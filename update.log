@@ -1,0 +1,27 @@
+=== Sat Jul 18 15:17:48 CDT 2026 ===
+Traceback (most recent call last):
+  File "/Users/joslyn/nc-petco-dashboard/fetch_data.py", line 16, in <module>
+    from google.cloud import bigquery
+ModuleNotFoundError: No module named 'google'
+=== Sat Jul 18 15:18:19 CDT 2026 ===
+Wrote data/metrics.json at 2026-07-18T20:18:20.313401+00:00Z
+  Total adoptions: 432 (337 cats, 95 dogs)
+  Year 1 (CY2025): 184 / 500-750
+  Year 2 (CY2026): 248 / 750-1000
+[main eb618e9] Auto-refresh metrics 2026-07-18 15:18
+ Committer: Joslyn <joslyn@Joslyns-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/joslyncavitt01/nc-petco-dashboard.git
+   782e1ec..eb618e9  main -> main
+Pushed update.

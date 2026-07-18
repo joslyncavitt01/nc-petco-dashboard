@@ -145,7 +145,7 @@ GOALS = {
 }
 
 output = {
-    "generated_at": now.isoformat() + "Z",
+    "generated_at": now.isoformat(),
     "adoptions": {
         "total": totals["total"],
         "cats": totals["cats"],

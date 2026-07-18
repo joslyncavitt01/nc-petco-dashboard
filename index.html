@@ -7,51 +7,71 @@
 <style>
   :root {
     color-scheme: light;
-    --surface-1:      #fcfcfb;
-    --page-plane:     #f9f9f7;
-    --text-primary:   #0b0b0b;
-    --text-secondary: #52514e;
-    --text-muted:     #898781;
-    --gridline:       #e1e0d9;
-    --baseline:       #c3c2b7;
-    --border:         rgba(11,11,11,0.10);
-    --success-text:   #006300;
-    --series-1:       #2a78d6; /* blue: cats */
-    --series-2:       #008300; /* green: dogs */
-    --status-good:    #0ca30c;
-    --status-warning: #fab219;
-    --status-serious: #ec835a;
-    --status-critical:#d03b3b;
+    --surface-1:      #ffffff;
+    --page-plane:     #faf8f5;
+    --text-primary:   #201c18;
+    --text-secondary: #5c554c;
+    --text-muted:     #948c80;
+    --gridline:       #eae4da;
+    --baseline:       #d8d0c2;
+    --border:         rgba(32,28,24,0.08);
+    --shadow:         0 1px 2px rgba(32,28,24,0.04), 0 8px 24px -12px rgba(32,28,24,0.10);
+    --success-text:   #4a6b1a;
+
+    --brand-orange:      #D85928;
+    --brand-orange-soft: #f5d9c8;
+    --brand-orange-wash: #fdf0e8;
+    --brand-green:       #A2C139;
+    --brand-green-dark:  #5C7A22;
+
+    --series-1: var(--brand-orange);  /* cats */
+    --series-2: var(--brand-green);   /* dogs */
+
+    --status-good:    #4a6b1a;
+    --status-warning: #c98500;
+    --status-critical:#c4491a;
   }
   @media (prefers-color-scheme: dark) {
     :root:where(:not([data-theme="light"])) {
       color-scheme: dark;
-      --surface-1:      #1a1a19;
-      --page-plane:     #0d0d0d;
-      --text-primary:   #ffffff;
-      --text-secondary: #c3c2b7;
-      --text-muted:     #898781;
-      --gridline:       #2c2c2a;
-      --baseline:       #383835;
-      --border:         rgba(255,255,255,0.10);
-      --success-text:   #0ca30c;
-      --series-1:       #3987e5;
-      --series-2:       #008300;
+      --surface-1:      #211d19;
+      --page-plane:     #16130f;
+      --text-primary:   #fbf7f2;
+      --text-secondary: #c9beae;
+      --text-muted:     #948c80;
+      --gridline:       #372f27;
+      --baseline:       #453b31;
+      --border:         rgba(251,247,242,0.10);
+      --shadow:         0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+      --success-text:   #9fc95e;
+      --brand-orange-soft: #5c3320;
+      --brand-orange-wash: #2a1c14;
+      --series-1: #ea7c4c;
+      --series-2: #3D8B5C;
+      --status-good:    #9fc95e;
+      --status-warning: #e3ab3f;
+      --status-critical:#e37a52;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --surface-1:      #1a1a19;
-    --page-plane:     #0d0d0d;
-    --text-primary:   #ffffff;
-    --text-secondary: #c3c2b7;
-    --text-muted:     #898781;
-    --gridline:       #2c2c2a;
-    --baseline:       #383835;
-    --border:         rgba(255,255,255,0.10);
-    --success-text:   #0ca30c;
-    --series-1:       #3987e5;
-    --series-2:       #008300;
+    --surface-1:      #211d19;
+    --page-plane:     #16130f;
+    --text-primary:   #fbf7f2;
+    --text-secondary: #c9beae;
+    --text-muted:     #948c80;
+    --gridline:       #372f27;
+    --baseline:       #453b31;
+    --border:         rgba(251,247,242,0.10);
+    --shadow:         0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    --success-text:   #9fc95e;
+    --brand-orange-soft: #5c3320;
+    --brand-orange-wash: #2a1c14;
+    --series-1: #ea7c4c;
+    --series-2: #3D8B5C;
+    --status-good:    #9fc95e;
+    --status-warning: #e3ab3f;
+    --status-critical:#e37a52;
   }
 
   * { box-sizing: border-box; }
@@ -60,126 +80,202 @@
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     background: var(--page-plane);
     color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px 64px; }
 
-  header { margin-bottom: 32px; }
-  header h1 { font-size: 1.5rem; margin: 0 0 4px; }
-  header p { margin: 0; color: var(--text-secondary); font-size: 0.9rem; }
-  #generated { color: var(--text-muted); font-size: 0.8rem; margin-top: 8px; }
+  header.masthead {
+    background: var(--surface-1);
+    border-bottom: 3px solid var(--brand-orange);
+    margin-bottom: 36px;
+  }
+  .masthead-inner {
+    max-width: 1160px; margin: 0 auto; padding: 22px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  }
+  .masthead-inner img { height: 42px; display: block; }
+  .masthead-inner img.apa-logo { height: 34px; }
+  .masthead-text h1 { font-size: 1.3rem; margin: 0 0 2px; letter-spacing: -0.01em; }
+  .masthead-text p { margin: 0; color: var(--text-secondary); font-size: 0.85rem; }
+  #generated { color: var(--text-muted); font-size: 0.76rem; margin-top: 4px; }
 
-  section { margin-bottom: 40px; }
-  section > h2 {
-    font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em;
-    color: var(--text-secondary); margin: 0 0 14px; font-weight: 600;
+  section { margin-bottom: 44px; }
+  .section-head { display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  .section-head svg { width: 16px; height: 16px; color: var(--brand-orange); flex-shrink: 0; }
+  .section-head h2 {
+    font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-secondary); margin: 0; font-weight: 700;
   }
 
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
   .tile {
-    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
-    padding: 16px 18px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px 14px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+    transition: transform 0.15s ease;
   }
-  .tile .label { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 6px; }
-  .tile .value { font-size: 1.8rem; font-weight: 600; line-height: 1.1; }
-  .tile .sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+  .tile::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--brand-orange), var(--brand-green));
+  }
+  .tile .label { font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 6px; font-weight: 600; }
+  .tile .value { font-size: 1.9rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+  .tile .spark { margin-top: 8px; height: 28px; }
+  .tile .spark svg { display: block; width: 100%; height: 100%; }
 
   .goal-card {
-    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
-    padding: 20px 22px; margin-bottom: 14px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 26px; margin-bottom: 16px; box-shadow: var(--shadow);
   }
   .goal-card .goal-head {
-    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;
-    flex-wrap: wrap; gap: 6px;
+    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;
+    flex-wrap: wrap; gap: 8px;
   }
-  .goal-card .goal-title { font-weight: 600; font-size: 1rem; }
-  .goal-card .goal-status { font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
-  .goal-status.closed { background: var(--status-critical); color: #fff; }
-  .goal-status.open { background: var(--status-warning); color: #1a1a19; }
-  .goal-card .goal-numbers { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; }
-  .goal-card .goal-numbers b { color: var(--text-primary); }
-  .bar-track { position: relative; height: 20px; background: var(--gridline); border-radius: 6px; overflow: visible; }
-  .bar-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 6px 0 0 6px; background: var(--series-1); }
-  .bar-marker { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--baseline); }
-  .bar-marker .tick-label { position: absolute; top: -18px; font-size: 0.72rem; color: var(--text-muted); transform: translateX(-50%); white-space: nowrap; }
+  .goal-card .goal-title { font-weight: 700; font-size: 1.05rem; }
+  .goal-card .goal-status {
+    font-size: 0.74rem; padding: 4px 11px; border-radius: 999px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .goal-status.missed  { background: color-mix(in srgb, var(--status-critical) 16%, transparent); color: var(--status-critical); }
+  .goal-status.open    { background: color-mix(in srgb, var(--status-warning) 18%, transparent); color: var(--status-warning); }
+  .goal-status.met     { background: color-mix(in srgb, var(--status-good) 16%, transparent); color: var(--status-good); }
+  .goal-card .goal-numbers { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .goal-card .goal-numbers b { color: var(--text-primary); font-weight: 700; }
+  .goal-card .goal-pct { font-size: 2rem; font-weight: 700; float: right; color: var(--brand-orange); letter-spacing: -0.02em; }
 
-  .chart-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
-  .legend { display: flex; gap: 16px; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 12px; }
-  .legend span { display: inline-flex; align-items: center; gap: 6px; }
-  .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .bar-track { position: relative; height: 14px; background: var(--gridline); border-radius: 7px; margin-top: 4px; }
+  .bar-fill {
+    position: absolute; top: 0; left: 0; height: 100%; border-radius: 7px;
+    background: linear-gradient(90deg, var(--brand-orange-soft), var(--brand-orange));
+  }
+  .bar-marker { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--baseline); }
+  .bar-marker .tick-label {
+    position: absolute; top: -20px; font-size: 0.72rem; color: var(--text-muted);
+    transform: translateX(-50%); white-space: nowrap; font-weight: 600;
+  }
+
+  .chart-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 26px 16px; box-shadow: var(--shadow);
+  }
+  .legend { display: flex; gap: 20px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 14px; font-weight: 600; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
   svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 
-  footer { color: var(--text-muted); font-size: 0.78rem; margin-top: 24px; }
-  footer a { color: var(--text-secondary); }
+  #chart-wrap { position: relative; }
+  #tooltip {
+    position: absolute; pointer-events: none; background: var(--text-primary); color: var(--page-plane);
+    font-size: 0.76rem; padding: 8px 11px; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    opacity: 0; transition: opacity 0.1s ease; white-space: nowrap; z-index: 5; font-weight: 500;
+  }
+  #tooltip b { font-weight: 700; }
+  #tooltip .row { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+  #tooltip .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+  footer { color: var(--text-muted); font-size: 0.78rem; margin-top: 24px; line-height: 1.6; }
 </style>
 </head>
 <body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <img src="https://raw.githubusercontent.com/joslyncavitt01/apa-assets/master/shelter_pet_logo.png" alt="Shelter Pet Adoption Center">
+    <div class="masthead-text" style="margin-right:auto; margin-left: 8px;">
+      <h1>NC Adoption Center Dashboard</h1>
+      <p>Huntersville, NC &middot; Petco Love Grant G-2406-56741</p>
+      <div id="generated">Loading&hellip;</div>
+    </div>
+    <img class="apa-logo" src="https://raw.githubusercontent.com/joslyncavitt01/apa-assets/master/apa_logo.svg" alt="Austin Pets Alive!">
+  </div>
+</header>
+
 <div class="wrap">
-  <header>
-    <h1>NC Adoption Center Dashboard</h1>
-    <p>Austin Pets Alive! Shelter Pet Adoption Center, Huntersville NC &middot; Petco Love Grant G-2406-56741</p>
-    <div id="generated">Loading…</div>
-  </header>
 
   <section>
-    <h2>Progress Toward Contract Goal</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <h2>Progress Toward Contract Goal</h2>
+    </div>
     <div id="goals"></div>
   </section>
 
   <section>
-    <h2>Adoptions</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-8.5C.5 8 2.5 4.5 6 4.5c2 0 3.5 1 4 2 0.5-1 2-2 4-2 3.5 0 5.5 3.5 3.5 8C19 16.5 12 21 12 21z"/></svg>
+      <h2>Adoptions</h2>
+    </div>
     <div class="tiles" id="adoption-tiles"></div>
   </section>
 
   <section>
-    <h2>Adoption Trend</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+      <h2>Adoption Trend</h2>
+    </div>
     <div class="chart-card">
       <div class="legend">
         <span><i style="background:var(--series-1)"></i>Cats</span>
         <span><i style="background:var(--series-2)"></i>Dogs</span>
       </div>
-      <svg id="trend-chart" width="100%" height="220" viewBox="0 0 1000 220" preserveAspectRatio="none"></svg>
+      <div id="chart-wrap">
+        <svg id="trend-chart" width="100%" height="240" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg>
+        <div id="tooltip"></div>
+      </div>
     </div>
   </section>
 
   <section>
-    <h2>Foster Program</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      <h2>Foster Program</h2>
+    </div>
     <div class="tiles" id="foster-tiles"></div>
   </section>
 
   <section>
-    <h2>Volunteers</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <h2>Volunteers</h2>
+    </div>
     <div class="tiles" id="volunteer-tiles"></div>
   </section>
 
   <section>
-    <h2>Current Snapshot</h2>
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+      <h2>Current Snapshot</h2>
+    </div>
     <div class="tiles" id="snapshot-tiles"></div>
   </section>
 
   <footer>
-    Data source: ShelterLuv via BigQuery (apa-data-410213.nc_shelterluv, apa-data-410213.betterImpact).
+    Data source: ShelterLuv via BigQuery (apa-data-410213.nc_shelterluv, apa-data-410213.betterImpact).<br>
     Year 1 / Year 2 goal framing confirmed by Petco Love (Mary Ann Magana, 7/17/26): calendar year, separate annual goals.
   </footer>
 </div>
 
 <script>
+let METRICS = null;
+
 async function main() {
   const res = await fetch('data/metrics.json', { cache: 'no-store' });
-  const d = await res.json();
+  METRICS = await res.json();
+  const d = METRICS;
 
   const genDate = new Date(d.generated_at);
   document.getElementById('generated').textContent =
     'Last updated ' + genDate.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 
-  // Adoption tiles
-  const adoptTiles = [
-    { label: 'Total Adoptions', value: d.adoptions.total },
-    { label: 'Cat Adoptions', value: d.adoptions.cats },
-    { label: 'Dog Adoptions', value: d.adoptions.dogs },
-  ];
-  renderTiles('adoption-tiles', adoptTiles);
+  const months = d.adoptions.by_month;
+  const catSeries = months.map(m => m.cats);
+  const dogSeries = months.map(m => m.dogs);
+  const totalSeries = months.map(m => m.total);
 
-  // Foster tiles
+  renderTiles('adoption-tiles', [
+    { label: 'Total Adoptions', value: d.adoptions.total, spark: totalSeries, color: 'var(--brand-orange)' },
+    { label: 'Cat Adoptions', value: d.adoptions.cats, spark: catSeries, color: 'var(--series-1)' },
+    { label: 'Dog Adoptions', value: d.adoptions.dogs, spark: dogSeries, color: 'var(--series-2)' },
+  ]);
+
   renderTiles('foster-tiles', [
     { label: 'Unique Foster Families', value: d.foster.unique_families },
     { label: 'Total Foster Placements', value: d.foster.total_placements },
@@ -187,14 +283,12 @@ async function main() {
     { label: 'Foster-to-Adopt %', value: d.foster.foster_to_adopt_pct + '%' },
   ]);
 
-  // Volunteer tiles
   renderTiles('volunteer-tiles', [
     { label: 'Total Hours', value: d.volunteers.total_hours.toLocaleString() },
     { label: 'Unique Volunteers', value: d.volunteers.unique_volunteers },
     { label: 'Total Shifts', value: d.volunteers.total_shifts },
   ]);
 
-  // Snapshot tiles
   const s = d.snapshot;
   renderTiles('snapshot-tiles', [
     { label: 'Total in Custody', value: s.total_in_custody },
@@ -204,42 +298,76 @@ async function main() {
     { label: 'Dogs in Foster', value: s.dogs_in_foster || 0 },
   ]);
 
-  // Goal cards
   renderGoals(d.goals);
+  renderTrend(months);
+}
 
-  // Trend chart
-  renderTrend(d.adoptions.by_month);
+function sparkPath(values, w, h) {
+  if (!values || values.length < 2) return '';
+  const max = Math.max(...values, 1);
+  const min = Math.min(...values, 0);
+  const range = (max - min) || 1;
+  const step = w / (values.length - 1);
+  const pts = values.map((v, i) => [i * step, h - ((v - min) / range) * h]);
+  const d = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const area = d + ` L${w},${h} L0,${h} Z`;
+  return { line: d, area };
 }
 
 function renderTiles(id, items) {
   const el = document.getElementById(id);
-  el.innerHTML = items.map(t => `
-    <div class="tile">
-      <div class="label">${t.label}</div>
-      <div class="value">${t.value}</div>
-    </div>
-  `).join('');
+  el.innerHTML = items.map(t => {
+    let sparkHtml = '';
+    if (t.spark) {
+      const p = sparkPath(t.spark, 200, 28);
+      const gid = 'g' + Math.random().toString(36).slice(2);
+      sparkHtml = `
+        <div class="spark">
+          <svg viewBox="0 0 200 28" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="${t.color}" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="${t.color}" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="${p.area}" fill="url(#${gid})" stroke="none"/>
+            <path d="${p.line}" fill="none" stroke="${t.color}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>`;
+    }
+    return `
+      <div class="tile">
+        <div class="label">${t.label}</div>
+        <div class="value">${t.value}</div>
+        ${sparkHtml}
+      </div>
+    `;
+  }).join('');
 }
 
 function renderGoals(goals) {
   const el = document.getElementById('goals');
   const cards = [goals.year1, goals.year2].map(g => {
-    const pctMin = Math.min(100, (g.actual / g.min) * 100);
     const pctMax = Math.min(100, (g.actual / g.max) * 100);
     const minTick = 100 * (g.min / g.max);
-    const statusClass = g.closed ? 'closed' : 'open';
-    const statusLabel = g.closed
-      ? (g.actual >= g.min ? 'Goal met' : 'Goal missed')
-      : 'In progress';
+    let statusClass, statusLabel;
+    if (g.closed) {
+      statusClass = g.actual >= g.min ? 'met' : 'missed';
+      statusLabel = g.actual >= g.min ? 'Goal met' : 'Goal missed';
+    } else {
+      statusClass = 'open';
+      statusLabel = 'In progress';
+    }
     return `
       <div class="goal-card">
+        <div class="goal-pct">${g.pct_of_min}%</div>
         <div class="goal-head">
           <div class="goal-title">${g.label}</div>
           <div class="goal-status ${statusClass}">${statusLabel}</div>
         </div>
         <div class="goal-numbers">
           <b>${g.actual}</b> adoptions against a goal of <b>${g.min}&ndash;${g.max}</b>
-          (${g.pct_of_min}% of minimum, ${g.cats} cats / ${g.dogs} dogs)
+          &nbsp;&middot;&nbsp; ${g.cats} cats / ${g.dogs} dogs &nbsp;&middot;&nbsp; ${g.pct_of_min}% of minimum
         </div>
         <div class="bar-track">
           <div class="bar-fill" style="width:${pctMax}%"></div>
@@ -256,47 +384,152 @@ function renderGoals(goals) {
   el.innerHTML = cards;
 }
 
+// Catmull-Rom -> cubic Bezier smoothing for a nicer curve
+function smoothPath(pts) {
+  if (pts.length < 3) {
+    return pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  }
+  let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)} `;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] || pts[i];
+    const p1 = pts[i];
+    const p2 = pts[i + 1];
+    const p3 = pts[i + 2] || p2;
+    const c1x = p1[0] + (p2[0] - p0[0]) / 6;
+    const c1y = p1[1] + (p2[1] - p0[1]) / 6;
+    const c2x = p2[0] - (p3[0] - p1[0]) / 6;
+    const c2y = p2[1] - (p3[1] - p1[1]) / 6;
+    d += `C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)} `;
+  }
+  return d;
+}
+
+let chartGeom = null;
+
 function renderTrend(byMonth) {
   const svg = document.getElementById('trend-chart');
   if (!byMonth || byMonth.length === 0) return;
 
-  const W = 1000, H = 220, padL = 36, padR = 12, padT = 12, padB = 28;
+  const W = 1000, H = 240, padL = 22, padR = 34, padT = 12, padB = 28;
   const plotW = W - padL - padR, plotH = H - padT - padB;
 
-  const maxVal = Math.max(...byMonth.map(m => Math.max(m.cats, m.dogs)), 1);
+  const maxVal = Math.max(...byMonth.map(m => Math.max(m.cats, m.dogs)), 1) * 1.12;
   const stepX = plotW / (byMonth.length - 1 || 1);
 
-  const xy = (i, val) => {
-    const x = padL + i * stepX;
-    const y = padT + plotH - (val / maxVal) * plotH;
-    return [x, y];
-  };
+  const xy = (i, val) => [padL + i * stepX, padT + plotH - (val / maxVal) * plotH];
 
-  const path = (key, color) => {
-    const pts = byMonth.map((m, i) => xy(i, m[key]));
-    const d = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
-    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
-  };
+  const catsCss = 'var(--series-1)';
+  const dogsCss = 'var(--series-2)';
 
-  // gridlines (4 horizontal)
+  const catPts = byMonth.map((m, i) => xy(i, m.cats));
+  const dogPts = byMonth.map((m, i) => xy(i, m.dogs));
+
+  const catLine = smoothPath(catPts);
+  const dogLine = smoothPath(dogPts);
+  const catArea = catLine + ` L${catPts[catPts.length-1][0].toFixed(1)},${padT+plotH} L${catPts[0][0].toFixed(1)},${padT+plotH} Z`;
+  const dogArea = dogLine + ` L${dogPts[dogPts.length-1][0].toFixed(1)},${padT+plotH} L${dogPts[0][0].toFixed(1)},${padT+plotH} Z`;
+
   let grid = '';
-  for (let g = 0; g <= 4; g++) {
-    const y = padT + (plotH / 4) * g;
+  for (let g = 0; g <= 3; g++) {
+    const y = padT + (plotH / 3) * g;
     grid += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--gridline)" stroke-width="1"/>`;
   }
 
-  // x labels: show every other month to avoid crowding
   let labels = '';
   byMonth.forEach((m, i) => {
-    if (i % 2 !== 0 && byMonth.length > 12) return;
+    if (byMonth.length > 12 && i % 2 !== 0) return;
     const [x] = xy(i, 0);
-    labels += `<text x="${x.toFixed(1)}" y="${H - 8}" font-size="10" fill="var(--text-muted)" text-anchor="middle">${m.month.slice(2)}</text>`;
+    labels += `<text x="${x.toFixed(1)}" y="${H - 8}" font-size="10.5" fill="var(--text-muted)" text-anchor="middle">${m.month.slice(2)}</text>`;
   });
 
-  const catsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-1').trim();
-  const dogsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-2').trim();
+  const lastCat = catPts[catPts.length - 1];
+  const lastDog = dogPts[dogPts.length - 1];
+  const endLabels = `
+    <text x="${lastCat[0]-4}" y="${lastCat[1]-8}" font-size="11" font-weight="700" fill="${catsCss}" text-anchor="end">Cats</text>
+    <text x="${lastDog[0]-4}" y="${lastDog[1]+16}" font-size="11" font-weight="700" fill="${dogsCss}" text-anchor="end">Dogs</text>
+  `;
 
-  svg.innerHTML = grid + path('cats', catsCss || '#2a78d6') + path('dogs', dogsCss || '#008300') + labels;
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="catFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${catsCss}" stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="${catsCss}" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="dogFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${dogsCss}" stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="${dogsCss}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    ${grid}
+    <path d="${catArea}" fill="url(#catFill)" stroke="none"/>
+    <path d="${dogArea}" fill="url(#dogFill)" stroke="none"/>
+    <path d="${catLine}" fill="none" stroke="${catsCss}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="${dogLine}" fill="none" stroke="${dogsCss}" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <line id="crosshair" x1="0" y1="${padT}" x2="0" y2="${padT+plotH}" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="3,3" opacity="0"/>
+    <circle id="dot-cat" r="4" fill="${catsCss}" stroke="var(--surface-1)" stroke-width="2" opacity="0"/>
+    <circle id="dot-dog" r="4" fill="${dogsCss}" stroke="var(--surface-1)" stroke-width="2" opacity="0"/>
+    ${labels}
+    ${endLabels}
+  `;
+
+  chartGeom = { byMonth, padL, plotW, stepX, xy, W, H };
+  setupHover();
+}
+
+function setupHover() {
+  const svg = document.getElementById('trend-chart');
+  const wrap = document.getElementById('chart-wrap');
+  const tooltip = document.getElementById('tooltip');
+  const crosshair = document.getElementById('crosshair');
+  const dotCat = document.getElementById('dot-cat');
+  const dotDog = document.getElementById('dot-dog');
+
+  function handleMove(evt) {
+    const rect = svg.getBoundingClientRect();
+    const relX = evt.clientX - rect.left;
+    const scaleX = chartGeom.W / rect.width;
+    const svgX = relX * scaleX;
+
+    let i = Math.round((svgX - chartGeom.padL) / chartGeom.stepX);
+    i = Math.max(0, Math.min(chartGeom.byMonth.length - 1, i));
+    const m = chartGeom.byMonth[i];
+    const [cx, cy] = chartGeom.xy(i, m.cats);
+    const [dx, dy] = chartGeom.xy(i, m.dogs);
+
+    crosshair.setAttribute('x1', cx.toFixed(1));
+    crosshair.setAttribute('x2', cx.toFixed(1));
+    crosshair.setAttribute('opacity', '1');
+    dotCat.setAttribute('cx', cx.toFixed(1)); dotCat.setAttribute('cy', cy.toFixed(1)); dotCat.setAttribute('opacity', '1');
+    dotDog.setAttribute('cx', dx.toFixed(1)); dotDog.setAttribute('cy', dy.toFixed(1)); dotDog.setAttribute('opacity', '1');
+
+    const catsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-1').trim();
+    const dogsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-2').trim();
+
+    tooltip.innerHTML = `
+      <b>${m.month}</b>
+      <div class="row"><span class="dot" style="background:${catsCss}"></span>Cats: <b>${m.cats}</b></div>
+      <div class="row"><span class="dot" style="background:${dogsCss}"></span>Dogs: <b>${m.dogs}</b></div>
+    `;
+    tooltip.style.opacity = '1';
+    const wrapRect = wrap.getBoundingClientRect();
+    const px = (cx / chartGeom.W) * wrapRect.width;
+    const py = (Math.min(cy, dy) / chartGeom.H) * wrapRect.height;
+    let left = px + 14;
+    if (left + 140 > wrapRect.width) left = px - 150;
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = Math.max(0, py - 40) + 'px';
+  }
+
+  function handleLeave() {
+    crosshair.setAttribute('opacity', '0');
+    dotCat.setAttribute('opacity', '0');
+    dotDog.setAttribute('opacity', '0');
+    tooltip.style.opacity = '0';
+  }
+
+  svg.addEventListener('mousemove', handleMove);
+  svg.addEventListener('mouseleave', handleLeave);
+  svg.addEventListener('touchmove', (e) => { if (e.touches[0]) handleMove(e.touches[0]); }, { passive: true });
 }
 
 main().catch(err => {
