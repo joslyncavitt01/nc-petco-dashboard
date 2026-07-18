@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NC Adoption Center Dashboard</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --success-text:   #006300;
+    --series-1:       #2a78d6; /* blue: cats */
+    --series-2:       #008300; /* green: dogs */
+    --status-good:    #0ca30c;
+    --status-warning: #fab219;
+    --status-serious: #ec835a;
+    --status-critical:#d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --success-text:   #0ca30c;
+      --series-1:       #3987e5;
+      --series-2:       #008300;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --success-text:   #0ca30c;
+    --series-1:       #3987e5;
+    --series-2:       #008300;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+
+  header { margin-bottom: 32px; }
+  header h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  header p { margin: 0; color: var(--text-secondary); font-size: 0.9rem; }
+  #generated { color: var(--text-muted); font-size: 0.8rem; margin-top: 8px; }
+
+  section { margin-bottom: 40px; }
+  section > h2 {
+    font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--text-secondary); margin: 0 0 14px; font-weight: 600;
+  }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .tile {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .tile .label { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 6px; }
+  .tile .value { font-size: 1.8rem; font-weight: 600; line-height: 1.1; }
+  .tile .sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+  .goal-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .goal-card .goal-head {
+    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;
+    flex-wrap: wrap; gap: 6px;
+  }
+  .goal-card .goal-title { font-weight: 600; font-size: 1rem; }
+  .goal-card .goal-status { font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+  .goal-status.closed { background: var(--status-critical); color: #fff; }
+  .goal-status.open { background: var(--status-warning); color: #1a1a19; }
+  .goal-card .goal-numbers { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; }
+  .goal-card .goal-numbers b { color: var(--text-primary); }
+  .bar-track { position: relative; height: 20px; background: var(--gridline); border-radius: 6px; overflow: visible; }
+  .bar-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 6px 0 0 6px; background: var(--series-1); }
+  .bar-marker { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--baseline); }
+  .bar-marker .tick-label { position: absolute; top: -18px; font-size: 0.72rem; color: var(--text-muted); transform: translateX(-50%); white-space: nowrap; }
+
+  .chart-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
+  .legend { display: flex; gap: 16px; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+  footer { color: var(--text-muted); font-size: 0.78rem; margin-top: 24px; }
+  footer a { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>NC Adoption Center Dashboard</h1>
+    <p>Austin Pets Alive! Shelter Pet Adoption Center, Huntersville NC &middot; Petco Love Grant G-2406-56741</p>
+    <div id="generated">Loading…</div>
+  </header>
+
+  <section>
+    <h2>Progress Toward Contract Goal</h2>
+    <div id="goals"></div>
+  </section>
+
+  <section>
+    <h2>Adoptions</h2>
+    <div class="tiles" id="adoption-tiles"></div>
+  </section>
+
+  <section>
+    <h2>Adoption Trend</h2>
+    <div class="chart-card">
+      <div class="legend">
+        <span><i style="background:var(--series-1)"></i>Cats</span>
+        <span><i style="background:var(--series-2)"></i>Dogs</span>
+      </div>
+      <svg id="trend-chart" width="100%" height="220" viewBox="0 0 1000 220" preserveAspectRatio="none"></svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>Foster Program</h2>
+    <div class="tiles" id="foster-tiles"></div>
+  </section>
+
+  <section>
+    <h2>Volunteers</h2>
+    <div class="tiles" id="volunteer-tiles"></div>
+  </section>
+
+  <section>
+    <h2>Current Snapshot</h2>
+    <div class="tiles" id="snapshot-tiles"></div>
+  </section>
+
+  <footer>
+    Data source: ShelterLuv via BigQuery (apa-data-410213.nc_shelterluv, apa-data-410213.betterImpact).
+    Year 1 / Year 2 goal framing confirmed by Petco Love (Mary Ann Magana, 7/17/26): calendar year, separate annual goals.
+  </footer>
+</div>
+
+<script>
+async function main() {
+  const res = await fetch('data/metrics.json', { cache: 'no-store' });
+  const d = await res.json();
+
+  const genDate = new Date(d.generated_at);
+  document.getElementById('generated').textContent =
+    'Last updated ' + genDate.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+
+  // Adoption tiles
+  const adoptTiles = [
+    { label: 'Total Adoptions', value: d.adoptions.total },
+    { label: 'Cat Adoptions', value: d.adoptions.cats },
+    { label: 'Dog Adoptions', value: d.adoptions.dogs },
+  ];
+  renderTiles('adoption-tiles', adoptTiles);
+
+  // Foster tiles
+  renderTiles('foster-tiles', [
+    { label: 'Unique Foster Families', value: d.foster.unique_families },
+    { label: 'Total Foster Placements', value: d.foster.total_placements },
+    { label: 'Avg Days per Stay', value: d.foster.avg_days_per_stay },
+    { label: 'Foster-to-Adopt %', value: d.foster.foster_to_adopt_pct + '%' },
+  ]);
+
+  // Volunteer tiles
+  renderTiles('volunteer-tiles', [
+    { label: 'Total Hours', value: d.volunteers.total_hours.toLocaleString() },
+    { label: 'Unique Volunteers', value: d.volunteers.unique_volunteers },
+    { label: 'Total Shifts', value: d.volunteers.total_shifts },
+  ]);
+
+  // Snapshot tiles
+  const s = d.snapshot;
+  renderTiles('snapshot-tiles', [
+    { label: 'Total in Custody', value: s.total_in_custody },
+    { label: 'Cats at Center', value: s.cats_at_center || 0 },
+    { label: 'Dogs at Center', value: s.dogs_at_center || 0 },
+    { label: 'Cats in Foster', value: s.cats_in_foster || 0 },
+    { label: 'Dogs in Foster', value: s.dogs_in_foster || 0 },
+  ]);
+
+  // Goal cards
+  renderGoals(d.goals);
+
+  // Trend chart
+  renderTrend(d.adoptions.by_month);
+}
+
+function renderTiles(id, items) {
+  const el = document.getElementById(id);
+  el.innerHTML = items.map(t => `
+    <div class="tile">
+      <div class="label">${t.label}</div>
+      <div class="value">${t.value}</div>
+    </div>
+  `).join('');
+}
+
+function renderGoals(goals) {
+  const el = document.getElementById('goals');
+  const cards = [goals.year1, goals.year2].map(g => {
+    const pctMin = Math.min(100, (g.actual / g.min) * 100);
+    const pctMax = Math.min(100, (g.actual / g.max) * 100);
+    const minTick = 100 * (g.min / g.max);
+    const statusClass = g.closed ? 'closed' : 'open';
+    const statusLabel = g.closed
+      ? (g.actual >= g.min ? 'Goal met' : 'Goal missed')
+      : 'In progress';
+    return `
+      <div class="goal-card">
+        <div class="goal-head">
+          <div class="goal-title">${g.label}</div>
+          <div class="goal-status ${statusClass}">${statusLabel}</div>
+        </div>
+        <div class="goal-numbers">
+          <b>${g.actual}</b> adoptions against a goal of <b>${g.min}&ndash;${g.max}</b>
+          (${g.pct_of_min}% of minimum, ${g.cats} cats / ${g.dogs} dogs)
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pctMax}%"></div>
+          <div class="bar-marker" style="left:${minTick}%">
+            <span class="tick-label">min ${g.min}</span>
+          </div>
+          <div class="bar-marker" style="left:100%">
+            <span class="tick-label" style="left:auto; right:0; transform:none;">max ${g.max}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  el.innerHTML = cards;
+}
+
+function renderTrend(byMonth) {
+  const svg = document.getElementById('trend-chart');
+  if (!byMonth || byMonth.length === 0) return;
+
+  const W = 1000, H = 220, padL = 36, padR = 12, padT = 12, padB = 28;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  const maxVal = Math.max(...byMonth.map(m => Math.max(m.cats, m.dogs)), 1);
+  const stepX = plotW / (byMonth.length - 1 || 1);
+
+  const xy = (i, val) => {
+    const x = padL + i * stepX;
+    const y = padT + plotH - (val / maxVal) * plotH;
+    return [x, y];
+  };
+
+  const path = (key, color) => {
+    const pts = byMonth.map((m, i) => xy(i, m[key]));
+    const d = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+  };
+
+  // gridlines (4 horizontal)
+  let grid = '';
+  for (let g = 0; g <= 4; g++) {
+    const y = padT + (plotH / 4) * g;
+    grid += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--gridline)" stroke-width="1"/>`;
+  }
+
+  // x labels: show every other month to avoid crowding
+  let labels = '';
+  byMonth.forEach((m, i) => {
+    if (i % 2 !== 0 && byMonth.length > 12) return;
+    const [x] = xy(i, 0);
+    labels += `<text x="${x.toFixed(1)}" y="${H - 8}" font-size="10" fill="var(--text-muted)" text-anchor="middle">${m.month.slice(2)}</text>`;
+  });
+
+  const catsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-1').trim();
+  const dogsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-2').trim();
+
+  svg.innerHTML = grid + path('cats', catsCss || '#2a78d6') + path('dogs', dogsCss || '#008300') + labels;
+}
+
+main().catch(err => {
+  document.getElementById('generated').textContent = 'Failed to load data: ' + err.message;
+  console.error(err);
+});
+</script>
+</body>
+</html>
