@@ -119,8 +119,13 @@
   }
   .tile .label { font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 6px; font-weight: 600; }
   .tile .value { font-size: 1.9rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
-  .tile .spark { margin-top: 8px; height: 28px; }
-  .tile .spark svg { display: block; width: 100%; height: 100%; }
+  .tile .spark { margin-top: 8px; }
+  .tile .spark-chart { height: 28px; }
+  .tile .spark-chart svg { display: block; width: 100%; height: 100%; }
+  .tile .spark-labels { position: relative; height: 14px; margin-top: 3px; font-size: 0.66rem; color: var(--text-muted); font-weight: 500; }
+  .tile .spark-labels span { position: absolute; top: 0; white-space: nowrap; }
+  .tile .spark-labels .spark-start { left: 0; }
+  .tile .spark-labels .spark-mid { left: 50%; transform: translateX(-50%); }
 
   .goal-card {
     background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
@@ -256,6 +261,14 @@
 <script>
 let METRICS = null;
 
+const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONTH_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function formatMonth(ym, full) {
+  const [y, m] = ym.split('-');
+  const arr = full ? MONTH_FULL : MONTH_ABBR;
+  return arr[parseInt(m, 10) - 1] + ' ' + y;
+}
+
 async function main() {
   const res = await fetch('data/metrics.json', { cache: 'no-store' });
   METRICS = await res.json();
@@ -266,14 +279,15 @@ async function main() {
     'Last updated ' + genDate.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 
   const months = d.adoptions.by_month;
+  const monthLabels = months.map(m => m.month);
   const catSeries = months.map(m => m.cats);
   const dogSeries = months.map(m => m.dogs);
   const totalSeries = months.map(m => m.total);
 
   renderTiles('adoption-tiles', [
-    { label: 'Total Adoptions', value: d.adoptions.total, spark: totalSeries, color: 'var(--brand-orange)' },
-    { label: 'Cat Adoptions', value: d.adoptions.cats, spark: catSeries, color: 'var(--series-1)' },
-    { label: 'Dog Adoptions', value: d.adoptions.dogs, spark: dogSeries, color: 'var(--series-2)' },
+    { label: 'Total Adoptions', value: d.adoptions.total, spark: totalSeries, sparkMonths: monthLabels, color: 'var(--brand-orange)' },
+    { label: 'Cat Adoptions', value: d.adoptions.cats, spark: catSeries, sparkMonths: monthLabels, color: 'var(--series-1)' },
+    { label: 'Dog Adoptions', value: d.adoptions.dogs, spark: dogSeries, sparkMonths: monthLabels, color: 'var(--series-2)' },
   ]);
 
   renderTiles('foster-tiles', [
@@ -321,18 +335,26 @@ function renderTiles(id, items) {
     if (t.spark) {
       const p = sparkPath(t.spark, 200, 28);
       const gid = 'g' + Math.random().toString(36).slice(2);
+      const startLabel = t.sparkMonths ? formatMonth(t.sparkMonths[0]) : '';
+      const midLabel = t.sparkMonths ? formatMonth(t.sparkMonths[Math.floor((t.sparkMonths.length - 1) / 2)]) : '';
       sparkHtml = `
         <div class="spark">
-          <svg viewBox="0 0 200 28" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="${t.color}" stop-opacity="0.28"/>
-                <stop offset="100%" stop-color="${t.color}" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="${p.area}" fill="url(#${gid})" stroke="none"/>
-            <path d="${p.line}" fill="none" stroke="${t.color}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <div class="spark-chart">
+            <svg viewBox="0 0 200 28" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="${t.color}" stop-opacity="0.28"/>
+                  <stop offset="100%" stop-color="${t.color}" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="${p.area}" fill="url(#${gid})" stroke="none"/>
+              <path d="${p.line}" fill="none" stroke="${t.color}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="spark-labels">
+            <span class="spark-start">${startLabel}</span>
+            <span class="spark-mid">${midLabel}</span>
+          </div>
         </div>`;
     }
     return `
@@ -439,7 +461,7 @@ function renderTrend(byMonth) {
   byMonth.forEach((m, i) => {
     if (byMonth.length > 12 && i % 2 !== 0) return;
     const [x] = xy(i, 0);
-    labels += `<text x="${x.toFixed(1)}" y="${H - 8}" font-size="10.5" fill="var(--text-muted)" text-anchor="middle">${m.month.slice(2)}</text>`;
+    labels += `<text x="${x.toFixed(1)}" y="${H - 8}" font-size="10.5" fill="var(--text-muted)" text-anchor="middle">${formatMonth(m.month)}</text>`;
   });
 
   const lastCat = catPts[catPts.length - 1];
@@ -506,7 +528,7 @@ function setupHover() {
     const dogsCss = getComputedStyle(document.documentElement).getPropertyValue('--series-2').trim();
 
     tooltip.innerHTML = `
-      <b>${m.month}</b>
+      <b>${formatMonth(m.month, true)}</b>
       <div class="row"><span class="dot" style="background:${catsCss}"></span>Cats: <b>${m.cats}</b></div>
       <div class="row"><span class="dot" style="background:${dogsCss}"></span>Dogs: <b>${m.dogs}</b></div>
     `;
