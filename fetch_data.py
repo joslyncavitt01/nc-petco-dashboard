@@ -37,6 +37,12 @@ adoptions_by_month = q("""
     ORDER BY month
 """)
 
+# Drop the current (in-progress) month from the trend series so it doesn't
+# read as a decline when it's really just a partial month. Recomputed fresh
+# on every run, so the cutoff always tracks "today" automatically.
+current_month = now.strftime("%Y-%m")
+adoptions_by_month = [m for m in adoptions_by_month if m["month"] < current_month]
+
 adoptions_by_cal_year = q("""
     SELECT
       EXTRACT(YEAR FROM o.outcomeDate) AS cal_year,
