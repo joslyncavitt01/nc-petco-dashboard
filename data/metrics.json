@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-28T11:00:06.624290+00:00",
+  "generated_at": "2026-08-08T15:37:05.714081+00:00",
   "adoptions": {
-    "total": 447,
-    "cats": 351,
-    "dogs": 96,
+    "total": 458,
+    "cats": 358,
+    "dogs": 100,
     "by_month": [
       {
         "month": "2025-04",
@@ -94,26 +94,32 @@
         "total": 49,
         "cats": 40,
         "dogs": 9
+      },
+      {
+        "month": "2026-07",
+        "total": 32,
+        "cats": 28,
+        "dogs": 4
       }
     ]
   },
   "foster": {
-    "unique_families": 56,
-    "total_placements": 103,
-    "avg_days_per_stay": 8.2,
+    "unique_families": 59,
+    "total_placements": 116,
+    "avg_days_per_stay": 8.1,
     "foster_to_adopt_pct": 8.3
   },
   "volunteers": {
-    "total_hours": 1546.3,
-    "unique_volunteers": 109,
-    "total_shifts": 1034
+    "total_hours": 1615.0,
+    "unique_volunteers": 110,
+    "total_shifts": 1075
   },
   "snapshot": {
-    "cats_at_center": 7,
-    "dogs_at_center": 1,
-    "cats_in_foster": 11,
+    "cats_at_center": 13,
+    "dogs_at_center": 0,
+    "cats_in_foster": 16,
     "dogs_in_foster": 4,
-    "total_in_custody": 23
+    "total_in_custody": 33
   },
   "goals": {
     "year1": {
@@ -131,10 +137,10 @@
       "min": 750,
       "max": 1000,
       "closed": false,
-      "actual": 263,
-      "cats": 209,
-      "dogs": 54,
-      "pct_of_min": 35.1
+      "actual": 274,
+      "cats": 216,
+      "dogs": 58,
+      "pct_of_min": 36.5
     }
   }
 }
