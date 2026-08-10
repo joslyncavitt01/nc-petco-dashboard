@@ -12,9 +12,16 @@ Year 1 / Year 2 goal framing confirmed by Petco Love (Mary Ann Magana,
 
 Pedigree Foundation D2A (Direct to Adopt) section tracks the 2026 grant
 goals from the March 2026 proposal: 180 pets transported TX->NC in 2026,
-100 local NC shelter transfers-in, foster caregivers 5->15. TX transport-ins
-are identified by intakeSubType ('HNCSPAC - Space', 'Transport Held at
-APATH'); D2A-tagged pets are identified by the 'D2A' AnimalAttributes tag.
+100 local NC shelter transfers-in, foster caregivers 5->15. D2A-tagged pets
+are identified by the 'D2A' AnimalAttributes tag.
+
+IMPORTANT: intakeSubType ('HNCSPAC - Space', 'Transport Held at APATH') is
+NOT a reliable TX-vs-NC signal -- both labels are used for transfers from
+Texas source shelters AND from local NC shelters (e.g. Charlotte-Mecklenburg
+Animal Care & Control, Catawba County). True origin is derived from
+AnimalPreviousIds.issuingShelter, backfilled by the dominant issuingShelter
+seen for that record's partnerInternalID when the animal's own previous-ID
+record is blank. A small residual is still unclassified ('UNKNOWN' origin).
 """
 
 import json
@@ -117,26 +124,67 @@ foster_stay_length = q("""
       AND DATE_DIFF(next_date, event_date, DAY) BETWEEN 0 AND 365
 """)[0]
 
-# --- Pedigree D2A: TX transport-ins ---------------------------------------
-TRANSPORT_SUBTYPES = "('HNCSPAC - Space', 'Transport Held at APATH')"
+# --- Pedigree D2A: transfer-in origin classification (TX vs NC vs unknown) -
+# See module docstring: issuingShelter is looked up directly per-animal, then
+# backfilled per-partner (dominant issuingShelter for that partnerInternalID)
+# for animals with no previous-ID record of their own.
+TX_SHELTERS = """(
+  'Austin Pets Alive, Inc.', 'Bryan Animal Center', 'Bastrop County Animal Services',
+  'Bastrop Cats Anonymous TNR Society - Bastrop CATS Inc', 'City of Lufkin Animal Services',
+  'Hill Country Humane Society', 'Kerrville Pets Alive!'
+)"""
+NC_SHELTERS = """(
+  'Charlotte Mecklenburg Animal Care & Control', 'Catawba County Animal Control',
+  'Catawba County Animal Shelter'
+)"""
+
+ORIGIN_CTE = f"""
+    WITH direct AS (
+      SELECT i.intakeID, i.animalInternalID, i.partnerInternalID, i.intakeDate,
+        CASE
+          WHEN p.issuingShelter IN {TX_SHELTERS} THEN 'TX'
+          WHEN p.issuingShelter IN {NC_SHELTERS} THEN 'NC'
+          WHEN p.issuingShelter IS NOT NULL AND p.issuingShelter != '' THEN 'OTHER'
+          ELSE NULL
+        END AS direct_origin
+      FROM `apa-data-410213.nc_shelterluv.Intakes` i
+      LEFT JOIN `apa-data-410213.nc_shelterluv.AnimalPreviousIds` p
+        ON i.animalInternalID = p.animalInternalID
+      WHERE i.intakeType = 'Intake.Transfer'
+    ),
+    partner_mode AS (
+      SELECT partnerInternalID, direct_origin AS mode_origin
+      FROM (
+        SELECT partnerInternalID, direct_origin,
+          ROW_NUMBER() OVER (PARTITION BY partnerInternalID ORDER BY COUNT(*) DESC) AS rn
+        FROM direct
+        WHERE direct_origin IS NOT NULL AND partnerInternalID IS NOT NULL AND partnerInternalID != ''
+        GROUP BY 1, 2
+      )
+      WHERE rn = 1
+    ),
+    classified AS (
+      SELECT d.intakeID, d.intakeDate,
+        COALESCE(d.direct_origin, pm.mode_origin, 'UNKNOWN') AS origin
+      FROM direct d
+      LEFT JOIN partner_mode pm ON d.partnerInternalID = pm.partnerInternalID
+    )
+"""
 
 transport_by_month = q(f"""
-    SELECT
-      FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month,
-      COUNT(*) AS total
-    FROM `apa-data-410213.nc_shelterluv.Intakes`
-    WHERE intakeType = 'Intake.Transfer' AND intakeSubType IN {TRANSPORT_SUBTYPES}
-    GROUP BY month
-    ORDER BY month
+    {ORIGIN_CTE}
+    SELECT FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month, COUNT(*) AS total
+    FROM classified WHERE origin = 'TX'
+    GROUP BY month ORDER BY month
 """)
 transport_by_month = [m for m in transport_by_month if m["month"] < current_month]
 
 transport_totals = q(f"""
+    {ORIGIN_CTE}
     SELECT
-      COUNT(*) AS all_time,
-      COUNTIF(EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
-    FROM `apa-data-410213.nc_shelterluv.Intakes`
-    WHERE intakeType = 'Intake.Transfer' AND intakeSubType IN {TRANSPORT_SUBTYPES}
+      COUNTIF(origin = 'TX') AS all_time,
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+    FROM classified
 """)[0]
 
 # --- Pedigree D2A: D2A-tagged pets and their outcomes ----------------------
@@ -162,15 +210,19 @@ d2a_outcomes = q("""
 
 # --- Pedigree D2A: local NC shelter transfers-in ---------------------------
 # Distinct from TX transport-ins above; goal is separate relationship-building
-# with in-state NC shelters. Tagging for this category is still sparse as of
-# Aug 2026 (program is early-stage) -- treat as directional, not complete.
+# with in-state NC shelters (e.g. Charlotte-Mecklenburg, Catawba County).
 local_transfers = q(f"""
+    {ORIGIN_CTE}
     SELECT
-      COUNT(*) AS all_time,
-      COUNTIF(EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
-    FROM `apa-data-410213.nc_shelterluv.Intakes`
-    WHERE intakeType = 'Intake.Transfer'
-      AND intakeSubType NOT IN {TRANSPORT_SUBTYPES}
+      COUNTIF(origin = 'NC') AS all_time,
+      COUNTIF(origin = 'NC' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+    FROM classified
+""")[0]
+
+unclassified_transfers = q(f"""
+    {ORIGIN_CTE}
+    SELECT COUNTIF(origin = 'UNKNOWN') AS all_time
+    FROM classified
 """)[0]
 
 # --- Pedigree D2A: active foster caregivers (point-in-time) ----------------
@@ -271,6 +323,7 @@ output = {
             "cy2026": local_transfers["cy2026"],
             "goal_2026_min": 100,
         },
+        "unclassified_transfers_all_time": unclassified_transfers["all_time"],
         "foster_caregivers": {
             "active_now": foster_caregivers_active["active_caregivers"],
             "goal_2026_min": 15,
@@ -301,3 +354,6 @@ print(f"Wrote data/metrics.json at {now.isoformat()}Z")
 print(f"  Total adoptions: {totals['total']} ({totals['cats']} cats, {totals['dogs']} dogs)")
 print(f"  Year 1 (CY2025): {year1['total']} / {GOALS['year1']['min']}-{GOALS['year1']['max']}")
 print(f"  Year 2 (CY2026): {year2['total']} / {GOALS['year2']['min']}-{GOALS['year2']['max']}")
+print(f"  TX transport-in (CY2026): {transport_totals['cy2026']} / goal 180")
+print(f"  NC local transfers-in (CY2026): {local_transfers['cy2026']} / goal 100")
+print(f"  Unclassified transfer origin (all-time): {unclassified_transfers['all_time']}")

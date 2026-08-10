@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:04:07.121098+00:00",
+  "generated_at": "2026-08-10T14:25:11.557270+00:00",
   "adoptions": {
     "total": 466,
     "cats": 364,
@@ -123,72 +123,68 @@
   },
   "pedigree": {
     "transport_in": {
-      "all_time": 399,
-      "cy2026": 250,
+      "all_time": 363,
+      "cy2026": 290,
       "by_month": [
         {
           "month": "2025-04",
-          "total": 2
+          "total": 3
         },
         {
           "month": "2025-05",
-          "total": 20
+          "total": 8
         },
         {
           "month": "2025-06",
-          "total": 24
+          "total": 31
         },
         {
           "month": "2025-07",
-          "total": 9
-        },
-        {
-          "month": "2025-08",
-          "total": 19
+          "total": 8
         },
         {
           "month": "2025-09",
-          "total": 15
+          "total": 4
         },
         {
           "month": "2025-10",
-          "total": 17
+          "total": 4
         },
         {
           "month": "2025-11",
-          "total": 16
+          "total": 4
         },
         {
           "month": "2025-12",
-          "total": 27
+          "total": 11
         },
         {
           "month": "2026-01",
-          "total": 10
+          "total": 28
         },
         {
           "month": "2026-02",
-          "total": 35
+          "total": 27
         },
         {
           "month": "2026-03",
-          "total": 26
+          "total": 24
         },
         {
           "month": "2026-04",
-          "total": 45
+          "total": 46
         },
         {
           "month": "2026-05",
-          "total": 45
+          "total": 62
         },
         {
           "month": "2026-06",
-          "total": 38
+          "total": 29
         },
         {
           "month": "2026-07",
-          "total": 38
+          "total": 50
         }
       ],
       "goal_2026_min": 180
@@ -200,10 +196,11 @@
       "with_any_outcome": 21
     },
     "local_transfers_in": {
-      "all_time": 50,
-      "cy2026": 18,
+      "all_time": 281,
+      "cy2026": 104,
       "goal_2026_min": 100
     },
+    "unclassified_transfers_all_time": 60,
     "foster_caregivers": {
       "active_now": 7,
       "goal_2026_min": 15
