@@ -261,6 +261,18 @@ local_transfers = q(f"""
     FROM classified
 """)[0]
 
+local_transfers_by_month = q(f"""
+    {ORIGIN_CTE}
+    SELECT
+      FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month,
+      COUNT(*) AS total,
+      COUNTIF(species = 'Cat') AS cats,
+      COUNTIF(species = 'Dog') AS dogs
+    FROM classified WHERE origin = 'NC'
+    GROUP BY month ORDER BY month
+""")
+local_transfers_by_month = [m for m in local_transfers_by_month if m["month"] < current_month]
+
 unclassified_transfers = q(f"""
     {ORIGIN_CTE}
     SELECT COUNTIF(origin = 'UNKNOWN') AS all_time
@@ -377,6 +389,7 @@ output = {
             "cy2026": local_transfers["cy2026"],
             "cy2026_cats": local_transfers["cy2026_cats"],
             "cy2026_dogs": local_transfers["cy2026_dogs"],
+            "by_month": local_transfers_by_month,
             "goal_2026_min": 100,
         },
         "unclassified_transfers_all_time": unclassified_transfers["all_time"],

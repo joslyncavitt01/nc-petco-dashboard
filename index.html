@@ -471,19 +471,31 @@ function renderPedigree(p) {
   const transportCatSeries2026 = months2026.map(m => m.cats);
   const transportDogSeries2026 = months2026.map(m => m.dogs);
 
+  const monthLabelsAll = t.by_month.map(m => m.month);
+  const transportSeriesAll = t.by_month.map(m => m.total);
+
   renderTiles('transport-tiles', [
     { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries2026, sparkMonths: monthLabels2026, color: 'var(--brand-orange)' },
     { label: 'Cats Transported (2026)', value: t.cy2026_cats, spark: transportCatSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-1)' },
     { label: 'Dogs Transported (2026)', value: t.cy2026_dogs, spark: transportDogSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-2)' },
-    { label: 'Transported to NC (All-Time)', value: t.all_time },
+    { label: 'Transported to NC (All-Time)', value: t.all_time, spark: transportSeriesAll, sparkMonths: monthLabelsAll, color: 'var(--brand-orange)' },
   ]);
 
   const lt = p.local_transfers_in;
+  const ltMonths2026 = lt.by_month.filter(m => m.month.startsWith('2026'));
+  const ltMonthLabels2026 = ltMonths2026.map(m => m.month);
+  const ltSeries2026 = ltMonths2026.map(m => m.total);
+  const ltCatSeries2026 = ltMonths2026.map(m => m.cats);
+  const ltDogSeries2026 = ltMonths2026.map(m => m.dogs);
+
+  const ltMonthLabelsAll = lt.by_month.map(m => m.month);
+  const ltSeriesAll = lt.by_month.map(m => m.total);
+
   renderTiles('local-transfer-tiles', [
-    { label: 'Local NC Transfers-In (2026)', value: lt.cy2026 },
-    { label: 'Cats (2026)', value: lt.cy2026_cats },
-    { label: 'Dogs (2026)', value: lt.cy2026_dogs },
-    { label: 'Local NC Transfers-In (All-Time)', value: lt.all_time },
+    { label: 'Local NC Transfers-In (2026)', value: lt.cy2026, spark: ltSeries2026, sparkMonths: ltMonthLabels2026, color: 'var(--brand-orange)' },
+    { label: 'Cats (2026)', value: lt.cy2026_cats, spark: ltCatSeries2026, sparkMonths: ltMonthLabels2026, color: 'var(--series-1)' },
+    { label: 'Dogs (2026)', value: lt.cy2026_dogs, spark: ltDogSeries2026, sparkMonths: ltMonthLabels2026, color: 'var(--series-2)' },
+    { label: 'Local NC Transfers-In (All-Time)', value: lt.all_time, spark: ltSeriesAll, sparkMonths: ltMonthLabelsAll, color: 'var(--brand-orange)' },
   ]);
 
   const d2aAdoptions = p.d2a.direct_adoptions + p.d2a.foster_to_adopt;

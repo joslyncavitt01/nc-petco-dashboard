@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:32:47.939479+00:00",
+  "generated_at": "2026-08-10T14:50:30.184793+00:00",
   "adoptions": {
     "total": 466,
     "cats": 364,
@@ -242,6 +242,92 @@
       "cy2026": 103,
       "cy2026_cats": 79,
       "cy2026_dogs": 24,
+      "by_month": [
+        {
+          "month": "2025-05",
+          "total": 15,
+          "cats": 15,
+          "dogs": 0
+        },
+        {
+          "month": "2025-06",
+          "total": 4,
+          "cats": 4,
+          "dogs": 0
+        },
+        {
+          "month": "2025-08",
+          "total": 20,
+          "cats": 18,
+          "dogs": 2
+        },
+        {
+          "month": "2025-09",
+          "total": 9,
+          "cats": 8,
+          "dogs": 1
+        },
+        {
+          "month": "2025-10",
+          "total": 11,
+          "cats": 6,
+          "dogs": 5
+        },
+        {
+          "month": "2025-11",
+          "total": 7,
+          "cats": 6,
+          "dogs": 1
+        },
+        {
+          "month": "2025-12",
+          "total": 24,
+          "cats": 23,
+          "dogs": 1
+        },
+        {
+          "month": "2026-01",
+          "total": 11,
+          "cats": 10,
+          "dogs": 1
+        },
+        {
+          "month": "2026-02",
+          "total": 16,
+          "cats": 11,
+          "dogs": 5
+        },
+        {
+          "month": "2026-03",
+          "total": 10,
+          "cats": 9,
+          "dogs": 1
+        },
+        {
+          "month": "2026-04",
+          "total": 18,
+          "cats": 17,
+          "dogs": 1
+        },
+        {
+          "month": "2026-05",
+          "total": 11,
+          "cats": 5,
+          "dogs": 6
+        },
+        {
+          "month": "2026-06",
+          "total": 20,
+          "cats": 14,
+          "dogs": 6
+        },
+        {
+          "month": "2026-07",
+          "total": 16,
+          "cats": 13,
+          "dogs": 3
+        }
+      ],
       "goal_2026_min": 100
     },
     "unclassified_transfers_all_time": 57,
