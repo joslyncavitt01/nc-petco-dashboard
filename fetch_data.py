@@ -9,6 +9,12 @@ Year 1 / Year 2 goal framing confirmed by Petco Love (Mary Ann Magana,
 7/17/26): calendar year, separate annual goals, NOT cumulative.
   Year 1 = calendar year 2025, goal 500-750 adoptions
   Year 2 = calendar year 2026, goal 750-1,000 adoptions
+
+Pedigree Foundation D2A (Direct to Adopt) section tracks the 2026 grant
+goals from the March 2026 proposal: 180 pets transported TX->NC in 2026,
+100 local NC shelter transfers-in, foster caregivers 5->15. TX transport-ins
+are identified by intakeSubType ('HNCSPAC - Space', 'Transport Held at
+APATH'); D2A-tagged pets are identified by the 'D2A' AnimalAttributes tag.
 """
 
 import json
@@ -111,6 +117,81 @@ foster_stay_length = q("""
       AND DATE_DIFF(next_date, event_date, DAY) BETWEEN 0 AND 365
 """)[0]
 
+# --- Pedigree D2A: TX transport-ins ---------------------------------------
+TRANSPORT_SUBTYPES = "('HNCSPAC - Space', 'Transport Held at APATH')"
+
+transport_by_month = q(f"""
+    SELECT
+      FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month,
+      COUNT(*) AS total
+    FROM `apa-data-410213.nc_shelterluv.Intakes`
+    WHERE intakeType = 'Intake.Transfer' AND intakeSubType IN {TRANSPORT_SUBTYPES}
+    GROUP BY month
+    ORDER BY month
+""")
+transport_by_month = [m for m in transport_by_month if m["month"] < current_month]
+
+transport_totals = q(f"""
+    SELECT
+      COUNT(*) AS all_time,
+      COUNTIF(EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+    FROM `apa-data-410213.nc_shelterluv.Intakes`
+    WHERE intakeType = 'Intake.Transfer' AND intakeSubType IN {TRANSPORT_SUBTYPES}
+""")[0]
+
+# --- Pedigree D2A: D2A-tagged pets and their outcomes ----------------------
+d2a_tagged = q("""
+    SELECT COUNT(DISTINCT animalInternalID) AS total
+    FROM `apa-data-410213.nc_shelterluv.AnimalAttributes`
+    WHERE attributeName = 'D2A'
+""")[0]
+
+d2a_outcomes = q("""
+    WITH d2a AS (
+      SELECT DISTINCT animalInternalID
+      FROM `apa-data-410213.nc_shelterluv.AnimalAttributes`
+      WHERE attributeName = 'D2A'
+    )
+    SELECT
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType NOT LIKE '%(Foster)%') AS direct_adoptions,
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType LIKE '%(Foster)%') AS foster_to_adopt,
+      COUNT(DISTINCT o.animalInternalID) AS with_any_outcome
+    FROM d2a
+    JOIN `apa-data-410213.nc_shelterluv.Outcomes` o ON d2a.animalInternalID = o.animalInternalID
+""")[0]
+
+# --- Pedigree D2A: local NC shelter transfers-in ---------------------------
+# Distinct from TX transport-ins above; goal is separate relationship-building
+# with in-state NC shelters. Tagging for this category is still sparse as of
+# Aug 2026 (program is early-stage) -- treat as directional, not complete.
+local_transfers = q(f"""
+    SELECT
+      COUNT(*) AS all_time,
+      COUNTIF(EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+    FROM `apa-data-410213.nc_shelterluv.Intakes`
+    WHERE intakeType = 'Intake.Transfer'
+      AND intakeSubType NOT IN {TRANSPORT_SUBTYPES}
+""")[0]
+
+# --- Pedigree D2A: active foster caregivers (point-in-time) ----------------
+foster_caregivers_active = q("""
+    WITH in_foster_now AS (
+      SELECT animalInternalID
+      FROM `apa-data-410213.nc_shelterluv.Animals`
+      WHERE deletedFromSL IS NOT TRUE
+        AND status IN ('Available (Foster)', 'Unavailable - (Foster)')
+    ),
+    last_foster_out AS (
+      SELECT animalInternalID, personInternalID,
+        ROW_NUMBER() OVER (PARTITION BY animalInternalID ORDER BY outcomeDate DESC) AS rn
+      FROM `apa-data-410213.nc_shelterluv.Outcomes`
+      WHERE outcomeType = 'Outcome.Foster'
+    )
+    SELECT COUNT(DISTINCT lf.personInternalID) AS active_caregivers
+    FROM in_foster_now f
+    JOIN last_foster_out lf ON f.animalInternalID = lf.animalInternalID AND lf.rn = 1
+""")[0]
+
 # --- Volunteers (NC only, approved entries) ------------------------------
 volunteers = q("""
     SELECT
@@ -172,6 +253,29 @@ output = {
         "total_shifts": volunteers["total_shifts"],
     },
     "snapshot": snapshot,
+    "pedigree": {
+        "transport_in": {
+            "all_time": transport_totals["all_time"],
+            "cy2026": transport_totals["cy2026"],
+            "by_month": transport_by_month,
+            "goal_2026_min": 180,
+        },
+        "d2a": {
+            "tagged_total": d2a_tagged["total"],
+            "direct_adoptions": d2a_outcomes["direct_adoptions"],
+            "foster_to_adopt": d2a_outcomes["foster_to_adopt"],
+            "with_any_outcome": d2a_outcomes["with_any_outcome"],
+        },
+        "local_transfers_in": {
+            "all_time": local_transfers["all_time"],
+            "cy2026": local_transfers["cy2026"],
+            "goal_2026_min": 100,
+        },
+        "foster_caregivers": {
+            "active_now": foster_caregivers_active["active_caregivers"],
+            "goal_2026_min": 15,
+        },
+    },
     "goals": {
         "year1": {
             **GOALS["year1"],

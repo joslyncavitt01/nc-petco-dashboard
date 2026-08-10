@@ -178,6 +178,53 @@
   #tooltip .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
 
   footer { color: var(--text-muted); font-size: 0.78rem; margin-top: 24px; line-height: 1.6; }
+
+  .tabnav {
+    display: flex; gap: 4px; max-width: 1160px; margin: 0 auto; padding: 0 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tabnav button {
+    appearance: none; background: none; border: none; cursor: pointer;
+    font-family: inherit; font-size: 0.92rem; font-weight: 600; color: var(--text-secondary);
+    padding: 14px 16px 12px; border-bottom: 2.5px solid transparent; margin-bottom: -1px;
+    transition: color 0.12s ease, border-color 0.12s ease;
+  }
+  .tabnav button:hover { color: var(--text-primary); }
+  .tabnav button.active { color: var(--brand-orange); border-bottom-color: var(--brand-orange); }
+
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  .grant-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grant-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 22px; box-shadow: var(--shadow); cursor: pointer; text-align: left;
+    font-family: inherit; transition: transform 0.12s ease;
+  }
+  .grant-card:hover { transform: translateY(-1px); }
+  .grant-card .grant-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-orange); font-weight: 700; margin-bottom: 6px; }
+  .grant-card .grant-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+  .grant-card .grant-desc { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; }
+
+  .info-note {
+    background: var(--brand-orange-wash); border: 1px solid var(--brand-orange-soft); border-radius: 10px;
+    padding: 12px 16px; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;
+  }
+
+  .pgoal-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 24px; margin-bottom: 14px; box-shadow: var(--shadow);
+  }
+  .pgoal-card .pgoal-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+  .pgoal-card .pgoal-title { font-weight: 700; font-size: 1rem; }
+  .pgoal-card .pgoal-status {
+    font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .pgoal-status.met  { background: color-mix(in srgb, var(--status-good) 16%, transparent); color: var(--status-good); }
+  .pgoal-status.open { background: color-mix(in srgb, var(--status-warning) 18%, transparent); color: var(--status-warning); }
+  .pgoal-card .pgoal-numbers { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; }
+  .pgoal-card .pgoal-numbers b { color: var(--text-primary); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -186,71 +233,147 @@
     <img src="https://raw.githubusercontent.com/joslyncavitt01/apa-assets/master/shelter_pet_logo.png" alt="Shelter Pet Adoption Center">
     <div class="masthead-text" style="margin-right:auto; margin-left: 8px;">
       <h1>NC Adoption Center Dashboard</h1>
-      <p>Huntersville, NC &middot; Petco Love Grant G-2406-56741</p>
+      <p>Huntersville, NC &middot; Shelter Pet Adoption Center</p>
       <div id="generated">Loading&hellip;</div>
     </div>
     <img class="apa-logo" src="https://raw.githubusercontent.com/joslyncavitt01/apa-assets/master/apa_logo.svg" alt="Austin Pets Alive!">
   </div>
 </header>
 
+<nav class="tabnav" id="tabnav">
+  <button data-tab="overview" class="active">Overview</button>
+  <button data-tab="petco-love">Petco Love</button>
+  <button data-tab="pedigree">Pedigree Foundation</button>
+</nav>
+
 <div class="wrap">
 
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      <h2>Progress Toward Contract Goal</h2>
-    </div>
-    <div id="goals"></div>
-  </section>
+  <!-- ===== OVERVIEW TAB ===== -->
+  <div class="tab-pane active" data-tab="overview">
 
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-8.5C.5 8 2.5 4.5 6 4.5c2 0 3.5 1 4 2 0.5-1 2-2 4-2 3.5 0 5.5 3.5 3.5 8C19 16.5 12 21 12 21z"/></svg>
-      <h2>Adoptions</h2>
-    </div>
-    <div class="tiles" id="adoption-tiles"></div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-      <h2>Adoption Trend</h2>
-    </div>
-    <div class="chart-card">
-      <div class="legend">
-        <span><i style="background:var(--series-1)"></i>Cats</span>
-        <span><i style="background:var(--series-2)"></i>Dogs</span>
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M20 4l-8 8"/></svg>
+        <h2>Funded By</h2>
       </div>
-      <div id="chart-wrap">
-        <svg id="trend-chart" width="100%" height="240" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg>
-        <div id="tooltip"></div>
+      <div class="grant-cards">
+        <button class="grant-card" data-goto="petco-love">
+          <div class="grant-eyebrow">Petco Love &middot; Grant G-2406-56741</div>
+          <div class="grant-title">Adoption Center Launch</div>
+          <div class="grant-desc">Multi-year contract goal for total adoptions out of the Huntersville center, tracked by calendar year.</div>
+        </button>
+        <button class="grant-card" data-goto="pedigree">
+          <div class="grant-eyebrow">PEDIGREE Foundation &middot; $50K, 2026</div>
+          <div class="grant-title">Direct to Adopt (D2A) Transport Capacity</div>
+          <div class="grant-desc">Builds NC-side foster capacity so more pets move straight from Texas source shelters into adoptive homes.</div>
+        </button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-      <h2>Foster Program</h2>
-    </div>
-    <div class="tiles" id="foster-tiles"></div>
-  </section>
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <h2>Current Snapshot</h2>
+      </div>
+      <div class="tiles" id="snapshot-tiles"></div>
+    </section>
 
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <h2>Volunteers</h2>
-    </div>
-    <div class="tiles" id="volunteer-tiles"></div>
-  </section>
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-8.5C.5 8 2.5 4.5 6 4.5c2 0 3.5 1 4 2 0.5-1 2-2 4-2 3.5 0 5.5 3.5 3.5 8C19 16.5 12 21 12 21z"/></svg>
+        <h2>Adoptions</h2>
+      </div>
+      <div class="tiles" id="adoption-tiles"></div>
+    </section>
 
-  <section>
-    <div class="section-head">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
-      <h2>Current Snapshot</h2>
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <h2>Foster Program</h2>
+      </div>
+      <div class="tiles" id="foster-tiles"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h2>Volunteers</h2>
+      </div>
+      <div class="tiles" id="volunteer-tiles"></div>
+    </section>
+
+  </div>
+
+  <!-- ===== PETCO LOVE TAB ===== -->
+  <div class="tab-pane" data-tab="petco-love">
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h2>Progress Toward Contract Goal</h2>
+      </div>
+      <div id="goals"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        <h2>Adoption Trend</h2>
+      </div>
+      <div class="chart-card">
+        <div class="legend">
+          <span><i style="background:var(--series-1)"></i>Cats</span>
+          <span><i style="background:var(--series-2)"></i>Dogs</span>
+        </div>
+        <div id="chart-wrap">
+          <svg id="trend-chart" width="100%" height="240" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg>
+          <div id="tooltip"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== PEDIGREE TAB ===== -->
+  <div class="tab-pane" data-tab="pedigree">
+
+    <div class="info-note">
+      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. Local-transfer and D2A tagging in ShelterLuv is still early-stage, so those two figures should be read as directional rather than complete.
     </div>
-    <div class="tiles" id="snapshot-tiles"></div>
-  </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        <h2>2026 Goal Progress</h2>
+      </div>
+      <div id="pedigree-goals"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <h2>Texas &rarr; NC Transport</h2>
+      </div>
+      <div class="tiles" id="transport-tiles"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-8.5C.5 8 2.5 4.5 6 4.5c2 0 3.5 1 4 2 0.5-1 2-2 4-2 3.5 0 5.5 3.5 3.5 8C19 16.5 12 21 12 21z"/></svg>
+        <h2>Direct to Adopt (D2A) Outcomes</h2>
+      </div>
+      <div class="tiles" id="d2a-tiles"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <h2>Foster Corps</h2>
+      </div>
+      <div class="tiles" id="pedigree-foster-tiles"></div>
+    </section>
+
+  </div>
 
   <footer>
     Data source: ShelterLuv via BigQuery (apa-data-410213.nc_shelterluv, apa-data-410213.betterImpact).<br>
@@ -314,6 +437,77 @@ async function main() {
 
   renderGoals(d.goals);
   renderTrend(months);
+  renderPedigree(d.pedigree);
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tabnav button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.dataset.tab === tab));
+}
+
+document.getElementById('tabnav').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-tab]');
+  if (btn) switchTab(btn.dataset.tab);
+});
+document.querySelectorAll('.grant-card[data-goto]').forEach(card => {
+  card.addEventListener('click', () => switchTab(card.dataset.goto));
+});
+
+function renderPedigree(p) {
+  if (!p) return;
+  const t = p.transport_in;
+  const monthLabels = t.by_month.map(m => m.month);
+  const transportSeries = t.by_month.map(m => m.total);
+
+  renderTiles('transport-tiles', [
+    { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries, sparkMonths: monthLabels, color: 'var(--brand-orange)' },
+    { label: 'Transported to NC (All-Time)', value: t.all_time },
+  ]);
+
+  const d2aAdoptions = p.d2a.direct_adoptions + p.d2a.foster_to_adopt;
+  const stillInPipeline = Math.max(0, p.d2a.tagged_total - d2aAdoptions);
+  renderTiles('d2a-tiles', [
+    { label: 'D2A-Tagged Pets (All-Time)', value: p.d2a.tagged_total },
+    { label: 'D2A Adoptions to Date', value: d2aAdoptions },
+    { label: 'Direct (No Foster Stop)', value: p.d2a.direct_adoptions },
+    { label: 'Via Foster-to-Adopt', value: p.d2a.foster_to_adopt },
+    { label: 'Still Moving Through Pipeline', value: stillInPipeline },
+  ]);
+
+  renderTiles('pedigree-foster-tiles', [
+    { label: 'Active Foster Caregivers Now', value: p.foster_caregivers.active_now },
+  ]);
+
+  const fc = p.foster_caregivers;
+  const lt = p.local_transfers_in;
+
+  const goalCards = [
+    { title: 'Texas Transport-Ins (2026)', actual: t.cy2026, goal: t.goal_2026_min, unit: 'pets' },
+    { title: 'Local NC Shelter Transfers-In (2026)', actual: lt.cy2026, goal: lt.goal_2026_min, unit: 'pets' },
+    { title: 'Active Foster Caregivers', actual: fc.active_now, goal: fc.goal_2026_min, unit: 'caregivers' },
+  ].map(g => {
+    const met = g.actual >= g.goal;
+    const pct = Math.round(100 * g.actual / g.goal);
+    const barPct = Math.min(100, pct);
+    return `
+      <div class="pgoal-card">
+        <div class="pgoal-head">
+          <div class="pgoal-title">${g.title}</div>
+          <div class="pgoal-status ${met ? 'met' : 'open'}">${met ? 'Goal met' : 'In progress'}</div>
+        </div>
+        <div class="pgoal-numbers">
+          <b>${g.actual}</b> ${g.unit} against a goal of at least <b>${g.goal}</b> &nbsp;&middot;&nbsp; ${pct}% of goal
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${barPct}%"></div>
+          <div class="bar-marker" style="left:100%">
+            <span class="tick-label" style="left:auto; right:0; transform:none;">goal ${g.goal}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('pedigree-goals').innerHTML = goalCards;
 }
 
 function sparkPath(values, w, h) {
