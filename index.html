@@ -226,6 +226,103 @@
   .pgoal-status.open { background: color-mix(in srgb, var(--status-warning) 18%, transparent); color: var(--status-warning); }
   .pgoal-card .pgoal-numbers { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; }
   .pgoal-card .pgoal-numbers b { color: var(--text-primary); font-weight: 700; }
+
+  .animals-filter-bar {
+    position: sticky; top: 0; z-index: 20; background: var(--page-plane);
+    padding: 14px 0; margin-bottom: 8px; border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .animals-filter-bar input[type="search"], .animals-filter-bar select {
+    font: inherit; font-size: 0.85rem; color: var(--text-primary);
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 12px;
+  }
+  .animals-filter-bar input[type="search"] { min-width: 200px; flex: 1 1 200px; }
+  .animals-filter-bar input:focus, .animals-filter-bar select:focus { outline: 2px solid var(--brand-orange); outline-offset: 1px; }
+  .animals-results-count { font-size: 0.78rem; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+
+  .animals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-top: 8px; }
+  .animal-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; cursor: pointer; text-align: left; display: flex; flex-direction: column;
+    padding: 0; font: inherit; color: inherit; box-shadow: var(--shadow);
+    transition: transform 0.12s ease;
+  }
+  .animal-card:hover { transform: translateY(-1px); }
+  .animal-card-photo {
+    width: 100%; aspect-ratio: 1 / 1; background: var(--brand-orange-wash);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--brand-orange); font-size: 26px; font-weight: 700; overflow: hidden;
+  }
+  .animal-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .animal-card-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .animal-card-name { font-weight: 700; font-size: 0.92rem; }
+  .animal-card-sub { font-size: 0.76rem; color: var(--text-muted); line-height: 1.35; }
+  .origin-pill {
+    align-self: flex-start; font-size: 0.66rem; font-weight: 700; padding: 2px 9px;
+    border-radius: 20px; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .origin-pill.tx { background: color-mix(in srgb, var(--brand-orange) 16%, transparent); color: var(--brand-orange); }
+  .origin-pill.nc { background: color-mix(in srgb, var(--brand-green-dark) 20%, transparent); color: var(--brand-green-dark); }
+  .origin-pill.other, .origin-pill.unknown { background: var(--gridline); color: var(--text-muted); }
+  .animals-no-results, .animals-loading { padding: 48px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+  .animal-modal-backdrop {
+    position: fixed; inset: 0; background: rgba(20,16,12,0.55); z-index: 100;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding: 40px 20px; overflow-y: auto;
+  }
+  .animal-modal {
+    background: var(--surface-1); border-radius: 14px; max-width: 680px; width: 100%;
+    border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .animal-modal-header { display: flex; gap: 16px; padding: 20px 22px 16px; border-bottom: 1px solid var(--border); }
+  .animal-modal-photo {
+    width: 96px; height: 96px; border-radius: 10px; background: var(--brand-orange-wash); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--brand-orange);
+    font-size: 26px; font-weight: 700; overflow: hidden;
+  }
+  .animal-modal-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .animal-modal-title-wrap { flex: 1; min-width: 0; }
+  .animal-modal-name { font-size: 1.3rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .animal-modal-close {
+    background: var(--gridline); border: none; color: var(--text-secondary);
+    border-radius: 50%; width: 30px; height: 30px; font-size: 16px; line-height: 1; cursor: pointer;
+    flex-shrink: 0;
+  }
+  .animal-modal-close:hover { background: var(--baseline); }
+  .animal-modal-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+  .animal-modal-body { padding: 18px 22px 22px; }
+  .animal-fact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; margin-bottom: 18px; }
+  .animal-fact { font-size: 0.86rem; }
+  .animal-fact .k { color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; margin-bottom: 2px; }
+  .animal-fact .v { color: var(--text-primary); }
+  .animal-source-section { margin-top: 6px; margin-bottom: 20px; }
+  .animal-source-section h3 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;
+    color: var(--brand-orange); margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
+  }
+  .animal-attr-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .animal-attr-chip {
+    font-size: 0.74rem; font-weight: 600; color: var(--text-secondary); background: var(--brand-orange-wash);
+    border: 1px solid var(--brand-orange-soft); border-radius: 20px; padding: 4px 10px;
+  }
+  .animal-history-entry { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+  .animal-history-entry:last-child { border-bottom: none; }
+  .animal-history-entry .h-top { display: flex; justify-content: space-between; gap: 10px; font-weight: 600; }
+  .animal-history-entry .h-date { color: var(--text-muted); font-weight: 500; white-space: nowrap; }
+  .animal-history-entry .h-detail { color: var(--text-secondary); margin-top: 2px; }
+  details.animal-memo {
+    border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; background: var(--page-plane);
+  }
+  details.animal-memo summary {
+    padding: 9px 12px; cursor: pointer; font-size: 0.82rem; font-weight: 600; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; color: var(--text-primary);
+  }
+  details.animal-memo summary::-webkit-details-marker { display: none; }
+  details.animal-memo summary::after { content: '+'; color: var(--text-muted); font-weight: 700; }
+  details.animal-memo[open] summary::after { content: '\2212'; }
+  details.animal-memo .memo-text { margin: 0; padding: 0 12px 12px; font-size: 0.82rem; color: var(--text-secondary); white-space: pre-wrap; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -245,6 +342,7 @@
   <button data-tab="overview" class="active">Overview</button>
   <button data-tab="petco-love">Petco Love</button>
   <button data-tab="pedigree">Pedigree Foundation</button>
+  <button data-tab="animals">Animal Profiles</button>
 </nav>
 
 <div class="wrap">
@@ -384,6 +482,27 @@
 
   </div>
 
+  <!-- ===== ANIMAL PROFILES TAB ===== -->
+  <div class="tab-pane" data-tab="animals">
+
+    <div class="info-note">
+      Every animal that's passed through the NC center, all-time. For animals transferred in through Austin Pets Alive's own ShelterLuv system, this combines their full Austin history (photo, memos, intake/outcome timeline) with their NC record. Animals transferred from other Texas shelters directly, or sourced locally in NC, only show what's in the NC system &mdash; no photo is available for those since NC's ShelterLuv doesn't have a photo table.
+    </div>
+
+    <div class="animals-filter-bar">
+      <input type="search" id="a-search" placeholder="Search by name...">
+      <select id="a-species"><option value="">All species</option></select>
+      <select id="a-origin"><option value="">All origins</option></select>
+      <select id="a-status"><option value="">All statuses</option></select>
+      <span class="animals-results-count" id="a-results-count"></span>
+    </div>
+
+    <div id="animals-grid" class="animals-grid"></div>
+    <div id="animals-no-results" class="animals-no-results" style="display:none;">No animals match these filters.</div>
+    <div id="animals-loading" class="animals-loading">Loading animal profiles&hellip;</div>
+
+  </div>
+
   <footer>
     Data source: ShelterLuv via BigQuery (apa-data-410213.nc_shelterluv, apa-data-410213.betterImpact).<br>
     Year 1 / Year 2 goal framing confirmed by Petco Love (Mary Ann Magana, 7/17/26): calendar year, separate annual goals.
@@ -452,6 +571,7 @@ async function main() {
 function switchTab(tab) {
   document.querySelectorAll('.tabnav button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.dataset.tab === tab));
+  if (tab === 'animals') loadAnimalProfiles();
 }
 
 document.getElementById('tabnav').addEventListener('click', e => {
@@ -794,6 +914,243 @@ main().catch(err => {
   document.getElementById('generated').textContent = 'Failed to load data: ' + err.message;
   console.error(err);
 });
+
+// ============================================================================
+// Animal Profiles tab
+// ============================================================================
+let ANIMALS = null;
+
+function elx(tag, cls, html) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html != null) e.innerHTML = html;
+  return e;
+}
+
+function initials(name) {
+  if (!name) return '?';
+  return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+}
+
+function originLabel(origin, hasAustinLink) {
+  if (origin === 'TX') return hasAustinLink ? 'TX (Austin-linked)' : 'TX';
+  if (origin === 'NC') return 'NC';
+  if (origin === 'OTHER') return 'Other';
+  return 'Unknown';
+}
+function originClass(origin) {
+  if (origin === 'TX') return 'tx';
+  if (origin === 'NC') return 'nc';
+  if (origin === 'OTHER') return 'other';
+  return 'unknown';
+}
+
+async function loadAnimalProfiles() {
+  if (ANIMALS) return;
+  const grid = document.getElementById('animals-grid');
+  const loading = document.getElementById('animals-loading');
+  try {
+    const res = await fetch('data/animal_profiles.json', { cache: 'no-store' });
+    const data = await res.json();
+    ANIMALS = data.animals;
+    loading.style.display = 'none';
+
+    const speciesSel = document.getElementById('a-species');
+    const originSel = document.getElementById('a-origin');
+    const statusSel = document.getElementById('a-status');
+    [...new Set(ANIMALS.map(a => a.species).filter(Boolean))].sort().forEach(s => {
+      speciesSel.appendChild(elx('option', null, s)).value = s;
+    });
+    [...new Set(ANIMALS.map(a => a.origin || 'UNKNOWN'))].sort().forEach(o => {
+      const opt = elx('option', null, originLabel(o, false));
+      opt.value = o;
+      originSel.appendChild(opt);
+    });
+    [...new Set(ANIMALS.map(a => a.status).filter(Boolean))].sort().forEach(s => {
+      statusSel.appendChild(elx('option', null, s)).value = s;
+    });
+
+    ['a-search', 'a-species', 'a-origin', 'a-status'].forEach(id => {
+      document.getElementById(id).addEventListener('input', renderAnimalsGrid);
+    });
+
+    renderAnimalsGrid();
+  } catch (err) {
+    loading.textContent = 'Failed to load animal profiles: ' + err.message;
+    console.error(err);
+  }
+}
+
+function renderAnimalsGrid() {
+  const search = document.getElementById('a-search').value.trim().toLowerCase();
+  const species = document.getElementById('a-species').value;
+  const origin = document.getElementById('a-origin').value;
+  const status = document.getElementById('a-status').value;
+
+  const filtered = ANIMALS.filter(a => {
+    if (search && !(a.name || '').toLowerCase().includes(search)) return false;
+    if (species && a.species !== species) return false;
+    if (origin && (a.origin || 'UNKNOWN') !== origin) return false;
+    if (status && a.status !== status) return false;
+    return true;
+  });
+
+  document.getElementById('a-results-count').textContent = `${filtered.length} of ${ANIMALS.length} animals`;
+
+  const grid = document.getElementById('animals-grid');
+  const noResults = document.getElementById('animals-no-results');
+  grid.innerHTML = '';
+  noResults.style.display = filtered.length ? 'none' : 'block';
+
+  filtered.forEach(a => {
+    const card = elx('button', 'animal-card');
+    const photo = elx('div', 'animal-card-photo');
+    if (a.photo) {
+      const img = document.createElement('img');
+      img.src = a.photo; img.alt = ''; img.loading = 'lazy';
+      photo.appendChild(img);
+    } else {
+      photo.textContent = initials(a.name);
+    }
+    card.appendChild(photo);
+
+    const body = elx('div', 'animal-card-body');
+    body.innerHTML = `
+      <div class="animal-card-name">${a.name || 'Unnamed'}</div>
+      <div class="animal-card-sub">${[a.species, a.breed].filter(Boolean).join(' · ')}</div>
+      <div class="animal-card-sub">${a.status || ''}</div>
+      <span class="origin-pill ${originClass(a.origin)}">${originLabel(a.origin, !!a.austin)}</span>
+    `;
+    card.appendChild(body);
+    card.addEventListener('click', () => openAnimalModal(a));
+    grid.appendChild(card);
+  });
+}
+
+function animalFact(label, value) {
+  if (!value) return '';
+  return `<div class="animal-fact"><div class="k">${label}</div><div class="v">${value}</div></div>`;
+}
+
+function historySection(title, history) {
+  if (!history || !history.length) return null;
+  const section = elx('div', 'animal-source-section');
+  section.appendChild(elx('h3', null, title));
+  const sorted = [...history].sort((x, y) => (y.date || '').localeCompare(x.date || ''));
+  sorted.forEach(h => {
+    const entry = elx('div', 'animal-history-entry');
+    const label = h.event === 'intake' ? 'Intake' : 'Outcome';
+    entry.innerHTML = `
+      <div class="h-top"><span>${label}: ${h.type || ''}</span><span class="h-date">${h.date || ''}</span></div>
+      ${h.subtype ? `<div class="h-detail">${h.subtype}</div>` : ''}
+    `;
+    section.appendChild(entry);
+  });
+  return section;
+}
+
+function memosSection(title, memos) {
+  if (!memos || !memos.length) return null;
+  const section = elx('div', 'animal-source-section');
+  section.appendChild(elx('h3', null, title));
+  memos.forEach(m => {
+    const details = elx('details', 'animal-memo');
+    const summary = elx('summary', null, m.label || 'Note');
+    details.appendChild(summary);
+    details.appendChild(elx('p', 'memo-text', m.text));
+    section.appendChild(details);
+  });
+  return section;
+}
+
+function attributesSection(title, attrs) {
+  if (!attrs || !attrs.length) return null;
+  const section = elx('div', 'animal-source-section');
+  section.appendChild(elx('h3', null, title));
+  const chips = elx('div', 'animal-attr-chips');
+  attrs.forEach(attr => chips.appendChild(elx('span', 'animal-attr-chip', attr)));
+  section.appendChild(chips);
+  return section;
+}
+
+function openAnimalModal(a) {
+  const backdrop = elx('div', 'animal-modal-backdrop');
+  const modal = elx('div', 'animal-modal');
+
+  const header = elx('div', 'animal-modal-header');
+  const photo = elx('div', 'animal-modal-photo');
+  if (a.photo) {
+    const img = document.createElement('img');
+    img.src = a.photo; img.alt = '';
+    photo.appendChild(img);
+  } else {
+    photo.textContent = initials(a.name);
+  }
+  header.appendChild(photo);
+
+  const titleWrap = elx('div', 'animal-modal-title-wrap');
+  titleWrap.innerHTML = `
+    <h2 class="animal-modal-name">${a.name || 'Unnamed'}</h2>
+    <div class="animal-modal-meta">${[a.species, a.breed].filter(Boolean).join(' · ')} · ID ${a.aid || a.id}</div>
+    <span class="origin-pill ${originClass(a.origin)}" style="margin-top:6px;">${originLabel(a.origin, !!a.austin)}</span>
+  `;
+  const closeBtn = elx('button', 'animal-modal-close', '&times;');
+  closeBtn.setAttribute('aria-label', 'Close');
+  closeBtn.addEventListener('click', close);
+  header.appendChild(titleWrap);
+  header.appendChild(closeBtn);
+  modal.appendChild(header);
+
+  const body = elx('div', 'animal-modal-body');
+
+  const facts = elx('div', 'animal-fact-grid');
+  facts.innerHTML = [
+    animalFact('Status', a.status),
+    animalFact('Sex', a.sex),
+    animalFact('Age', a.age),
+    animalFact('Color', a.color),
+    animalFact('Weight', a.weight ? a.weight + ' lbs' : ''),
+    animalFact('Altered', a.altered === true ? 'Yes' : a.altered === false ? 'No' : ''),
+    animalFact('Arrival date (NC)', a.arrivalDate),
+    animalFact('Austin AID', a.austin ? a.austin.austinAID : ''),
+  ].join('');
+  body.appendChild(facts);
+
+  if (a.websiteMemo) {
+    const bio = elx('div', 'animal-source-section');
+    bio.appendChild(elx('h3', null, 'Bio'));
+    bio.appendChild(elx('p', 'memo-text', a.websiteMemo));
+    body.appendChild(bio);
+  }
+
+  if (a.austin) {
+    [
+      attributesSection('Austin Attributes', a.austin.attributes),
+      memosSection('Austin Memos', a.austin.memos),
+      historySection('Austin History', a.austin.history),
+    ].forEach(s => s && body.appendChild(s));
+  }
+
+  [
+    attributesSection('NC Attributes', a.nc.attributes),
+    memosSection('NC Memos', a.nc.memos),
+    historySection('NC History', a.nc.history),
+  ].forEach(s => s && body.appendChild(s));
+
+  modal.appendChild(body);
+  backdrop.appendChild(modal);
+  document.body.appendChild(backdrop);
+  document.body.style.overflow = 'hidden';
+
+  function close() {
+    backdrop.remove();
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+  document.addEventListener('keydown', onKey);
+}
 </script>
 </body>
 </html>

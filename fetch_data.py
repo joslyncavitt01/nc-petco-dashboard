@@ -473,3 +473,251 @@ print(f"  TX transported & adopted (CY2026, grant KPI): {transport_adopted_total
 print(f"  NC local transfers-in (CY2026): {local_transfers['cy2026']} / goal 100")
 print(f"  Unclassified transfer origin (all-time): {unclassified_transfers['all_time']}")
 print(f"  Foster caregivers, 2+ placements (CY2026): {foster_caregivers_active['active_2026']} / goal 15")
+
+# =============================================================================
+# Animal Profiles: every NC animal, all-time. For animals transferred in
+# through Austin Pets Alive's own ShelterLuv (identified via
+# AnimalPreviousIds -> 'APA-A-<austin animalAID>'), pulls their full Austin
+# history (photo, memos, attributes, intake/outcome timeline) alongside NC's.
+# Animals transferred from other TX shelters directly (Bryan, Bastrop, etc.)
+# or sourced locally in NC only have what's in nc_shelterluv -- no photo is
+# available there, since nc_shelterluv has no AnimalPhotos table.
+# =============================================================================
+
+MEMO_FIELD_LABELS = {
+    "kennelCardMemo": "Kennel Card / Bio",
+    "behavioral": "Behavioral",
+    "medical": "Medical",
+    "history": "History",
+    "intake": "Intake Notes",
+    "outcome": "Outcome Notes",
+    "internalPrivate": "Internal (Private)",
+    "popup": "Popup",
+    "disclaimer": "Disclaimer",
+    "nextSteps": "Next Steps",
+    "fosterNotes": "Foster Notes",
+    "fosterReturnNotes": "Foster Return Notes",
+    "custom": "Custom",
+    "custodyChange": "Custody Change",
+    "adoptionFollowUp": "Adoption Follow-Up",
+    "spayNeuter": "Spay/Neuter",
+    "returnMemo": "Return Notes",
+}
+
+
+def _d(v):
+    return str(v) if v is not None else None
+
+
+nc_animals = q("""
+    SELECT animalInternalID, animalAID, name, species, breed, age, animalDoB, sex, color,
+      arrivalDate, status, sizeGroup, currentWeightPounds, altered, websiteMemo, lastIntakeDate
+    FROM `apa-data-410213.nc_shelterluv.Animals`
+    WHERE deletedFromSL IS NOT TRUE
+""")
+
+nc_history_raw = q("""
+    SELECT animalInternalID, DATE(intakeDate) AS date, 'intake' AS event,
+      intakeType AS type, intakeSubType AS subtype
+    FROM `apa-data-410213.nc_shelterluv.Intakes`
+    UNION ALL
+    SELECT animalInternalID, DATE(outcomeDate) AS date, 'outcome' AS event,
+      outcomeType AS type, outcomeSubType AS subtype
+    FROM `apa-data-410213.nc_shelterluv.Outcomes`
+""")
+
+# AnimalMemos here doesn't populate animalInternalID -- key off animalID
+# ('PHNC-A-<n>'), whose numeric suffix matches Animals.animalAID.
+nc_memos_raw = q("""
+    SELECT m.*, a.animalInternalID AS resolved_internal_id
+    FROM `apa-data-410213.nc_shelterluv.AnimalMemos` m
+    LEFT JOIN `apa-data-410213.nc_shelterluv.Animals` a
+      ON a.animalAID = REGEXP_EXTRACT(m.animalID, r'PHNC-A-(\\d+)')
+""")
+
+nc_attributes_raw = q("""
+    SELECT animalInternalID, attributeName
+    FROM `apa-data-410213.nc_shelterluv.AnimalAttributes`
+""")
+
+# Per-animal origin classification (TX / NC / OTHER / UNKNOWN), reusing the
+# same transfer-partner backfill logic as the Pedigree transport metrics.
+# Animals never intaked via Intake.Transfer (e.g. born in care) get no origin.
+animal_origin_rows = q(f"""
+    {ORIGIN_CTE}
+    SELECT animalInternalID, origin
+    FROM (
+      SELECT animalInternalID, origin,
+        ROW_NUMBER() OVER (PARTITION BY animalInternalID ORDER BY intakeDate DESC) AS rn
+      FROM classified
+    )
+    WHERE rn = 1
+""")
+animal_origin_by_id = {r["animalInternalID"]: r["origin"] for r in animal_origin_rows}
+
+tx_links = q("""
+    SELECT DISTINCT animalInternalID, REGEXP_EXTRACT(previousIdValue, r'APA-A-(\\d+)') AS austin_aid
+    FROM `apa-data-410213.nc_shelterluv.AnimalPreviousIds`
+    WHERE issuingShelter = 'Austin Pets Alive, Inc.' AND idType = 'Shelterluv'
+      AND previousIdValue LIKE 'APA-A-%'
+""")
+austin_aid_by_animal = {r["animalInternalID"]: r["austin_aid"] for r in tx_links if r["austin_aid"]}
+austin_aids = sorted(set(austin_aid_by_animal.values()))
+
+austin_bio_by_aid = {}
+austin_photo_by_internal = {}
+austin_memos_by_internal = {}
+austin_attrs_by_internal = {}
+austin_history_by_internal = {}
+
+if austin_aids:
+    aid_list = ", ".join(f"'{a}'" for a in austin_aids)  # numeric-only, regex-extracted -- safe to inline
+
+    austin_bio_rows = q(f"""
+        SELECT animalInternalID, animalAID, name, species, breed, age, animalDoB, sex, color,
+          arrivalDate, status, sizeGroup, currentWeightPounds, altered, websiteMemo
+        FROM `apa-data-410213.shelterluv.Animals`
+        WHERE animalAID IN ({aid_list})
+    """)
+    austin_bio_by_aid = {r["animalAID"]: r for r in austin_bio_rows}
+    internal_ids = [r["animalInternalID"] for r in austin_bio_rows]
+    internal_list = ", ".join(f"'{i}'" for i in internal_ids)
+
+    austin_photo_rows = q(f"""
+        SELECT animalInternalID, photoUrl, createdAt
+        FROM `apa-data-410213.shelterluv.AnimalPhotos`
+        WHERE animalInternalID IN ({internal_list})
+        ORDER BY animalInternalID, createdAt DESC
+    """)
+    for r in austin_photo_rows:
+        austin_photo_by_internal.setdefault(r["animalInternalID"], r["photoUrl"])
+
+    austin_memo_rows = q(f"""
+        SELECT animalInternalID, memoType, memoText, createdAt
+        FROM `apa-data-410213.shelterluv.AnimalMemos`
+        WHERE animalInternalID IN ({internal_list}) AND memoText IS NOT NULL AND memoText != ''
+        ORDER BY animalInternalID, createdAt
+    """)
+    for r in austin_memo_rows:
+        austin_memos_by_internal.setdefault(r["animalInternalID"], []).append(r)
+
+    austin_attr_rows = q(f"""
+        SELECT animalInternalID, attributeName
+        FROM `apa-data-410213.shelterluv.AnimalAttributes`
+        WHERE animalInternalID IN ({internal_list})
+    """)
+    for r in austin_attr_rows:
+        austin_attrs_by_internal.setdefault(r["animalInternalID"], []).append(r["attributeName"])
+
+    austin_history_rows = q(f"""
+        SELECT animalInternalID, DATE(intakeDate) AS date, 'intake' AS event,
+          intakeType AS type, intakeSubType AS subtype
+        FROM `apa-data-410213.shelterluv.Intakes`
+        WHERE animalInternalID IN ({internal_list})
+        UNION ALL
+        SELECT animalInternalID, DATE(outcomeDate) AS date, 'outcome' AS event,
+          outcomeType AS type, outcomeSubType AS subtype
+        FROM `apa-data-410213.shelterluv.Outcomes`
+        WHERE animalInternalID IN ({internal_list})
+    """)
+    for r in austin_history_rows:
+        austin_history_by_internal.setdefault(r["animalInternalID"], []).append(r)
+
+nc_history_by_animal = {}
+for r in nc_history_raw:
+    nc_history_by_animal.setdefault(r["animalInternalID"], []).append(r)
+
+nc_attrs_by_animal = {}
+for r in nc_attributes_raw:
+    nc_attrs_by_animal.setdefault(r["animalInternalID"], []).append(r["attributeName"])
+
+nc_memos_by_animal = {}
+for r in nc_memos_raw:
+    internal_id = r.get("resolved_internal_id")
+    if not internal_id:
+        continue
+    entries = [
+        {"label": label, "text": r[field]}
+        for field, label in MEMO_FIELD_LABELS.items()
+        if r.get(field)
+    ]
+    if entries:
+        nc_memos_by_animal[internal_id] = entries
+
+
+def _history_list(rows):
+    return sorted(
+        [{"date": _d(r["date"]), "event": r["event"], "type": r["type"], "subtype": r["subtype"]} for r in rows],
+        key=lambda h: h["date"] or "",
+    )
+
+
+profiles = []
+for a in nc_animals:
+    nc_id = a["animalInternalID"]
+    origin = animal_origin_by_id.get(nc_id)
+    austin_aid = austin_aid_by_animal.get(nc_id)
+    austin_bio = austin_bio_by_aid.get(austin_aid) if austin_aid else None
+
+    austin_block = None
+    if austin_bio:
+        austin_internal_id = austin_bio["animalInternalID"]
+        austin_block = {
+            "austinAID": austin_aid,
+            "austinInternalID": austin_internal_id,
+            "name": austin_bio["name"],
+            "breed": austin_bio["breed"],
+            "sex": austin_bio["sex"],
+            "age": austin_bio["age"],
+            "color": austin_bio["color"],
+            "altered": austin_bio["altered"],
+            "arrivalDate": _d(austin_bio["arrivalDate"]),
+            "websiteMemo": austin_bio["websiteMemo"],
+            "photo": austin_photo_by_internal.get(austin_internal_id),
+            "memos": [
+                {"label": m["memoType"] or "Note", "text": m["memoText"], "date": _d(m["createdAt"])}
+                for m in austin_memos_by_internal.get(austin_internal_id, [])
+            ],
+            "attributes": austin_attrs_by_internal.get(austin_internal_id, []),
+            "history": _history_list(austin_history_by_internal.get(austin_internal_id, [])),
+        }
+
+    profiles.append({
+        "id": nc_id,
+        "aid": a["animalAID"],
+        "name": a["name"],
+        "species": a["species"],
+        "breed": a["breed"],
+        "sex": a["sex"],
+        "age": a["age"],
+        "animalDoB": _d(a["animalDoB"]),
+        "color": a["color"],
+        "status": a["status"],
+        "sizeGroup": a["sizeGroup"],
+        "weight": a["currentWeightPounds"],
+        "altered": a["altered"],
+        "arrivalDate": _d(a["arrivalDate"]),
+        "websiteMemo": a["websiteMemo"],
+        "origin": origin,
+        "photo": austin_block["photo"] if austin_block else None,
+        "nc": {
+            "memos": nc_memos_by_animal.get(nc_id, []),
+            "attributes": nc_attrs_by_animal.get(nc_id, []),
+            "history": _history_list(nc_history_by_animal.get(nc_id, [])),
+        },
+        "austin": austin_block,
+    })
+
+profiles.sort(key=lambda p: p["name"] or "")
+
+profiles_output = {
+    "generated_at": now.isoformat(),
+    "total": len(profiles),
+    "with_austin_link": sum(1 for p in profiles if p["austin"]),
+    "animals": profiles,
+}
+
+with open("data/animal_profiles.json", "w") as f:
+    json.dump(profiles_output, f, indent=2, default=str)
+
+print(f"Wrote data/animal_profiles.json: {len(profiles)} animals ({profiles_output['with_austin_link']} with Austin link)")
