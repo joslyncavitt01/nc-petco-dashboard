@@ -185,10 +185,22 @@ ORIGIN_CTE = f"""
       WHERE rn = 1
     ),
     classified AS (
-      SELECT d.intakeID, d.intakeDate, d.species,
+      SELECT d.intakeID, d.animalInternalID, d.intakeDate, d.species,
         COALESCE(d.direct_origin, pm.mode_origin, 'UNKNOWN') AS origin
       FROM direct d
       LEFT JOIN partner_mode pm ON d.partnerInternalID = pm.partnerInternalID
+    ),
+    -- Grant KPI language is "transport ... AND place them in adoptive homes",
+    -- so transport-in alone isn't the metric -- must also have reached an
+    -- Outcome.Adoption at some point (any date, not just within the same
+    -- calendar year as the transport).
+    classified_with_adoption AS (
+      SELECT c.*, ad.animalInternalID IS NOT NULL AS was_adopted
+      FROM classified c
+      LEFT JOIN (
+        SELECT DISTINCT animalInternalID FROM `apa-data-410213.nc_shelterluv.Outcomes`
+        WHERE outcomeType = 'Outcome.Adoption'
+      ) ad ON c.animalInternalID = ad.animalInternalID
     )
 """
 
@@ -215,6 +227,32 @@ transport_totals = q(f"""
       COUNTIF(origin = 'TX' AND species = 'Dog' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026_dogs
     FROM classified
 """)[0]
+
+# The grant KPI itself: TX-transported pets placed in adoptive homes.
+# Scoped by transport (intake) year, not adoption date, since the goal is
+# framed as a 2026 transport-capacity target -- but only counts pets whose
+# adoption has actually happened as of this run.
+transport_adopted_totals = q(f"""
+    {ORIGIN_CTE}
+    SELECT
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026 AND was_adopted) AS cy2026_adopted,
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026 AND was_adopted AND species = 'Cat') AS cy2026_adopted_cats,
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026 AND was_adopted AND species = 'Dog') AS cy2026_adopted_dogs,
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026 AND NOT was_adopted) AS cy2026_not_yet_adopted
+    FROM classified_with_adoption
+""")[0]
+
+transport_adopted_by_month = q(f"""
+    {ORIGIN_CTE}
+    SELECT
+      FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month,
+      COUNT(*) AS total,
+      COUNTIF(species = 'Cat') AS cats,
+      COUNTIF(species = 'Dog') AS dogs
+    FROM classified_with_adoption WHERE origin = 'TX' AND was_adopted
+    GROUP BY month ORDER BY month
+""")
+transport_adopted_by_month = [m for m in transport_adopted_by_month if m["month"] < current_month]
 
 # --- Pedigree D2A: D2A-tagged pets and their outcomes ----------------------
 d2a_tagged = q("""
@@ -368,6 +406,11 @@ output = {
             "cy2026_cats": transport_totals["cy2026_cats"],
             "cy2026_dogs": transport_totals["cy2026_dogs"],
             "by_month": transport_by_month,
+            "cy2026_adopted": transport_adopted_totals["cy2026_adopted"],
+            "cy2026_adopted_cats": transport_adopted_totals["cy2026_adopted_cats"],
+            "cy2026_adopted_dogs": transport_adopted_totals["cy2026_adopted_dogs"],
+            "cy2026_not_yet_adopted": transport_adopted_totals["cy2026_not_yet_adopted"],
+            "by_month_adopted": transport_adopted_by_month,
             "goal_2026_min": 180,
         },
         "d2a": {
@@ -423,6 +466,7 @@ print(f"Wrote data/metrics.json at {now.isoformat()}Z")
 print(f"  Total adoptions: {totals['total']} ({totals['cats']} cats, {totals['dogs']} dogs)")
 print(f"  Year 1 (CY2025): {year1['total']} / {GOALS['year1']['min']}-{GOALS['year1']['max']}")
 print(f"  Year 2 (CY2026): {year2['total']} / {GOALS['year2']['min']}-{GOALS['year2']['max']}")
-print(f"  TX transport-in (CY2026): {transport_totals['cy2026']} / goal 180")
+print(f"  TX transport-in (CY2026, arrived): {transport_totals['cy2026']}")
+print(f"  TX transported & adopted (CY2026, grant KPI): {transport_adopted_totals['cy2026_adopted']} / goal 180")
 print(f"  NC local transfers-in (CY2026): {local_transfers['cy2026']} / goal 100")
 print(f"  Unclassified transfer origin (all-time): {unclassified_transfers['all_time']}")

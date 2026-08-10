@@ -339,7 +339,7 @@
   <div class="tab-pane" data-tab="pedigree">
 
     <div class="info-note">
-      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small, mostly-2025 share of historical transfers can't be classified either way and are excluded from both totals below.
+      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC <strong>and placed in adoptive homes</strong> in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. The 180 goal counts only TX-origin pets that have actually been adopted, not just arrived &mdash; arrivals still waiting on an adoption are shown separately. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small, mostly-2025 share of historical transfers can't be classified either way and are excluded from both totals below.
     </div>
 
     <section>
@@ -474,11 +474,17 @@ function renderPedigree(p) {
   const monthLabelsAll = t.by_month.map(m => m.month);
   const transportSeriesAll = t.by_month.map(m => m.total);
 
+  const adoptedMonths2026 = t.by_month_adopted.filter(m => m.month.startsWith('2026'));
+  const adoptedMonthLabels2026 = adoptedMonths2026.map(m => m.month);
+  const adoptedSeries2026 = adoptedMonths2026.map(m => m.total);
+
   renderTiles('transport-tiles', [
-    { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries2026, sparkMonths: monthLabels2026, color: 'var(--brand-orange)' },
-    { label: 'Cats Transported (2026)', value: t.cy2026_cats, spark: transportCatSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-1)' },
-    { label: 'Dogs Transported (2026)', value: t.cy2026_dogs, spark: transportDogSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-2)' },
-    { label: 'Transported to NC (All-Time)', value: t.all_time, spark: transportSeriesAll, sparkMonths: monthLabelsAll, color: 'var(--brand-orange)' },
+    { label: 'Transported & Placed in Homes (2026)', value: t.cy2026_adopted, spark: adoptedSeries2026, sparkMonths: adoptedMonthLabels2026, color: 'var(--brand-orange)', sub: `${t.cy2026_adopted_cats} cats / ${t.cy2026_adopted_dogs} dogs · grant KPI` },
+    { label: 'Arrived, Not Yet Adopted (2026)', value: t.cy2026_not_yet_adopted },
+    { label: 'Arrived in NC (2026)', value: t.cy2026, spark: transportSeries2026, sparkMonths: monthLabels2026, color: 'var(--brand-orange)' },
+    { label: 'Cats Arrived (2026)', value: t.cy2026_cats, spark: transportCatSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-1)' },
+    { label: 'Dogs Arrived (2026)', value: t.cy2026_dogs, spark: transportDogSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-2)' },
+    { label: 'Arrived in NC (All-Time)', value: t.all_time, spark: transportSeriesAll, sparkMonths: monthLabelsAll, color: 'var(--brand-orange)' },
   ]);
 
   const lt = p.local_transfers_in;
@@ -515,7 +521,7 @@ function renderPedigree(p) {
   const fc = p.foster_caregivers;
 
   const goalCards = [
-    { title: 'Texas Transport-Ins (2026)', actual: t.cy2026, goal: t.goal_2026_min, unit: 'pets' },
+    { title: 'Transported & Placed in Adoptive Homes (2026)', actual: t.cy2026_adopted, goal: t.goal_2026_min, unit: 'pets' },
     { title: 'Local NC Shelter Transfers-In (2026)', actual: lt.cy2026, goal: lt.goal_2026_min, unit: 'pets' },
     { title: 'Active Foster Caregivers', actual: fc.active_now, goal: fc.goal_2026_min, unit: 'caregivers' },
   ].map(g => {

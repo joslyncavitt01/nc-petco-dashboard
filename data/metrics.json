@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:50:30.184793+00:00",
+  "generated_at": "2026-08-10T14:55:18.517115+00:00",
   "adoptions": {
     "total": 466,
     "cats": 364,
@@ -218,6 +218,102 @@
           "month": "2026-07",
           "total": 22,
           "cats": 21,
+          "dogs": 1
+        }
+      ],
+      "cy2026_adopted": 141,
+      "cy2026_adopted_cats": 117,
+      "cy2026_adopted_dogs": 24,
+      "cy2026_not_yet_adopted": 16,
+      "by_month_adopted": [
+        {
+          "month": "2025-04",
+          "total": 2,
+          "cats": 2,
+          "dogs": 0
+        },
+        {
+          "month": "2025-05",
+          "total": 4,
+          "cats": 3,
+          "dogs": 1
+        },
+        {
+          "month": "2025-06",
+          "total": 15,
+          "cats": 11,
+          "dogs": 4
+        },
+        {
+          "month": "2025-07",
+          "total": 4,
+          "cats": 3,
+          "dogs": 1
+        },
+        {
+          "month": "2025-09",
+          "total": 2,
+          "cats": 2,
+          "dogs": 0
+        },
+        {
+          "month": "2025-10",
+          "total": 2,
+          "cats": 0,
+          "dogs": 2
+        },
+        {
+          "month": "2025-11",
+          "total": 2,
+          "cats": 1,
+          "dogs": 1
+        },
+        {
+          "month": "2025-12",
+          "total": 6,
+          "cats": 6,
+          "dogs": 0
+        },
+        {
+          "month": "2026-01",
+          "total": 15,
+          "cats": 13,
+          "dogs": 2
+        },
+        {
+          "month": "2026-02",
+          "total": 14,
+          "cats": 9,
+          "dogs": 5
+        },
+        {
+          "month": "2026-03",
+          "total": 16,
+          "cats": 9,
+          "dogs": 7
+        },
+        {
+          "month": "2026-04",
+          "total": 26,
+          "cats": 23,
+          "dogs": 3
+        },
+        {
+          "month": "2026-05",
+          "total": 33,
+          "cats": 29,
+          "dogs": 4
+        },
+        {
+          "month": "2026-06",
+          "total": 15,
+          "cats": 13,
+          "dogs": 2
+        },
+        {
+          "month": "2026-07",
+          "total": 16,
+          "cats": 15,
           "dogs": 1
         }
       ],
