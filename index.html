@@ -465,15 +465,16 @@ document.querySelectorAll('.grant-card[data-goto]').forEach(card => {
 function renderPedigree(p) {
   if (!p) return;
   const t = p.transport_in;
-  const monthLabels = t.by_month.map(m => m.month);
-  const transportSeries = t.by_month.map(m => m.total);
-  const transportCatSeries = t.by_month.map(m => m.cats);
-  const transportDogSeries = t.by_month.map(m => m.dogs);
+  const months2026 = t.by_month.filter(m => m.month.startsWith('2026'));
+  const monthLabels2026 = months2026.map(m => m.month);
+  const transportSeries2026 = months2026.map(m => m.total);
+  const transportCatSeries2026 = months2026.map(m => m.cats);
+  const transportDogSeries2026 = months2026.map(m => m.dogs);
 
   renderTiles('transport-tiles', [
-    { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries, sparkMonths: monthLabels, color: 'var(--brand-orange)' },
-    { label: 'Cats Transported (2026)', value: t.cy2026_cats, spark: transportCatSeries, sparkMonths: monthLabels, color: 'var(--series-1)' },
-    { label: 'Dogs Transported (2026)', value: t.cy2026_dogs, spark: transportDogSeries, sparkMonths: monthLabels, color: 'var(--series-2)' },
+    { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries2026, sparkMonths: monthLabels2026, color: 'var(--brand-orange)' },
+    { label: 'Cats Transported (2026)', value: t.cy2026_cats, spark: transportCatSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-1)' },
+    { label: 'Dogs Transported (2026)', value: t.cy2026_dogs, spark: transportDogSeries2026, sparkMonths: monthLabels2026, color: 'var(--series-2)' },
     { label: 'Transported to NC (All-Time)', value: t.all_time },
   ]);
 
