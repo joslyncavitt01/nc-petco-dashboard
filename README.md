@@ -24,7 +24,7 @@ Live metrics for APA!'s Shelter Pet Adoption Center (Huntersville, NC). Three ta
 
 - 180+ pets transported from Texas source shelters to NC in 2026 (identified by intakeSubType `HNCSPAC - Space` / `Transport Held at APATH`)
 - 100+ local NC shelter transfers-in (all other `Intake.Transfer` records) — tagging is sparse/early-stage, read as directional
-- Active NC foster corps grown from 5 to 15+ caregivers (point-in-time count of caregivers currently holding a fostered animal)
+- Active NC foster corps grown from 5 to 15+ caregivers ("active" = fostered 2+ times in calendar year 2026, not a point-in-time snapshot of who currently has an animal -- that undercounted, since some currently-in-foster animals have no Intake/Outcome record at all to trace a caregiver from)
 - D2A outcomes tracked via the `D2A` AnimalAttributes tag, split into direct adoptions vs. foster-to-adopt
 
 ## Refreshing the data

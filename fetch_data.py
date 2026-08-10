@@ -317,24 +317,25 @@ unclassified_transfers = q(f"""
     FROM classified
 """)[0]
 
-# --- Pedigree D2A: active foster caregivers (point-in-time) ----------------
-foster_caregivers_active = q("""
-    WITH in_foster_now AS (
-      SELECT animalInternalID
-      FROM `apa-data-410213.nc_shelterluv.Animals`
-      WHERE deletedFromSL IS NOT TRUE
-        AND status IN ('Available (Foster)', 'Unavailable - (Foster)')
-    ),
-    last_foster_out AS (
-      SELECT animalInternalID, personInternalID,
-        ROW_NUMBER() OVER (PARTITION BY animalInternalID ORDER BY outcomeDate DESC) AS rn
-      FROM `apa-data-410213.nc_shelterluv.Outcomes`
-      WHERE outcomeType = 'Outcome.Foster'
-    )
-    SELECT COUNT(DISTINCT lf.personInternalID) AS active_caregivers
-    FROM in_foster_now f
-    JOIN last_foster_out lf ON f.animalInternalID = lf.animalInternalID AND lf.rn = 1
-""")[0]
+# --- Pedigree D2A: active foster caregivers ---------------------------------
+# Grant-goal definition (confirmed 8/10/26): "active" = fostered 2+ times in
+# calendar year 2026, not a point-in-time count of who currently has an
+# animal. A point-in-time count was tried first but undercounted -- 6 of the
+# animals currently showing an in-foster status in ShelterLuv have zero
+# Intake/Outcome records at all (a sync gap, not a query bug), so there was
+# no way to attribute them to a caregiver. Repeat-placement counting sidesteps
+# that gap entirely since it doesn't depend on current custody status.
+foster_caregivers_by_placements = q("""
+    SELECT personInternalID, COUNT(*) AS placements_2026
+    FROM `apa-data-410213.nc_shelterluv.Outcomes`
+    WHERE outcomeType = 'Outcome.Foster' AND EXTRACT(YEAR FROM outcomeDate) = 2026
+    GROUP BY personInternalID
+""")
+
+foster_caregivers_active = {
+    "active_2026": sum(1 for r in foster_caregivers_by_placements if r["placements_2026"] >= 2),
+    "one_time_2026": sum(1 for r in foster_caregivers_by_placements if r["placements_2026"] == 1),
+}
 
 # --- Volunteers (NC only, approved entries) ------------------------------
 volunteers = q("""
@@ -437,7 +438,8 @@ output = {
         },
         "unclassified_transfers_all_time": unclassified_transfers["all_time"],
         "foster_caregivers": {
-            "active_now": foster_caregivers_active["active_caregivers"],
+            "active_2026": foster_caregivers_active["active_2026"],
+            "one_time_2026": foster_caregivers_active["one_time_2026"],
             "goal_2026_min": 15,
         },
     },
@@ -470,3 +472,4 @@ print(f"  TX transport-in (CY2026, arrived): {transport_totals['cy2026']}")
 print(f"  TX transported & adopted (CY2026, grant KPI): {transport_adopted_totals['cy2026_adopted']} / goal 180")
 print(f"  NC local transfers-in (CY2026): {local_transfers['cy2026']} / goal 100")
 print(f"  Unclassified transfer origin (all-time): {unclassified_transfers['all_time']}")
+print(f"  Foster caregivers, 2+ placements (CY2026): {foster_caregivers_active['active_2026']} / goal 15")

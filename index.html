@@ -339,7 +339,7 @@
   <div class="tab-pane" data-tab="pedigree">
 
     <div class="info-note">
-      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC <strong>and placed in adoptive homes</strong> in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. The 180 goal counts only TX-origin pets that have actually been adopted, not just arrived &mdash; arrivals still waiting on an adoption are shown separately. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small, mostly-2025 share of historical transfers can't be classified either way and are excluded from both totals below.
+      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC <strong>and placed in adoptive homes</strong> in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. The 180 goal counts only TX-origin pets that have actually been adopted, not just arrived &mdash; arrivals still waiting on an adoption are shown separately. "Active" foster caregiver = fostered 2+ times in 2026, not just anyone currently holding an animal. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small, mostly-2025 share of historical transfers can't be classified either way and are excluded from both totals below.
     </div>
 
     <section>
@@ -515,7 +515,8 @@ function renderPedigree(p) {
   ]);
 
   renderTiles('pedigree-foster-tiles', [
-    { label: 'Active Foster Caregivers Now', value: p.foster_caregivers.active_now },
+    { label: 'Active Foster Caregivers (2+ Placements, 2026)', value: p.foster_caregivers.active_2026 },
+    { label: 'One-Time Foster Caregivers (2026)', value: p.foster_caregivers.one_time_2026 },
   ]);
 
   const fc = p.foster_caregivers;
@@ -523,7 +524,7 @@ function renderPedigree(p) {
   const goalCards = [
     { title: 'Transported & Placed in Adoptive Homes (2026)', actual: t.cy2026_adopted, goal: t.goal_2026_min, unit: 'pets' },
     { title: 'Local NC Shelter Transfers-In (2026)', actual: lt.cy2026, goal: lt.goal_2026_min, unit: 'pets' },
-    { title: 'Active Foster Caregivers', actual: fc.active_now, goal: fc.goal_2026_min, unit: 'caregivers' },
+    { title: 'Active Foster Caregivers (2+ Placements, 2026)', actual: fc.active_2026, goal: fc.goal_2026_min, unit: 'caregivers' },
   ].map(g => {
     const met = g.actual >= g.goal;
     const pct = Math.round(100 * g.actual / g.goal);

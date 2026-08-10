@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:55:18.517115+00:00",
+  "generated_at": "2026-08-10T15:09:10.183270+00:00",
   "adoptions": {
     "total": 466,
     "cats": 364,
@@ -428,7 +428,8 @@
     },
     "unclassified_transfers_all_time": 57,
     "foster_caregivers": {
-      "active_now": 7,
+      "active_2026": 28,
+      "one_time_2026": 31,
       "goal_2026_min": 15
     }
   },
