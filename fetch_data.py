@@ -139,8 +139,27 @@ NC_SHELTERS = """(
 )"""
 
 ORIGIN_CTE = f"""
-    WITH direct AS (
-      SELECT i.intakeID, i.animalInternalID, i.partnerInternalID, i.intakeDate,
+    WITH prev_id_dedup AS (
+      -- AnimalPreviousIds has up to one row per idType per animal (Shelterluv,
+      -- PetPoint, Other, Shelter Buddy). Joining on animalInternalID alone
+      -- fans out and double/triple-counts intake rows, so collapse to a
+      -- single best row per animal first: prefer a populated issuingShelter,
+      -- then prefer idType = 'Shelterluv' as the most reliable source.
+      SELECT animalInternalID, issuingShelter
+      FROM (
+        SELECT animalInternalID, issuingShelter,
+          ROW_NUMBER() OVER (
+            PARTITION BY animalInternalID
+            ORDER BY (issuingShelter IS NOT NULL AND issuingShelter != '') DESC,
+                     (idType = 'Shelterluv') DESC,
+                     issuingShelter
+          ) AS rn
+        FROM `apa-data-410213.nc_shelterluv.AnimalPreviousIds`
+      )
+      WHERE rn = 1
+    ),
+    direct AS (
+      SELECT i.intakeID, i.animalInternalID, i.partnerInternalID, i.intakeDate, a.species,
         CASE
           WHEN p.issuingShelter IN {TX_SHELTERS} THEN 'TX'
           WHEN p.issuingShelter IN {NC_SHELTERS} THEN 'NC'
@@ -148,8 +167,10 @@ ORIGIN_CTE = f"""
           ELSE NULL
         END AS direct_origin
       FROM `apa-data-410213.nc_shelterluv.Intakes` i
-      LEFT JOIN `apa-data-410213.nc_shelterluv.AnimalPreviousIds` p
+      LEFT JOIN prev_id_dedup p
         ON i.animalInternalID = p.animalInternalID
+      LEFT JOIN `apa-data-410213.nc_shelterluv.Animals` a
+        ON i.animalInternalID = a.animalInternalID
       WHERE i.intakeType = 'Intake.Transfer'
     ),
     partner_mode AS (
@@ -164,7 +185,7 @@ ORIGIN_CTE = f"""
       WHERE rn = 1
     ),
     classified AS (
-      SELECT d.intakeID, d.intakeDate,
+      SELECT d.intakeID, d.intakeDate, d.species,
         COALESCE(d.direct_origin, pm.mode_origin, 'UNKNOWN') AS origin
       FROM direct d
       LEFT JOIN partner_mode pm ON d.partnerInternalID = pm.partnerInternalID
@@ -173,7 +194,11 @@ ORIGIN_CTE = f"""
 
 transport_by_month = q(f"""
     {ORIGIN_CTE}
-    SELECT FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month, COUNT(*) AS total
+    SELECT
+      FORMAT_DATE('%Y-%m', DATE(intakeDate)) AS month,
+      COUNT(*) AS total,
+      COUNTIF(species = 'Cat') AS cats,
+      COUNTIF(species = 'Dog') AS dogs
     FROM classified WHERE origin = 'TX'
     GROUP BY month ORDER BY month
 """)
@@ -183,15 +208,23 @@ transport_totals = q(f"""
     {ORIGIN_CTE}
     SELECT
       COUNTIF(origin = 'TX') AS all_time,
-      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+      COUNTIF(origin = 'TX' AND species = 'Cat') AS all_time_cats,
+      COUNTIF(origin = 'TX' AND species = 'Dog') AS all_time_dogs,
+      COUNTIF(origin = 'TX' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026,
+      COUNTIF(origin = 'TX' AND species = 'Cat' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026_cats,
+      COUNTIF(origin = 'TX' AND species = 'Dog' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026_dogs
     FROM classified
 """)[0]
 
 # --- Pedigree D2A: D2A-tagged pets and their outcomes ----------------------
 d2a_tagged = q("""
-    SELECT COUNT(DISTINCT animalInternalID) AS total
-    FROM `apa-data-410213.nc_shelterluv.AnimalAttributes`
-    WHERE attributeName = 'D2A'
+    SELECT
+      COUNT(DISTINCT att.animalInternalID) AS total,
+      COUNT(DISTINCT IF(a.species = 'Cat', att.animalInternalID, NULL)) AS total_cats,
+      COUNT(DISTINCT IF(a.species = 'Dog', att.animalInternalID, NULL)) AS total_dogs
+    FROM `apa-data-410213.nc_shelterluv.AnimalAttributes` att
+    LEFT JOIN `apa-data-410213.nc_shelterluv.Animals` a ON att.animalInternalID = a.animalInternalID
+    WHERE att.attributeName = 'D2A'
 """)[0]
 
 d2a_outcomes = q("""
@@ -202,10 +235,15 @@ d2a_outcomes = q("""
     )
     SELECT
       COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType NOT LIKE '%(Foster)%') AS direct_adoptions,
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType NOT LIKE '%(Foster)%' AND a.species = 'Cat') AS direct_adoptions_cats,
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType NOT LIKE '%(Foster)%' AND a.species = 'Dog') AS direct_adoptions_dogs,
       COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType LIKE '%(Foster)%') AS foster_to_adopt,
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType LIKE '%(Foster)%' AND a.species = 'Cat') AS foster_to_adopt_cats,
+      COUNTIF(o.outcomeType = 'Outcome.Adoption' AND o.outcomeSubType LIKE '%(Foster)%' AND a.species = 'Dog') AS foster_to_adopt_dogs,
       COUNT(DISTINCT o.animalInternalID) AS with_any_outcome
     FROM d2a
     JOIN `apa-data-410213.nc_shelterluv.Outcomes` o ON d2a.animalInternalID = o.animalInternalID
+    LEFT JOIN `apa-data-410213.nc_shelterluv.Animals` a ON d2a.animalInternalID = a.animalInternalID
 """)[0]
 
 # --- Pedigree D2A: local NC shelter transfers-in ---------------------------
@@ -215,7 +253,11 @@ local_transfers = q(f"""
     {ORIGIN_CTE}
     SELECT
       COUNTIF(origin = 'NC') AS all_time,
-      COUNTIF(origin = 'NC' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026
+      COUNTIF(origin = 'NC' AND species = 'Cat') AS all_time_cats,
+      COUNTIF(origin = 'NC' AND species = 'Dog') AS all_time_dogs,
+      COUNTIF(origin = 'NC' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026,
+      COUNTIF(origin = 'NC' AND species = 'Cat' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026_cats,
+      COUNTIF(origin = 'NC' AND species = 'Dog' AND EXTRACT(YEAR FROM intakeDate) = 2026) AS cy2026_dogs
     FROM classified
 """)[0]
 
@@ -308,19 +350,33 @@ output = {
     "pedigree": {
         "transport_in": {
             "all_time": transport_totals["all_time"],
+            "all_time_cats": transport_totals["all_time_cats"],
+            "all_time_dogs": transport_totals["all_time_dogs"],
             "cy2026": transport_totals["cy2026"],
+            "cy2026_cats": transport_totals["cy2026_cats"],
+            "cy2026_dogs": transport_totals["cy2026_dogs"],
             "by_month": transport_by_month,
             "goal_2026_min": 180,
         },
         "d2a": {
             "tagged_total": d2a_tagged["total"],
+            "tagged_total_cats": d2a_tagged["total_cats"],
+            "tagged_total_dogs": d2a_tagged["total_dogs"],
             "direct_adoptions": d2a_outcomes["direct_adoptions"],
+            "direct_adoptions_cats": d2a_outcomes["direct_adoptions_cats"],
+            "direct_adoptions_dogs": d2a_outcomes["direct_adoptions_dogs"],
             "foster_to_adopt": d2a_outcomes["foster_to_adopt"],
+            "foster_to_adopt_cats": d2a_outcomes["foster_to_adopt_cats"],
+            "foster_to_adopt_dogs": d2a_outcomes["foster_to_adopt_dogs"],
             "with_any_outcome": d2a_outcomes["with_any_outcome"],
         },
         "local_transfers_in": {
             "all_time": local_transfers["all_time"],
+            "all_time_cats": local_transfers["all_time_cats"],
+            "all_time_dogs": local_transfers["all_time_dogs"],
             "cy2026": local_transfers["cy2026"],
+            "cy2026_cats": local_transfers["cy2026_cats"],
+            "cy2026_dogs": local_transfers["cy2026_dogs"],
             "goal_2026_min": 100,
         },
         "unclassified_transfers_all_time": unclassified_transfers["all_time"],

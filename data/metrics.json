@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:25:11.557270+00:00",
+  "generated_at": "2026-08-10T14:32:47.939479+00:00",
   "adoptions": {
     "total": 466,
     "cats": 364,
@@ -123,84 +123,128 @@
   },
   "pedigree": {
     "transport_in": {
-      "all_time": 363,
-      "cy2026": 290,
+      "all_time": 194,
+      "all_time_cats": 160,
+      "all_time_dogs": 34,
+      "cy2026": 157,
+      "cy2026_cats": 132,
+      "cy2026_dogs": 25,
       "by_month": [
         {
           "month": "2025-04",
-          "total": 3
+          "total": 2,
+          "cats": 2,
+          "dogs": 0
         },
         {
           "month": "2025-05",
-          "total": 8
+          "total": 4,
+          "cats": 3,
+          "dogs": 1
         },
         {
           "month": "2025-06",
-          "total": 31
+          "total": 15,
+          "cats": 11,
+          "dogs": 4
         },
         {
           "month": "2025-07",
-          "total": 8
+          "total": 4,
+          "cats": 3,
+          "dogs": 1
         },
         {
           "month": "2025-09",
-          "total": 4
+          "total": 2,
+          "cats": 2,
+          "dogs": 0
         },
         {
           "month": "2025-10",
-          "total": 4
+          "total": 2,
+          "cats": 0,
+          "dogs": 2
         },
         {
           "month": "2025-11",
-          "total": 4
+          "total": 2,
+          "cats": 1,
+          "dogs": 1
         },
         {
           "month": "2025-12",
-          "total": 11
+          "total": 6,
+          "cats": 6,
+          "dogs": 0
         },
         {
           "month": "2026-01",
-          "total": 28
+          "total": 15,
+          "cats": 13,
+          "dogs": 2
         },
         {
           "month": "2026-02",
-          "total": 27
+          "total": 14,
+          "cats": 9,
+          "dogs": 5
         },
         {
           "month": "2026-03",
-          "total": 24
+          "total": 16,
+          "cats": 9,
+          "dogs": 7
         },
         {
           "month": "2026-04",
-          "total": 46
+          "total": 27,
+          "cats": 24,
+          "dogs": 3
         },
         {
           "month": "2026-05",
-          "total": 62
+          "total": 34,
+          "cats": 30,
+          "dogs": 4
         },
         {
           "month": "2026-06",
-          "total": 29
+          "total": 17,
+          "cats": 14,
+          "dogs": 3
         },
         {
           "month": "2026-07",
-          "total": 50
+          "total": 22,
+          "cats": 21,
+          "dogs": 1
         }
       ],
       "goal_2026_min": 180
     },
     "d2a": {
       "tagged_total": 78,
+      "tagged_total_cats": 0,
+      "tagged_total_dogs": 78,
       "direct_adoptions": 20,
+      "direct_adoptions_cats": 0,
+      "direct_adoptions_dogs": 20,
       "foster_to_adopt": 4,
+      "foster_to_adopt_cats": 0,
+      "foster_to_adopt_dogs": 4,
       "with_any_outcome": 21
     },
     "local_transfers_in": {
-      "all_time": 281,
-      "cy2026": 104,
+      "all_time": 193,
+      "all_time_cats": 159,
+      "all_time_dogs": 34,
+      "cy2026": 103,
+      "cy2026_cats": 79,
+      "cy2026_dogs": 24,
       "goal_2026_min": 100
     },
-    "unclassified_transfers_all_time": 60,
+    "unclassified_transfers_all_time": 57,
     "foster_caregivers": {
       "active_now": 7,
       "goal_2026_min": 15

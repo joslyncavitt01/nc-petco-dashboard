@@ -119,6 +119,7 @@
   }
   .tile .label { font-size: 0.76rem; color: var(--text-secondary); margin-bottom: 6px; font-weight: 600; }
   .tile .value { font-size: 1.9rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+  .tile .sub { font-size: 0.74rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
   .tile .spark { margin-top: 8px; }
   .tile .spark-chart { height: 28px; }
   .tile .spark-chart svg { display: block; width: 100%; height: 100%; }
@@ -338,7 +339,7 @@
   <div class="tab-pane" data-tab="pedigree">
 
     <div class="info-note">
-      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small share of historical transfers (60 all-time, mostly from 2025) can't be classified either way and are excluded from both totals below.
+      Tracks the March 2026 PEDIGREE Foundation D2A grant goals: 180+ pets transported from Texas source shelters to NC in 2026, 100+ local NC shelter transfers-in, and growing the active NC foster corps from 5 to 15+ caregivers. Texas vs. NC origin is determined from each animal's prior-shelter record (backfilled by transfer partner where that record is missing); a small, mostly-2025 share of historical transfers can't be classified either way and are excluded from both totals below.
     </div>
 
     <section>
@@ -355,6 +356,14 @@
         <h2>Texas &rarr; NC Transport</h2>
       </div>
       <div class="tiles" id="transport-tiles"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <h2>Local NC Shelter Transfers-In</h2>
+      </div>
+      <div class="tiles" id="local-transfer-tiles"></div>
     </section>
 
     <section>
@@ -458,17 +467,29 @@ function renderPedigree(p) {
   const t = p.transport_in;
   const monthLabels = t.by_month.map(m => m.month);
   const transportSeries = t.by_month.map(m => m.total);
+  const transportCatSeries = t.by_month.map(m => m.cats);
+  const transportDogSeries = t.by_month.map(m => m.dogs);
 
   renderTiles('transport-tiles', [
     { label: 'Transported to NC (2026)', value: t.cy2026, spark: transportSeries, sparkMonths: monthLabels, color: 'var(--brand-orange)' },
+    { label: 'Cats Transported (2026)', value: t.cy2026_cats, spark: transportCatSeries, sparkMonths: monthLabels, color: 'var(--series-1)' },
+    { label: 'Dogs Transported (2026)', value: t.cy2026_dogs, spark: transportDogSeries, sparkMonths: monthLabels, color: 'var(--series-2)' },
     { label: 'Transported to NC (All-Time)', value: t.all_time },
+  ]);
+
+  const lt = p.local_transfers_in;
+  renderTiles('local-transfer-tiles', [
+    { label: 'Local NC Transfers-In (2026)', value: lt.cy2026 },
+    { label: 'Cats (2026)', value: lt.cy2026_cats },
+    { label: 'Dogs (2026)', value: lt.cy2026_dogs },
+    { label: 'Local NC Transfers-In (All-Time)', value: lt.all_time },
   ]);
 
   const d2aAdoptions = p.d2a.direct_adoptions + p.d2a.foster_to_adopt;
   const stillInPipeline = Math.max(0, p.d2a.tagged_total - d2aAdoptions);
   renderTiles('d2a-tiles', [
-    { label: 'D2A-Tagged Pets (All-Time)', value: p.d2a.tagged_total },
-    { label: 'D2A Adoptions to Date', value: d2aAdoptions },
+    { label: 'D2A-Tagged Pets (All-Time)', value: p.d2a.tagged_total, sub: `${p.d2a.tagged_total_cats} cats / ${p.d2a.tagged_total_dogs} dogs` },
+    { label: 'D2A Adoptions to Date', value: d2aAdoptions, sub: `${p.d2a.direct_adoptions_cats + p.d2a.foster_to_adopt_cats} cats / ${p.d2a.direct_adoptions_dogs + p.d2a.foster_to_adopt_dogs} dogs` },
     { label: 'Direct (No Foster Stop)', value: p.d2a.direct_adoptions },
     { label: 'Via Foster-to-Adopt', value: p.d2a.foster_to_adopt },
     { label: 'Still Moving Through Pipeline', value: stillInPipeline },
@@ -479,7 +500,6 @@ function renderPedigree(p) {
   ]);
 
   const fc = p.foster_caregivers;
-  const lt = p.local_transfers_in;
 
   const goalCards = [
     { title: 'Texas Transport-Ins (2026)', actual: t.cy2026, goal: t.goal_2026_min, unit: 'pets' },
@@ -551,10 +571,12 @@ function renderTiles(id, items) {
           </div>
         </div>`;
     }
+    const subHtml = t.sub ? `<div class="sub">${t.sub}</div>` : '';
     return `
       <div class="tile">
         <div class="label">${t.label}</div>
         <div class="value">${t.value}</div>
+        ${subHtml}
         ${sparkHtml}
       </div>
     `;
