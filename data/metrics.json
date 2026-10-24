@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-17T23:30:49.684070+00:00",
+  "generated_at": "2026-10-24T03:42:58.990550+00:00",
   "adoptions": {
-    "total": 542,
-    "cats": 422,
-    "dogs": 120,
+    "total": 580,
+    "cats": 454,
+    "dogs": 126,
     "by_month": [
       {
         "month": "2025-04",
@@ -106,35 +106,41 @@
         "total": 69,
         "cats": 52,
         "dogs": 17
+      },
+      {
+        "month": "2026-09",
+        "total": 46,
+        "cats": 37,
+        "dogs": 9
       }
     ]
   },
   "foster": {
-    "unique_families": 72,
-    "total_placements": 150,
-    "avg_days_per_stay": 8.1,
-    "foster_to_adopt_pct": 9.4
+    "unique_families": 83,
+    "total_placements": 177,
+    "avg_days_per_stay": 8.3,
+    "foster_to_adopt_pct": 9.7
   },
   "volunteers": {
-    "total_hours": 1849.8,
-    "unique_volunteers": 130,
-    "total_shifts": 1240
+    "total_hours": 2086.5,
+    "unique_volunteers": 162,
+    "total_shifts": 1420
   },
   "snapshot": {
-    "cats_at_center": 6,
-    "dogs_at_center": 0,
-    "cats_in_foster": 5,
-    "dogs_in_foster": 4,
-    "total_in_custody": 15
+    "cats_at_center": 12,
+    "dogs_at_center": 1,
+    "cats_in_foster": 8,
+    "dogs_in_foster": 3,
+    "total_in_custody": 24
   },
   "pedigree": {
     "transport_in": {
-      "all_time": 229,
-      "all_time_cats": 185,
-      "all_time_dogs": 44,
-      "cy2026": 192,
-      "cy2026_cats": 157,
-      "cy2026_dogs": 35,
+      "all_time": 256,
+      "all_time_cats": 211,
+      "all_time_dogs": 45,
+      "cy2026": 219,
+      "cy2026_cats": 183,
+      "cy2026_dogs": 36,
       "by_month": [
         {
           "month": "2025-04",
@@ -231,12 +237,18 @@
           "total": 28,
           "cats": 23,
           "dogs": 5
+        },
+        {
+          "month": "2026-09",
+          "total": 30,
+          "cats": 24,
+          "dogs": 6
         }
       ],
-      "cy2026_adopted": 180,
-      "cy2026_adopted_cats": 147,
-      "cy2026_adopted_dogs": 33,
-      "cy2026_not_yet_adopted": 12,
+      "cy2026_adopted": 200,
+      "cy2026_adopted_cats": 166,
+      "cy2026_adopted_dogs": 34,
+      "cy2026_not_yet_adopted": 19,
       "by_month_adopted": [
         {
           "month": "2025-04",
@@ -333,29 +345,35 @@
           "total": 28,
           "cats": 23,
           "dogs": 5
+        },
+        {
+          "month": "2026-09",
+          "total": 28,
+          "cats": 24,
+          "dogs": 4
         }
       ],
       "goal_2026_min": 180
     },
     "d2a": {
-      "tagged_total": 76,
+      "tagged_total": 69,
       "tagged_total_cats": 0,
-      "tagged_total_dogs": 76,
-      "direct_adoptions": 21,
+      "tagged_total_dogs": 69,
+      "direct_adoptions": 20,
       "direct_adoptions_cats": 0,
-      "direct_adoptions_dogs": 21,
+      "direct_adoptions_dogs": 20,
       "foster_to_adopt": 4,
       "foster_to_adopt_cats": 0,
       "foster_to_adopt_dogs": 4,
-      "with_any_outcome": 22
+      "with_any_outcome": 21
     },
     "local_transfers_in": {
-      "all_time": 223,
-      "all_time_cats": 179,
-      "all_time_dogs": 44,
-      "cy2026": 133,
-      "cy2026_cats": 99,
-      "cy2026_dogs": 34,
+      "all_time": 243,
+      "all_time_cats": 197,
+      "all_time_dogs": 46,
+      "cy2026": 153,
+      "cy2026_cats": 117,
+      "cy2026_dogs": 36,
       "by_month": [
         {
           "month": "2025-05",
@@ -446,14 +464,20 @@
           "total": 29,
           "cats": 20,
           "dogs": 9
+        },
+        {
+          "month": "2026-09",
+          "total": 15,
+          "cats": 12,
+          "dogs": 3
         }
       ],
       "goal_2026_min": 100
     },
     "unclassified_transfers_all_time": 57,
     "foster_caregivers": {
-      "active_2026": 32,
-      "one_time_2026": 40,
+      "active_2026": 37,
+      "one_time_2026": 46,
       "goal_2026_min": 15
     }
   },
@@ -473,10 +497,10 @@
       "min": 750,
       "max": 1000,
       "closed": false,
-      "actual": 358,
-      "cats": 280,
-      "dogs": 78,
-      "pct_of_min": 47.7
+      "actual": 396,
+      "cats": 312,
+      "dogs": 84,
+      "pct_of_min": 52.8
     }
   }
 }
