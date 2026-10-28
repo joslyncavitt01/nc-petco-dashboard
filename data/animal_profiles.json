@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-27T14:47:53.170835+00:00",
-  "total": 634,
+  "generated_at": "2026-10-28T11:13:01.130964+00:00",
+  "total": 645,
   "with_austin_link": 206,
   "animals": [
     {
@@ -1238,7 +1238,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/68db880835e6aa29d329a0a7fa3ec785/6ccf18e48984e18ef8142dccde631898.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/352729e6a334289a7c100313005a3362/138c121d53b8465ef2f121bfe5a07ad6.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -1268,7 +1268,7 @@
         "altered": true,
         "arrivalDate": "2026-07-22",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/68db880835e6aa29d329a0a7fa3ec785/6ccf18e48984e18ef8142dccde631898.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/352729e6a334289a7c100313005a3362/138c121d53b8465ef2f121bfe5a07ad6.jpeg",
         "memos": [
           {
             "label": "Outcome",
@@ -1376,7 +1376,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 5,
+      "age": 6,
       "animalDoB": "2026-04-28",
       "color": "White",
       "status": "Healthy in Home",
@@ -1957,6 +1957,40 @@
       "austin": null
     },
     {
+      "id": "214862970",
+      "aid": "1315",
+      "name": "Bear",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-05",
+      "color": "Brown",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 3.0,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "214244546",
       "aid": "1111",
       "name": "Beau",
@@ -2029,7 +2063,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 18,
+      "age": 19,
       "animalDoB": "2025-03-28",
       "color": "White/Black",
       "status": "Healthy in Home",
@@ -3280,8 +3314,8 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/f13222752966aefdea8a16f1475eee3a/e474e20ea891a51fae4b0b4c1c0ec4b8.jpeg",
         "memos": [
           {
-            "label": "Disclaimer",
-            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
+            "label": "Kennel Card / Website Memo",
+            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
@@ -3290,13 +3324,13 @@
             "date": "2026-08-18 13:30:11.657148"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 8/17. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 8/17. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
+            "label": "Disclaimer",
+            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
@@ -3310,23 +3344,23 @@
             "date": "2026-08-24 13:30:10.169944"
           },
           {
+            "label": "Pop-up",
+            "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
+            "date": "2026-08-24 13:30:10.169944"
+          },
+          {
             "label": "Kennel Card / Website Memo",
             "text": "Have you ever seen a pup fight so hard just to share her immense love with the world? Blur is a remarkable parvo survivor who beat the odds, showcasing an inspiring, resilient spirit that fills every room with pure inspiration. With a pristine, snow-white coat, captivating almond-shaped eyes, and perfectly folded ears that frame her sweet face, she is an absolute head-turner. This brilliant girl is a master of the post-nap stretch, engaging in clumsy, light-footed lunges whenever she spots her favorite toys. Her sharp mind makes her an eager learner who thrives on affectionate praise, gentle playtime, and discovering new sights with quiet curiosity.Don&#039;t wait\u2014make your move today to bring Blur home.",
             "date": "2026-08-24 13:30:10.169944"
           },
           {
             "label": "Pop-up",
-            "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
-            "date": "2026-08-24 13:30:10.169944"
+            "text": "parvo watch through 8/30. Jordana approved move over for transport",
+            "date": "2026-08-26 13:30:10.148264"
           },
           {
             "label": "History",
             "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
-            "date": "2026-08-26 13:30:10.148264"
-          },
-          {
-            "label": "Pop-up",
-            "text": "parvo watch through 8/30. Jordana approved move over for transport",
             "date": "2026-08-26 13:30:10.148264"
           }
         ],
@@ -3417,8 +3451,8 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/f13222752966aefdea8a16f1475eee3a/e474e20ea891a51fae4b0b4c1c0ec4b8.jpeg",
         "memos": [
           {
-            "label": "Disclaimer",
-            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
+            "label": "Kennel Card / Website Memo",
+            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
@@ -3427,13 +3461,13 @@
             "date": "2026-08-18 13:30:11.657148"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 8/17. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 8/17. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
+            "label": "Disclaimer",
+            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
             "date": "2026-08-18 13:30:11.657148"
           },
           {
@@ -3447,23 +3481,23 @@
             "date": "2026-08-24 13:30:10.169944"
           },
           {
+            "label": "Pop-up",
+            "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
+            "date": "2026-08-24 13:30:10.169944"
+          },
+          {
             "label": "Kennel Card / Website Memo",
             "text": "Have you ever seen a pup fight so hard just to share her immense love with the world? Blur is a remarkable parvo survivor who beat the odds, showcasing an inspiring, resilient spirit that fills every room with pure inspiration. With a pristine, snow-white coat, captivating almond-shaped eyes, and perfectly folded ears that frame her sweet face, she is an absolute head-turner. This brilliant girl is a master of the post-nap stretch, engaging in clumsy, light-footed lunges whenever she spots her favorite toys. Her sharp mind makes her an eager learner who thrives on affectionate praise, gentle playtime, and discovering new sights with quiet curiosity.Don&#039;t wait\u2014make your move today to bring Blur home.",
             "date": "2026-08-24 13:30:10.169944"
           },
           {
             "label": "Pop-up",
-            "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
-            "date": "2026-08-24 13:30:10.169944"
+            "text": "parvo watch through 8/30. Jordana approved move over for transport",
+            "date": "2026-08-26 13:30:10.148264"
           },
           {
             "label": "History",
             "text": "PF: cassie.swayze@gmail.com\tCassie Swayze-contacted 8/23 MC",
-            "date": "2026-08-26 13:30:10.148264"
-          },
-          {
-            "label": "Pop-up",
-            "text": "parvo watch through 8/30. Jordana approved move over for transport",
             "date": "2026-08-26 13:30:10.148264"
           }
         ],
@@ -3703,7 +3737,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/18471db648d2a867c3339112e63b76c4/b7ad0a8e39c682dcc035bdc5f5888402.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/6013f9cd1d63bd6228c23635defd47bb/5febe60e854ef8f700091c8211627150.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -3733,7 +3767,7 @@
         "altered": true,
         "arrivalDate": "2026-08-21",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/18471db648d2a867c3339112e63b76c4/b7ad0a8e39c682dcc035bdc5f5888402.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/6013f9cd1d63bd6228c23635defd47bb/5febe60e854ef8f700091c8211627150.jpeg",
         "memos": [
           {
             "label": "Pop-up",
@@ -4138,8 +4172,8 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/1d4eb2ba6b29e879cd25f0a614b796ae/d42589677619bd0825417eb89faa0a4c.jpeg",
         "memos": [
           {
-            "label": "Intake",
-            "text": "All 4 pitties found in the middle of the street.  No mama around.",
+            "label": "Outcome",
+            "text": "Cold Freeze Assistance",
             "date": "2026-01-24 14:30:09.373439"
           },
           {
@@ -4148,13 +4182,13 @@
             "date": "2026-01-24 14:30:09.373439"
           },
           {
-            "label": "Outcome",
-            "text": "Cold Freeze Assistance",
+            "label": "Intake",
+            "text": "All 4 pitties found in the middle of the street.  No mama around.",
             "date": "2026-01-24 14:30:09.373439"
           },
           {
-            "label": "History",
-            "text": "Hi! I\u2019m Brook \ud83d\udc96<br />\n<br />\nI\u2019m a curious, social little girl who loves to be right where the action is. If something fun is happening, I want to know about it, see it, and probably be in the middle of it. I\u2019m the kind of pup who watches the world closely and is always ready for the next exciting thing.<br />\n<br />\nMy story started when my siblings and I were found in the middle of a street, with no mama in sight. Thanks to some kind humans, we\u2019re safe now and getting the chance we deserve.<br />\n<br />\nI\u2019m ready to keep learning about the world and to do it alongside people who want a sweet puppy by their side. If you\u2019re looking for a little girl who\u2019s eager to be part of your day, I\u2019d love to meet you. \ud83d\udc3e",
+            "label": "Sleepover notes ",
+            "text": "s/o 1/23 - 1/30 with Shreya Gummadi, PA",
             "date": "2026-02-03 14:30:09.693026"
           },
           {
@@ -4163,8 +4197,8 @@
             "date": "2026-02-03 14:30:09.693026"
           },
           {
-            "label": "Sleepover notes ",
-            "text": "s/o 1/23 - 1/30 with Shreya Gummadi, PA",
+            "label": "History",
+            "text": "Hi! I\u2019m Brook \ud83d\udc96<br />\n<br />\nI\u2019m a curious, social little girl who loves to be right where the action is. If something fun is happening, I want to know about it, see it, and probably be in the middle of it. I\u2019m the kind of pup who watches the world closely and is always ready for the next exciting thing.<br />\n<br />\nMy story started when my siblings and I were found in the middle of a street, with no mama in sight. Thanks to some kind humans, we\u2019re safe now and getting the chance we deserve.<br />\n<br />\nI\u2019m ready to keep learning about the world and to do it alongside people who want a sweet puppy by their side. If you\u2019re looking for a little girl who\u2019s eager to be part of your day, I\u2019d love to meet you. \ud83d\udc3e",
             "date": "2026-02-03 14:30:09.693026"
           },
           {
@@ -4258,7 +4292,7 @@
       "species": "Dog",
       "breed": "Chihuahua/Mix",
       "sex": "Male",
-      "age": 10,
+      "age": 11,
       "animalDoB": "2025-11-27",
       "color": "Tan",
       "status": "Healthy in Home",
@@ -4268,7 +4302,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/066377a7fe846caae54719cdda7922f9/3d89dfe7eccdbd4f99243cc180ea1b52.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/3d27eb6aa79fbdc03001dfb5e4933056/681809a56f2054e3af37088f6d5c5df7.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -4298,7 +4332,7 @@
         "altered": false,
         "arrivalDate": "2026-03-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/066377a7fe846caae54719cdda7922f9/3d89dfe7eccdbd4f99243cc180ea1b52.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/3d27eb6aa79fbdc03001dfb5e4933056/681809a56f2054e3af37088f6d5c5df7.jpeg",
         "memos": [
           {
             "label": "Feeding Amount and Plan",
@@ -5066,7 +5100,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/91a8de0d9b520bb1f16ed0e227cc0ea6/4d06051a0b453eade3cddda3e3bc1f28.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/e82abe9d84a7ba709a47ae50395459c6/d3272788876347041080b33137f92b13.jpg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -5096,11 +5130,11 @@
         "altered": true,
         "arrivalDate": "2026-08-05",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/91a8de0d9b520bb1f16ed0e227cc0ea6/4d06051a0b453eade3cddda3e3bc1f28.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/e82abe9d84a7ba709a47ae50395459c6/d3272788876347041080b33137f92b13.jpg",
         "memos": [
           {
-            "label": "Intake",
-            "text": "Owner Surrender<br />\n",
+            "label": "Partner Attributes",
+            "text": "Attributes from Bastrop County Animal Services: In Foster Care Not at the Shelter",
             "date": "2026-08-06 13:30:11.562587"
           },
           {
@@ -5109,13 +5143,13 @@
             "date": "2026-08-06 13:30:11.562587"
           },
           {
-            "label": "Partner Attributes",
-            "text": "Attributes from Bastrop County Animal Services: In Foster Care Not at the Shelter",
+            "label": "Outcome",
+            "text": ".",
             "date": "2026-08-06 13:30:11.562587"
           },
           {
-            "label": "Outcome",
-            "text": ".",
+            "label": "Intake",
+            "text": "Owner Surrender<br />\n",
             "date": "2026-08-06 13:30:11.562587"
           }
         ],
@@ -5143,7 +5177,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 7,
+      "age": 8,
       "animalDoB": "2026-02-28",
       "color": "Calico",
       "status": "Healthy in Home",
@@ -5496,7 +5530,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 18,
+      "age": 19,
       "animalDoB": "2025-03-28",
       "color": "Brown",
       "status": "Healthy in Home",
@@ -5790,7 +5824,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/99c87a5c263ed9eeda6d199944bf78fc/647ddab2e0906b4f2e6abd4ec4eabb35.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/544159a64b9fa11b185487bc98175da4/145ec68a7f973b61803974b71e4e9907.jpeg",
       "nc": {
         "memos": [
           {
@@ -5833,7 +5867,7 @@
         "altered": true,
         "arrivalDate": "2026-07-22",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/99c87a5c263ed9eeda6d199944bf78fc/647ddab2e0906b4f2e6abd4ec4eabb35.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/544159a64b9fa11b185487bc98175da4/145ec68a7f973b61803974b71e4e9907.jpeg",
         "memos": [
           {
             "label": "Outcome",
@@ -5957,7 +5991,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/5c608f5514991d3959b64e6884bcaffe/9b8916eb176a0f9e9bc7f2a67c91ab75.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/7c24cf8d8e36817dfd1afcfb7d015215/7c99a013311358ca08ff57a2823e6fca.jpeg",
       "nc": {
         "memos": [
           {
@@ -5992,7 +6026,7 @@
         "altered": true,
         "arrivalDate": "2026-07-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/5c608f5514991d3959b64e6884bcaffe/9b8916eb176a0f9e9bc7f2a67c91ab75.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/7c24cf8d8e36817dfd1afcfb7d015215/7c99a013311358ca08ff57a2823e6fca.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -6355,7 +6389,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/8c3768938bfc7fb759f42865b8a75315/553e2098288204a314094dcc05ac7e14.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/92b7c3b2af16b381c4393b019944e3a6/cb1efe40744e0d18538d6fcf5056b5a4.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -6385,7 +6419,7 @@
         "altered": true,
         "arrivalDate": "2026-07-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/8c3768938bfc7fb759f42865b8a75315/553e2098288204a314094dcc05ac7e14.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/92b7c3b2af16b381c4393b019944e3a6/cb1efe40744e0d18538d6fcf5056b5a4.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -6976,7 +7010,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 7,
+      "age": 8,
       "animalDoB": "2026-02-28",
       "color": "Lynx",
       "status": "Healthy in Home",
@@ -7531,7 +7565,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/3e059e6e2132ffe15190a8aa0ea24ecf/f9426b6ffe5847f85849a7537d52cff1.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/55c7ea72914947316ee7a6869dfb9c3a/be6050fe66adccacf697d573fcad625c.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -7563,11 +7597,11 @@
         "altered": false,
         "arrivalDate": "2026-08-28",
         "websiteMemo": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they're ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/3e059e6e2132ffe15190a8aa0ea24ecf/f9426b6ffe5847f85849a7537d52cff1.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/55c7ea72914947316ee7a6869dfb9c3a/be6050fe66adccacf697d573fcad625c.jpeg",
         "memos": [
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 9/3. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-08-29 13:30:09.005154"
           },
           {
@@ -7576,8 +7610,8 @@
             "date": "2026-08-29 13:30:09.005154"
           },
           {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 9/3. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
+            "label": "Kennel Card / Website Memo",
+            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they&#039;re ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
             "date": "2026-08-29 13:30:09.005154"
           },
           {
@@ -7591,13 +7625,13 @@
             "date": "2026-09-16 13:30:35.515735"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they're ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
+            "label": "Matchmaker Summary",
+            "text": "Hold for NC transport",
             "date": "2026-09-16 13:30:35.515735"
           },
           {
-            "label": "Matchmaker Summary",
-            "text": "Hold for NC transport",
+            "label": "Kennel Card / Website Memo",
+            "text": "They didn\u2019t give up\u2026and neither did we \ud83d\udc9b This little fighter is on the path to beat parvo, showing us every day what resilience truly means. They\u2019ll be ready for a home soon and they deserve a place filled with love, care, and happiness. They still need to test negative before they're ready to go home, but you can come meet them now!  To learn how to welcome them into your family, email tarrytown.dog@austinpetsalive.org.",
             "date": "2026-09-16 13:30:35.515735"
           }
         ],
@@ -7637,7 +7671,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 30,
+      "age": 31,
       "animalDoB": "2024-03-28",
       "color": "Grey",
       "status": "Healthy in Home",
@@ -7934,6 +7968,46 @@
       "austin": null
     },
     {
+      "id": "214863159",
+      "aid": "1319",
+      "name": "Cotton Candy",
+      "species": "Cat",
+      "breed": "Domestic Medium Hair",
+      "sex": "Female",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Black/White",
+      "status": "Available (Foster)",
+      "sizeGroup": "",
+      "weight": 2.0,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "outcome",
+            "type": "Outcome.Foster",
+            "subtype": ""
+          },
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "212874618",
       "aid": "479",
       "name": "Crackle",
@@ -8038,7 +8112,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/5b8eb0e8730bbf53372d7df9e985085f/0d6c7ce594ee9d2aa13079a6f90322b6.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/55421b9f385244a3534e01054cd15465/e117c1123c939ba915bace85443816a0.jpeg",
       "nc": {
         "memos": [
           {
@@ -8091,7 +8165,7 @@
         "altered": true,
         "arrivalDate": "2026-07-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/5b8eb0e8730bbf53372d7df9e985085f/0d6c7ce594ee9d2aa13079a6f90322b6.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/55421b9f385244a3534e01054cd15465/e117c1123c939ba915bace85443816a0.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -9606,7 +9680,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 5,
+      "age": 6,
       "animalDoB": "2026-04-28",
       "color": "Orange",
       "status": "Healthy in Home",
@@ -10030,7 +10104,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 14,
+      "age": 15,
       "animalDoB": "2025-07-28",
       "color": "Black",
       "status": "Healthy in Home",
@@ -11138,15 +11212,15 @@
           },
           {
             "date": "2026-10-22",
-            "event": "intake",
-            "type": "Intake.FosterReturn",
-            "subtype": ""
-          },
-          {
-            "date": "2026-10-22",
             "event": "outcome",
             "type": "Outcome.Adoption",
             "subtype": "Cats - NCSPAC"
+          },
+          {
+            "date": "2026-10-22",
+            "event": "intake",
+            "type": "Intake.FosterReturn",
+            "subtype": ""
           }
         ]
       },
@@ -11428,7 +11502,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 12,
+      "age": 13,
       "animalDoB": "2025-09-28",
       "color": "Orange/White",
       "status": "Healthy in Home",
@@ -11499,7 +11573,7 @@
       "species": "Dog",
       "breed": "Pyrenees, Great",
       "sex": "Female",
-      "age": 7,
+      "age": 8,
       "animalDoB": "2026-02-28",
       "color": "Tan/White",
       "status": "Healthy in Home",
@@ -11582,7 +11656,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/9ae4d92bcda2f9fcaaf12e9b02ba11bb/4fbefd98823b7aadfc75fd56faeaa1eb.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/cf66a108272a6dd37354232dd98c9348/c6715ace57fc649156419cf39029b956.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -11612,7 +11686,7 @@
         "altered": false,
         "arrivalDate": "2026-09-02",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/9ae4d92bcda2f9fcaaf12e9b02ba11bb/4fbefd98823b7aadfc75fd56faeaa1eb.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/cf66a108272a6dd37354232dd98c9348/c6715ace57fc649156419cf39029b956.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -12321,13 +12395,13 @@
             "date": "2026-09-07 13:30:12.091777"
           },
           {
-            "label": "History",
-            "text": "Parvo+",
+            "label": "Prior Shelter/Rescue Notes",
+            "text": "Owner Surrender, The owner is unable to afford their care and is surrendering them to the shelter. They are very friendly and playful. They get along well with both male and female dogs. They previously lived indoors and are house-trained.",
             "date": "2026-09-07 13:30:12.091777"
           },
           {
-            "label": "Prior Shelter/Rescue Notes",
-            "text": "Owner Surrender, The owner is unable to afford their care and is surrendering them to the shelter. They are very friendly and playful. They get along well with both male and female dogs. They previously lived indoors and are house-trained.",
+            "label": "History",
+            "text": "Parvo+",
             "date": "2026-09-07 13:30:12.091777"
           },
           {
@@ -12803,7 +12877,7 @@
       "species": "Dog",
       "breed": "Chihuahua/Mixed Breed (Small)",
       "sex": "Female",
-      "age": 22,
+      "age": 23,
       "animalDoB": "2024-11-28",
       "color": "Cream/White",
       "status": "Healthy in Home",
@@ -13312,7 +13386,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/31064180ecb5eadf9425c69260a302bd/7cb25e9aec332d84879d764152e1699b.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/124c41ab9cd9d2a0ab7e3712c4e18faf/d301ea14742a4fcd935d6964771ad4e0.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -13342,7 +13416,7 @@
         "altered": true,
         "arrivalDate": "2026-07-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/31064180ecb5eadf9425c69260a302bd/7cb25e9aec332d84879d764152e1699b.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/124c41ab9cd9d2a0ab7e3712c4e18faf/d301ea14742a4fcd935d6964771ad4e0.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -13520,7 +13594,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/60a481fbb950b78010d7ddf6d1102067/2c2b075f0566cb908838fe7c5a7f1226.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/b0aa3246f27c712d9a1250dd32aa3cd1/f3b67c2e0132576d89806f8b54918c99.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -13613,7 +13687,7 @@
         "altered": false,
         "arrivalDate": "2025-12-01",
         "websiteMemo": "This handsome young man is guaranteed to steal your heart the moment you look into his beautiful blue eyes. Gumball is full of energy and love, and he truly shines when he gets one-on-one time with his special person. He enjoys playing with his toys and romping with his siblings, then happily soaking up affection when it\u2019s time to slow down.\n\nIf you\u2019re looking for a loyal, loving companion with a playful spirit and a heart ready to bond, Gumball would love to be your soulmate. Come meet him and fall in love! \ud83d\udc3e\ud83d\udc99",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/60a481fbb950b78010d7ddf6d1102067/2c2b075f0566cb908838fe7c5a7f1226.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/b0aa3246f27c712d9a1250dd32aa3cd1/f3b67c2e0132576d89806f8b54918c99.jpeg",
         "memos": [
           {
             "label": "Disclaimer",
@@ -13787,6 +13861,46 @@
           "D2A"
         ],
         "history": []
+      },
+      "austin": null
+    },
+    {
+      "id": "214863118",
+      "aid": "1318",
+      "name": "Hal O. Ween",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Black",
+      "status": "Available (Foster)",
+      "sizeGroup": "",
+      "weight": 2.7,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "outcome",
+            "type": "Outcome.Foster",
+            "subtype": ""
+          },
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
       },
       "austin": null
     },
@@ -14156,7 +14270,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/1bd440bb5e001b486ae1a409b138b5b1/3018ffd25906f89b3c472ea5749a1508.jpg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/60329f90f6566f51936b89454cf20770/0f2dd7da4d0216854c2533591c02b436.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -14182,7 +14296,7 @@
         "altered": false,
         "arrivalDate": "2026-10-20",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/1bd440bb5e001b486ae1a409b138b5b1/3018ffd25906f89b3c472ea5749a1508.jpg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/60329f90f6566f51936b89454cf20770/0f2dd7da4d0216854c2533591c02b436.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -14208,7 +14322,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 24,
+      "age": 25,
       "animalDoB": "2024-09-28",
       "color": "Black/Orange",
       "status": "Healthy in Home",
@@ -14301,7 +14415,7 @@
       "species": "Cat",
       "breed": "Domestic Medium Hair",
       "sex": "Female",
-      "age": 18,
+      "age": 19,
       "animalDoB": "2025-03-28",
       "color": "Brown",
       "status": "Healthy in Home",
@@ -14339,7 +14453,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 48,
+      "age": 49,
       "animalDoB": "2022-09-28",
       "color": "Orange",
       "status": "Healthy in Home",
@@ -14377,7 +14491,7 @@
       "species": "Cat",
       "breed": "Domestic Medium Hair",
       "sex": "Male",
-      "age": 18,
+      "age": 19,
       "animalDoB": "2025-03-28",
       "color": "Brown",
       "status": "Healthy in Home",
@@ -15027,6 +15141,46 @@
             "event": "outcome",
             "type": "Outcome.Adoption",
             "subtype": "Cats - NCSPAC"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
+      "id": "214863046",
+      "aid": "1316",
+      "name": "Ivy",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Female",
+      "age": 3,
+      "animalDoB": "2026-07-11",
+      "color": "Brown",
+      "status": "Available (Foster)",
+      "sizeGroup": "",
+      "weight": 3.9,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "outcome",
+            "type": "Outcome.Foster",
+            "subtype": ""
+          },
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
           }
         ]
       },
@@ -16713,7 +16867,7 @@
         "color": "Tan/White",
         "altered": false,
         "arrivalDate": "2026-10-23",
-        "websiteMemo": "Hi there! My name is Koda, and I\u2019m a 10-month-old Husky/Shepherd mix with a big love for toys! I can be a little shy when meeting new people, so I appreciate a little patience and gentle encouragement as I get to know you. Once I start feeling comfortable, my love for play really shines!\n\nI\u2019m still learning how to walk on a leash, so I\u2019ll need a family who can help me build confidence and practice as I grow. With time, consistency, and lots of positive reinforcement, I\u2019m excited to keep learning and discovering the world around me. At my age, I have so much potential and plenty of adventures ahead!\n\nIf you\u2019re looking for a sweet young pup who loves toys and is ready to learn, I could be the perfect addition to your family. I can\u2019t wait to find someone who will help me come out of my shell and show me just how wonderful life can be!\n\nIf you\u2019re interested in adopting or fostering me, you can call 704-266-3647 or email NCteam@austinpetsalive.org to learn more.",
+        "websiteMemo": "Hi there! My name is George, and I\u2019m a Husky/Shepherd mix with a big love for toys! I can be a little shy when meeting new people, so I appreciate a little patience and gentle encouragement as I get to know you. Once I start feeling comfortable, my love for play really shines!\n\nI\u2019m still learning how to walk on a leash, so I\u2019ll need a family who can help me build confidence and practice as I grow. With time, consistency, and lots of positive reinforcement, I\u2019m excited to keep learning and discovering the world around me. At my age, I have so much potential and plenty of adventures ahead!\n\nIf you\u2019re looking for a sweet young pup who loves toys and is ready to learn, I could be the perfect addition to your family. I can\u2019t wait to find someone who will help me come out of my shell and show me just how wonderful life can be!",
         "photo": "https://new-s3.shelterluv.com/profile-pictures/21ca2f2051466dbc71e23fa93525da77/37bb27b523c2d6f28a637fcf5b4b27f1.jpeg",
         "memos": [
           {
@@ -16727,8 +16881,8 @@
             "date": "2026-10-23 13:30:22.237418"
           },
           {
-            "label": "Behavioral",
-            "text": "Staff are now able to walk him without an additional staff member present. He is a big chewer and does well with a benebone or other hard chew toy. He will chew up and ingest soft toys",
+            "label": "Disclaimer",
+            "text": "This Addendum supplements your Adoption Contract with Austin Pets Alive! and outlines your obligations regarding the spay/neuter of your adopted pet.\n\n1. Veterinary Care and Spay/Neuter Requirement\nI understand and agree to the following:\n(a) If my puppy has been released to me before being spayed or neutered, I agree to have the surgery completed within 90 days of the adoption date\n(b) I will follow veterinary guidelines to ensure my pet is fully vaccinated and protected from common diseases.\n(c) I understand that I am responsible for managing, training, and socializing my pet to develop appropriate behavior.\n\n2. Spay/Neuter Scheduling Options\nWithin two weeks of adoption, Shelter Pet Adoption Center staff will contact me by phone or email to schedule a spay/neuter appointment with one of Austin Pets Alive!\u2019s veterinary partners.\n(a) If I choose this option, Austin Pets Alive! will cover the cost of the surgery and required medications directly related to that procedure.\n(b) I understand that any additional services (vaccinations, elective procedures, or other treatments) will be my financial responsibility.\n(c) Post-surgery complications due to non-compliance as decided by Austin Pets Alive! will be my responsibility\n\n3. Using a Private Veterinarian\nI may choose to schedule the surgery with my own licensed veterinarian. In that case, I am responsible for all related costs. Proof of spay/neuter (such as a veterinary invoice or certificate) must be submitted to NCteam@austinpetsalive.org within 90 days of adoption.\n\n4. Compliance\nFailure to provide proof of spay/neuter within 90 days may result in follow-up contact from Austin Pets Alive! and may be considered a breach of the adoption contract.\n\nA Friendly Note: You are not required to use your own vet, but doing so helps stretch our limited nonprofit resources and allows us to save more pets in need. Every time an adopter covers this cost, it helps us reach another animal waiting for help.\n\nAdopter Acknowledgment\nBy signing the adoption contract, I acknowledge that I have read, understand, and agree to the terms of this Spay/Neuter Addendum.",
             "date": "2026-10-23 13:30:22.237418"
           },
           {
@@ -16737,19 +16891,14 @@
             "date": "2026-10-23 13:30:22.237418"
           },
           {
-            "label": "Disclaimer",
-            "text": "This Addendum supplements your Adoption Contract with Austin Pets Alive! and outlines your obligations regarding the spay/neuter of your adopted pet.\n\n1. Veterinary Care and Spay/Neuter Requirement\nI understand and agree to the following:\n(a) If my puppy has been released to me before being spayed or neutered, I agree to have the surgery completed within 90 days of the adoption date\n(b) I will follow veterinary guidelines to ensure my pet is fully vaccinated and protected from common diseases.\n(c) I understand that I am responsible for managing, training, and socializing my pet to develop appropriate behavior.\n\n2. Spay/Neuter Scheduling Options\nWithin two weeks of adoption, Shelter Pet Adoption Center staff will contact me by phone or email to schedule a spay/neuter appointment with one of Austin Pets Alive!\u2019s veterinary partners.\n(a) If I choose this option, Austin Pets Alive! will cover the cost of the surgery and required medications directly related to that procedure.\n(b) I understand that any additional services (vaccinations, elective procedures, or other treatments) will be my financial responsibility.\n(c) Post-surgery complications due to non-compliance as decided by Austin Pets Alive! will be my responsibility\n\n3. Using a Private Veterinarian\nI may choose to schedule the surgery with my own licensed veterinarian. In that case, I am responsible for all related costs. Proof of spay/neuter (such as a veterinary invoice or certificate) must be submitted to NCteam@austinpetsalive.org within 90 days of adoption.\n\n4. Compliance\nFailure to provide proof of spay/neuter within 90 days may result in follow-up contact from Austin Pets Alive! and may be considered a breach of the adoption contract.\n\nA Friendly Note: You are not required to use your own vet, but doing so helps stretch our limited nonprofit resources and allows us to save more pets in need. Every time an adopter covers this cost, it helps us reach another animal waiting for help.\n\nAdopter Acknowledgment\nBy signing the adoption contract, I acknowledge that I have read, understand, and agree to the terms of this Spay/Neuter Addendum.",
+            "label": "Behavioral",
+            "text": "Staff are now able to walk him without an additional staff member present. He is a big chewer and does well with a benebone or other hard chew toy. He will chew up and ingest soft toys",
             "date": "2026-10-23 13:30:22.237418"
           },
           {
             "label": "Return",
             "text": "From owner who returned him-\"I would be happy to help. Yeah since in my home he only came to me. I worked with him to walk on a leash and he was still hesitant and nervous. If he ever saw another person not in my home he was anxious. He is also afraid of coming up the stairs. I tried positive reinforcement. I would use treats and praise when he took a step up. I have my service dog. He is 4 and he is a golden retriever. They were best friends until about 3 months ago. They were all here before Koda. I also have 2 older Poms. He would always go my younger Pom. So Gizmo would hide. My oldest Teddy is 10yrs old and she let him know hey don\u2019t mess with me. So he left her alone after a couple weeks of times Teddy nipped at him. Shes a grouchy old lady. Now with my service dog. I would let them out together and get them each equal things. I know that doesn\u2019t make a difference with some dogs. They are like little kids always wanting what the other has. Lol I am not sure what started the fight\u2026but I see Koda and Obi fully biting at each other. Idk why there were no toys or treats out at the time. My husband had to pull them apart a couple times. We were hoping to have it sorted out because Koda was starting to respond better with me. They both slept in their kennels at night. Fed at the same time and same room. He loves playing with his toys and he loves his treats and getting lots of pets. I would invite him up on the couch  and give him belly rubs. He was skittish around people he didn\u2019t see every day. He was a bit afraid of my sister in laws cat\u2026but she can be a witch sometimes. She was also adopted from Petco. I hate that I had to give him back. He is such a sweet dog. Scared and anxious\u2026but he is by no means a bad dog. I think he needs a family who can give him more one on one attention than I could. He was always anxious or scared. He loves playing fetch when his brain slows down enough to say oh that\u2019s what we are playing. He picks up on things pretty quick. It took me 30mins to get him to sit stay and wait until his food was ready and his water was poured. Then I would release him by saying ok and same thing when I let him out of his kennel. I would ask him to sit and wait before I opened the door.\" They refused to get him neutered despite lots of follow up from our team. The owner said he was going after her resident dogs and that's pretty much all the information I could get. She refused to talk on the phone. He never received vet care after adoption. She said he was good with dogs at the dog park but not in her home. He pancakes on leash and I finally had to carry him to a kennel last night and he expressed his anal glands everywhere he was so scared. Vol. Katherine and her husband sat with him for an hour on 10/16, 10/17, and may come 10/18 and it took a minute for him to warm up, but eventually they got him playing with his ball, giving kisses, and eating treats. ",
             "date": "2026-10-23 13:30:22.237418"
-          },
-          {
-            "label": "Custom",
-            "text": "Put on trazodone and gabapentin. Noticed potential gait abnormality in back legs. Please note weight is an estimate as we were not able to get him on a scale.",
-            "date": "2026-10-26 13:30:15.200192"
           },
           {
             "label": "Medical",
@@ -16759,37 +16908,7 @@
           {
             "label": "Custom",
             "text": "Put on trazodone and gabapentin. Noticed potential gait abnormality in back legs. Please note weight is an estimate as we were not able to get him on a scale.",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Disclaimer",
-            "text": "This Addendum supplements your Adoption Contract with Austin Pets Alive! and outlines your obligations regarding the spay/neuter of your adopted pet.\n\n1. Veterinary Care and Spay/Neuter Requirement\nI understand and agree to the following:\n(a) If my puppy has been released to me before being spayed or neutered, I agree to have the surgery completed within 90 days of the adoption date\n(b) I will follow veterinary guidelines to ensure my pet is fully vaccinated and protected from common diseases.\n(c) I understand that I am responsible for managing, training, and socializing my pet to develop appropriate behavior.\n\n2. Spay/Neuter Scheduling Options\nWithin two weeks of adoption, Shelter Pet Adoption Center staff will contact me by phone or email to schedule a spay/neuter appointment with one of Austin Pets Alive!\u2019s veterinary partners.\n(a) If I choose this option, Austin Pets Alive! will cover the cost of the surgery and required medications directly related to that procedure.\n(b) I understand that any additional services (vaccinations, elective procedures, or other treatments) will be my financial responsibility.\n(c) Post-surgery complications due to non-compliance as decided by Austin Pets Alive! will be my responsibility\n\n3. Using a Private Veterinarian\nI may choose to schedule the surgery with my own licensed veterinarian. In that case, I am responsible for all related costs. Proof of spay/neuter (such as a veterinary invoice or certificate) must be submitted to NCteam@austinpetsalive.org within 90 days of adoption.\n\n4. Compliance\nFailure to provide proof of spay/neuter within 90 days may result in follow-up contact from Austin Pets Alive! and may be considered a breach of the adoption contract.\n\nA Friendly Note: You are not required to use your own vet, but doing so helps stretch our limited nonprofit resources and allows us to save more pets in need. Every time an adopter covers this cost, it helps us reach another animal waiting for help.\n\nAdopter Acknowledgment\nBy signing the adoption contract, I acknowledge that I have read, understand, and agree to the terms of this Spay/Neuter Addendum.",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Kennel Card / Website Memo",
-            "text": "Hi there! My name is Koda, and I\u2019m a 10-month-old Husky/Shepherd mix with a big love for toys! I can be a little shy when meeting new people, so I appreciate a little patience and gentle encouragement as I get to know you. Once I start feeling comfortable, my love for play really shines!\n\nI\u2019m still learning how to walk on a leash, so I\u2019ll need a family who can help me build confidence and practice as I grow. With time, consistency, and lots of positive reinforcement, I\u2019m excited to keep learning and discovering the world around me. At my age, I have so much potential and plenty of adventures ahead!\n\nIf you\u2019re looking for a sweet young pup who loves toys and is ready to learn, I could be the perfect addition to your family. I can\u2019t wait to find someone who will help me come out of my shell and show me just how wonderful life can be!\n\nIf you\u2019re interested in adopting or fostering me, you can call 704-266-3647 or email NCteam@austinpetsalive.org to learn more.",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Behavioral",
-            "text": "Staff are now able to walk him without an additional staff member present. He is a big chewer and does well with a benebone or other hard chew toy. He will chew up and ingest soft toys",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Medical",
-            "text": " I talked to Jordana and she said since he's kept the food down for a while now he doesn't seem to be in any kind of distress that we can monitor him for today. For 24 hours we need to feed like three small portions of food rather than one or two large portions. If he starts getting sick again then we would need to take him. But if there's no vomit within 24 hours then he should be okay to go back to regular feedings. I guess we just kind of need to monitor his output and just making sure nothing else is coming out. \n",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Feeding Amount and Plan",
-            "text": "1/2 cup Purina Healthy Puppy Formula 3x daily",
-            "date": "2026-10-27 13:30:12.445798"
-          },
-          {
-            "label": "Return",
-            "text": "From owner who returned him-\"I would be happy to help. Yeah since in my home he only came to me. I worked with him to walk on a leash and he was still hesitant and nervous. If he ever saw another person not in my home he was anxious. He is also afraid of coming up the stairs. I tried positive reinforcement. I would use treats and praise when he took a step up. I have my service dog. He is 4 and he is a golden retriever. They were best friends until about 3 months ago. They were all here before Koda. I also have 2 older Poms. He would always go my younger Pom. So Gizmo would hide. My oldest Teddy is 10yrs old and she let him know hey don\u2019t mess with me. So he left her alone after a couple weeks of times Teddy nipped at him. Shes a grouchy old lady. Now with my service dog. I would let them out together and get them each equal things. I know that doesn\u2019t make a difference with some dogs. They are like little kids always wanting what the other has. Lol I am not sure what started the fight\u2026but I see Koda and Obi fully biting at each other. Idk why there were no toys or treats out at the time. My husband had to pull them apart a couple times. We were hoping to have it sorted out because Koda was starting to respond better with me. They both slept in their kennels at night. Fed at the same time and same room. He loves playing with his toys and he loves his treats and getting lots of pets. I would invite him up on the couch  and give him belly rubs. He was skittish around people he didn\u2019t see every day. He was a bit afraid of my sister in laws cat\u2026but she can be a witch sometimes. She was also adopted from Petco. I hate that I had to give him back. He is such a sweet dog. Scared and anxious\u2026but he is by no means a bad dog. I think he needs a family who can give him more one on one attention than I could. He was always anxious or scared. He loves playing fetch when his brain slows down enough to say oh that\u2019s what we are playing. He picks up on things pretty quick. It took me 30mins to get him to sit stay and wait until his food was ready and his water was poured. Then I would release him by saying ok and same thing when I let him out of his kennel. I would ask him to sit and wait before I opened the door.\" They refused to get him neutered despite lots of follow up from our team. The owner said he was going after her resident dogs and that's pretty much all the information I could get. She refused to talk on the phone. He never received vet care after adoption. She said he was good with dogs at the dog park but not in her home. He pancakes on leash and I finally had to carry him to a kennel last night and he expressed his anal glands everywhere he was so scared. Vol. Katherine and her husband sat with him for an hour on 10/16, 10/17, and may come 10/18 and it took a minute for him to warm up, but eventually they got him playing with his ball, giving kisses, and eating treats. ",
-            "date": "2026-10-27 13:30:12.445798"
+            "date": "2026-10-26 13:30:15.200192"
           }
         ],
         "attributes": [],
@@ -16931,13 +17050,53 @@
       }
     },
     {
+      "id": "214863271",
+      "aid": "1321",
+      "name": "Laffy Taffy",
+      "species": "Cat",
+      "breed": "Domestic Medium Hair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Black",
+      "status": "Available (Foster)",
+      "sizeGroup": "",
+      "weight": 1.7,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "outcome",
+            "type": "Outcome.Foster",
+            "subtype": ""
+          },
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "213638042",
       "aid": "910",
       "name": "Laney",
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 29,
+      "age": 30,
       "animalDoB": "2024-04-28",
       "color": "Black",
       "status": "Healthy in Home",
@@ -17132,6 +17291,11 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/8a5b8b2145ed3fe34fae7c7420fa6aeb/e5577237dffaaa609800cc700c2034ee.jpeg",
         "memos": [
           {
+            "label": "Outcome",
+            "text": "Parvo+",
+            "date": "2026-09-03 13:30:10.808601"
+          },
+          {
             "label": "Intake",
             "text": "Owner Surrender, The owner is unable to afford their care and is surrendering them to the shelter. They are very friendly and playful. They get along well with both male and female dogs. They previously lived indoors and are house-trained.",
             "date": "2026-09-03 13:30:10.808601"
@@ -17142,18 +17306,13 @@
             "date": "2026-09-03 13:30:10.808601"
           },
           {
-            "label": "Outcome",
+            "label": "History",
             "text": "Parvo+",
-            "date": "2026-09-03 13:30:10.808601"
+            "date": "2026-09-07 13:30:12.091777"
           },
           {
             "label": "Pop-up",
             "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters(no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 9/8. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. 1st Adopter: (Name)(Phone)(Email)  1st Back-up Adopter: (Name)(Phone)(Email)",
-            "date": "2026-09-07 13:30:12.091777"
-          },
-          {
-            "label": "History",
-            "text": "Parvo+",
             "date": "2026-09-07 13:30:12.091777"
           },
           {
@@ -17755,7 +17914,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 19,
+      "age": 20,
       "animalDoB": "2025-02-28",
       "color": "Brown",
       "status": "Healthy in Home",
@@ -17821,7 +17980,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 7,
+      "age": 8,
       "animalDoB": "2026-02-28",
       "color": "Lynx",
       "status": "Healthy in Home",
@@ -18810,13 +18969,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/ec8c1c040a1e34ce9352536f37d23410/d733063e41873b9136c3fa8dbc7c0e0c.jpg",
         "memos": [
           {
-            "label": "Intake",
-            "text": "Owner Surrender",
+            "label": "Outcome",
+            "text": "Elgin Hub",
             "date": "2026-07-23 13:30:09.497240"
           },
           {
-            "label": "Outcome",
-            "text": "Elgin Hub",
+            "label": "Intake",
+            "text": "Owner Surrender",
             "date": "2026-07-23 13:30:09.497240"
           }
         ],
@@ -20351,11 +20510,6 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/ae9b78bae874046cf3cc446336d30f7e/14332314c0a95b0c5dfbd6bbd7111c43.jpg",
         "memos": [
           {
-            "label": "Outcome",
-            "text": "Elgin Hub",
-            "date": "2026-05-27 13:30:11.084957"
-          },
-          {
             "label": "Intake",
             "text": "Foster found kitten, had for longer than 72 hrs",
             "date": "2026-05-27 13:30:11.084957"
@@ -20363,6 +20517,11 @@
           {
             "label": "Partner Attributes",
             "text": "Attributes from Bastrop County Animal Services: In Foster Care Not at the Shelter",
+            "date": "2026-05-27 13:30:11.084957"
+          },
+          {
+            "label": "Outcome",
+            "text": "Elgin Hub",
             "date": "2026-05-27 13:30:11.084957"
           }
         ],
@@ -20767,7 +20926,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/ba6751a085fbf9f371f868fae69e0982/fd543b6a14f0428d9679fb21f0d84779.jpg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/fc8c6453bbff8eb76c67f38c7b1c2b0a/ed9ca6fe362bd960543352415f77f337.jpg",
       "nc": {
         "memos": [
           {
@@ -20853,7 +21012,7 @@
         "altered": false,
         "arrivalDate": "2026-06-20",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/ba6751a085fbf9f371f868fae69e0982/fd543b6a14f0428d9679fb21f0d84779.jpg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/fc8c6453bbff8eb76c67f38c7b1c2b0a/ed9ca6fe362bd960543352415f77f337.jpg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -20993,7 +21152,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 28,
+      "age": 29,
       "animalDoB": "2024-05-28",
       "color": "Orange",
       "status": "Healthy in Home",
@@ -22049,11 +22208,6 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/edad2ae1fac3b7045a3e9c96045d474b/dacce8da353c3ff6f59ec0cff02c18fc.jpeg",
         "memos": [
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "Meet this sweet, playful kitten who&#039;s full of curiosity, cuddles, and kitten-sized zoomies! Like all kittens, they will need a little time to adjust to a new home before their personality truly shines. For their health and safety, this kitten is looking for a loving indoor-only home. \ud83d\udc3e\ud83d\udc95",
-            "date": "2026-08-06 13:30:11.562587"
-          },
-          {
             "label": "Outcome",
             "text": ".",
             "date": "2026-08-06 13:30:11.562587"
@@ -22066,6 +22220,11 @@
           {
             "label": "Partner Attributes",
             "text": "Attributes from Bastrop County Animal Services: Located at Petsmart Habitat (not at shelter), Inside only",
+            "date": "2026-08-06 13:30:11.562587"
+          },
+          {
+            "label": "Kennel Card / Website Memo",
+            "text": "Meet this sweet, playful kitten who&#039;s full of curiosity, cuddles, and kitten-sized zoomies! Like all kittens, they will need a little time to adjust to a new home before their personality truly shines. For their health and safety, this kitten is looking for a loving indoor-only home. \ud83d\udc3e\ud83d\udc95",
             "date": "2026-08-06 13:30:11.562587"
           }
         ],
@@ -22093,7 +22252,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 55,
+      "age": 56,
       "animalDoB": "2022-02-28",
       "color": "Calico",
       "status": "Healthy in Home",
@@ -22444,13 +22603,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/ae4689f9d55c580a1335fdaee9e0532a/492e9729a6f3119f8ea3969919383b0a.jpg",
         "memos": [
           {
-            "label": "Intake",
-            "text": "Found as a stray",
+            "label": "Outcome",
+            "text": "Elgin Hub",
             "date": "2026-07-23 13:30:09.497240"
           },
           {
-            "label": "Outcome",
-            "text": "Elgin Hub",
+            "label": "Intake",
+            "text": "Found as a stray",
             "date": "2026-07-23 13:30:09.497240"
           }
         ],
@@ -22606,10 +22765,10 @@
       "nc": {
         "memos": [],
         "attributes": [
-          "Spay/Neuter Still Needed",
           "Good with Kids",
           "Good with Cats",
-          "Good with Dogs"
+          "Good with Dogs",
+          "Spay/Neuter Scheduled"
         ],
         "history": [
           {
@@ -23972,7 +24131,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/33049b47b389647fbcf69d6ab0d6f618/bf7709eea17e723666f950709c6bb4aa.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/a8c15000a2e301bbd28b81a043b153fe/d35979e8ddd4ac906da388bf26b1e1b0.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -24004,7 +24163,7 @@
         "altered": false,
         "arrivalDate": "2026-10-20",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/33049b47b389647fbcf69d6ab0d6f618/bf7709eea17e723666f950709c6bb4aa.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/a8c15000a2e301bbd28b81a043b153fe/d35979e8ddd4ac906da388bf26b1e1b0.jpeg",
         "memos": [
           {
             "label": "Next Steps",
@@ -24127,7 +24286,7 @@
       "species": "Dog",
       "breed": "Beagle/Mixed Breed (Medium)",
       "sex": "Female",
-      "age": 45,
+      "age": 46,
       "animalDoB": "2022-12-28",
       "color": "Tan/White",
       "status": "Healthy in Home",
@@ -24528,15 +24687,15 @@
         "history": [
           {
             "date": "2026-10-22",
-            "event": "intake",
-            "type": "Intake.Transfer",
-            "subtype": "HNCSPAC - Space"
-          },
-          {
-            "date": "2026-10-22",
             "event": "outcome",
             "type": "Outcome.Adoption",
             "subtype": "Cats - NCSPAC"
+          },
+          {
+            "date": "2026-10-22",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
           }
         ]
       },
@@ -24704,7 +24863,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/4ebbeb0a8ec3786e20e9d11e513f5e47/123b8d76780a861ed938e2ebe5046c51.jpg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/35a0825fb61036124af5172dfad09178/0c4ded4e868777fa049c9a68e801784c.jpg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -24734,11 +24893,11 @@
         "altered": true,
         "arrivalDate": "2026-08-21",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/4ebbeb0a8ec3786e20e9d11e513f5e47/123b8d76780a861ed938e2ebe5046c51.jpg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/35a0825fb61036124af5172dfad09178/0c4ded4e868777fa049c9a68e801784c.jpg",
         "memos": [
           {
-            "label": "Medical",
-            "text": "Dog administered Effitix through nasal cavity. Cavity was flushed and dog is being observed. Capstar was scheduled per Jill&#039;s request 3 days out.",
+            "label": "Pop-up",
+            "text": "Headed out of state via APA Elgin Hub. Ana will transport 8/21. ETA TBD. -WB 8/20",
             "date": "2026-08-22 13:30:08.809461"
           },
           {
@@ -24747,8 +24906,8 @@
             "date": "2026-08-22 13:30:08.809461"
           },
           {
-            "label": "Pop-up",
-            "text": "Headed out of state via APA Elgin Hub. Ana will transport 8/21. ETA TBD. -WB 8/20",
+            "label": "Medical",
+            "text": "Dog administered Effitix through nasal cavity. Cavity was flushed and dog is being observed. Capstar was scheduled per Jill&#039;s request 3 days out.",
             "date": "2026-08-22 13:30:08.809461"
           },
           {
@@ -24935,7 +25094,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/330dcf7a6cf8a56bdb9d49c62f09d912/fe0333f8a27cf29339c07060801d369b.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/3f078099d167c6dc26a2b7ef411a9eaf/5dc1c1b2428cc68dc3843831ee25aa04.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -24989,16 +25148,16 @@
         "altered": false,
         "arrivalDate": "2026-01-26",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/330dcf7a6cf8a56bdb9d49c62f09d912/fe0333f8a27cf29339c07060801d369b.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/3f078099d167c6dc26a2b7ef411a9eaf/5dc1c1b2428cc68dc3843831ee25aa04.jpeg",
         "memos": [
-          {
-            "label": "Pop-up",
-            "text": "spay sx 4/27/26",
-            "date": "2026-01-28 14:30:11.015608"
-          },
           {
             "label": "Behavioral",
             "text": "1/27/26-Easy puppy intake, no D shown",
+            "date": "2026-01-28 14:30:11.015608"
+          },
+          {
+            "label": "Pop-up",
+            "text": "spay sx 4/27/26",
             "date": "2026-01-28 14:30:11.015608"
           },
           {
@@ -25165,13 +25324,47 @@
       }
     },
     {
+      "id": "214863221",
+      "aid": "1320",
+      "name": "Pluto",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Black",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 3.2,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "213168145",
       "aid": "820",
       "name": "Poe",
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 19,
+      "age": 20,
       "animalDoB": "2025-02-28",
       "color": "Black",
       "status": "Healthy in Home",
@@ -25297,7 +25490,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/7d57538e5b367c73a6f3162a93a64b11/97e5253427fcdac7d5c1d9f67e880402.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/b462ca50a196ac877cd42eef05558b88/2d1771395c9154cb0885d4bc2404ea80.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -25330,7 +25523,7 @@
         "altered": true,
         "arrivalDate": "2026-03-10",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/7d57538e5b367c73a6f3162a93a64b11/97e5253427fcdac7d5c1d9f67e880402.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/b462ca50a196ac877cd42eef05558b88/2d1771395c9154cb0885d4bc2404ea80.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -26300,7 +26493,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 65,
+      "age": 66,
       "animalDoB": "2021-04-28",
       "color": "Black",
       "status": "Healthy in Home",
@@ -26310,7 +26503,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/7d5adcdb6b226f93ab159bd09507992e/97c0720e16543083c6b8e238aca80a07.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/854ddae4ecc599404abf99f22e5a3035/74f3a1cb31406d5bb607d5d4c7082f7a.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -26352,7 +26545,7 @@
         "altered": true,
         "arrivalDate": "2026-05-21",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/7d5adcdb6b226f93ab159bd09507992e/97c0720e16543083c6b8e238aca80a07.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/854ddae4ecc599404abf99f22e5a3035/74f3a1cb31406d5bb607d5d4c7082f7a.jpeg",
         "memos": [
           {
             "label": "Partner Attributes",
@@ -27126,8 +27319,8 @@
             "date": "2026-01-30 14:30:10.677010"
           },
           {
-            "label": "Sleepover notes ",
-            "text": "s/o with Krish Chaudhari cold push until 2/5",
+            "label": "Dog Foster Support",
+            "text": "sent Foster Detail email to Fernanda 2/1 SM",
             "date": "2026-02-02 14:30:10.304643"
           },
           {
@@ -27136,8 +27329,8 @@
             "date": "2026-02-02 14:30:10.304643"
           },
           {
-            "label": "Dog Foster Support",
-            "text": "sent Foster Detail email to Fernanda 2/1 SM",
+            "label": "Sleepover notes ",
+            "text": "s/o with Krish Chaudhari cold push until 2/5",
             "date": "2026-02-02 14:30:10.304643"
           }
         ],
@@ -27255,7 +27448,7 @@
       "species": "Dog",
       "breed": "Retriever, Labrador/Mixed Breed (Medium)",
       "sex": "Female",
-      "age": 8,
+      "age": 9,
       "animalDoB": "2026-01-27",
       "color": "Brown",
       "status": "Healthy in Home",
@@ -27265,7 +27458,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/79a59f4ba25e8acc42a4ec6ba622cdce/836fa6f31245313d06c7abbd553c9999.jpg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/4ed7bf8935d42aec0c9502d3278cbc89/9b361c6597fdca4eec2c35caf132d0f6.jpg",
       "nc": {
         "memos": [
           {
@@ -27320,16 +27513,16 @@
         "altered": false,
         "arrivalDate": "2026-05-10",
         "websiteMemo": "Rosie has survived parvovirus and is ready for a home!",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/79a59f4ba25e8acc42a4ec6ba622cdce/836fa6f31245313d06c7abbd553c9999.jpg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/4ed7bf8935d42aec0c9502d3278cbc89/9b361c6597fdca4eec2c35caf132d0f6.jpg",
         "memos": [
-          {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters(no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 5/16/26. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. 1st Adopter: (Name)(Phone)(Email)  1st Back-up Adopter: (Name)(Phone)(Email)",
-            "date": "2026-05-12 13:30:10.869387"
-          },
           {
             "label": "Kennel Card / Website Memo",
             "text": "This adorable pup is undergoing Parvo treatment through APA! and is expected to make a full recovery.  They are not quite out of the woods yet and will need a few more days to complete treatment before leaving the Parvo ward; but that doesn\u2019t mean they can\u2019t start getting the word out that they need an adopter lined up for when they are ready to leave!  If you are interested in learning more about me you can email tarrytown.dog@austinpetsalive.org.  Please be aware that they absolutely cannot go home until they test negative, but we will be taking 1-2 people\u2019s information to be lined up for their adoption.",
+            "date": "2026-05-12 13:30:10.869387"
+          },
+          {
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters(no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 5/16/26. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. 1st Adopter: (Name)(Phone)(Email)  1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-05-12 13:30:10.869387"
           },
           {
@@ -27567,13 +27760,13 @@
             "date": "2026-02-26 14:30:09.601300"
           },
           {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 3/3. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
+            "label": "Disclaimer",
+            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
             "date": "2026-02-26 14:30:09.601300"
           },
           {
-            "label": "Disclaimer",
-            "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 3/3. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-02-26 14:30:09.601300"
           },
           {
@@ -27582,13 +27775,13 @@
             "date": "2026-02-27 14:30:09.858707"
           },
           {
-            "label": "Behavioral",
-            "text": "3/3/26-Red Envelope, Dragon Dance, Strelka, Lantern- very scared puppies. They are backing into the corner and shaking. If you put them in the yard, I would use an xpen to let them hang out in. Sweet pups but VERY scared. ",
+            "label": "Disclaimer",
+            "text": "This animal has not been spayed/neutered yet and it is eligible for surgery at no additional cost through the APA! clinic within 90 days of adoption, unless a longer timeline is provided for by an APA! vet in any medical disclaimers.<br />\n<br />\nI agree to not breed the Animal or allow the Animal to be in a situation where the Animal may breed (e.g., left unattended outdoors or indoors with animals of the same species and opposite sex that are not spayed/neutered).<br />\nI will ensure that the Animal is spayed or neutered within 90 days of adoption, and I understand that the Spay/Neuter Deposit will be forfeited unless, within 90 days of the Animal\u2019s adoption: (1) the Animal is spayed/neutered; and (2)  satisfactory proof of the spay/neuter has been received by APA!.<br />\nI understand I may be contacted by Austin Pets Alive! about my deposit.<br />\n<br />\nI am opting to complete the spay/neuter procedure through the APA! clinic. I understand and agree that APA! does not provide elective diagnostic tests, including bloodwork, prior to treatment, or state of the art medical procedures. APA! will only provide the Animal with the spay/neuter procedure and if any other treatment or exams outside of what is provided for in my adoption contract are needed, they must be done through a private veterinarian.<br />\n<br />\nThe Animal already has a medical appointment scheduled for the spay/neuter procedure, as specified below, or I will contact APA!\u2019s medical clinic within five (5) days of adoption to schedule the spay/neuter procedure.<br />\n<br />\nDate/time of surgery appointment:<br />\nOR<br />\nDeadline to complete surgery (90 days from adoption):",
             "date": "2026-03-04 14:30:09.296082"
           },
           {
-            "label": "Disclaimer",
-            "text": "This animal has not been spayed/neutered yet and it is eligible for surgery at no additional cost through the APA! clinic within 90 days of adoption, unless a longer timeline is provided for by an APA! vet in any medical disclaimers.<br />\n<br />\nI agree to not breed the Animal or allow the Animal to be in a situation where the Animal may breed (e.g., left unattended outdoors or indoors with animals of the same species and opposite sex that are not spayed/neutered).<br />\nI will ensure that the Animal is spayed or neutered within 90 days of adoption, and I understand that the Spay/Neuter Deposit will be forfeited unless, within 90 days of the Animal\u2019s adoption: (1) the Animal is spayed/neutered; and (2)  satisfactory proof of the spay/neuter has been received by APA!.<br />\nI understand I may be contacted by Austin Pets Alive! about my deposit.<br />\n<br />\nI am opting to complete the spay/neuter procedure through the APA! clinic. I understand and agree that APA! does not provide elective diagnostic tests, including bloodwork, prior to treatment, or state of the art medical procedures. APA! will only provide the Animal with the spay/neuter procedure and if any other treatment or exams outside of what is provided for in my adoption contract are needed, they must be done through a private veterinarian.<br />\n<br />\nThe Animal already has a medical appointment scheduled for the spay/neuter procedure, as specified below, or I will contact APA!\u2019s medical clinic within five (5) days of adoption to schedule the spay/neuter procedure.<br />\n<br />\nDate/time of surgery appointment:<br />\nOR<br />\nDeadline to complete surgery (90 days from adoption):",
+            "label": "Behavioral",
+            "text": "3/3/26-Red Envelope, Dragon Dance, Strelka, Lantern- very scared puppies. They are backing into the corner and shaking. If you put them in the yard, I would use an xpen to let them hang out in. Sweet pups but VERY scared. ",
             "date": "2026-03-04 14:30:09.296082"
           },
           {
@@ -27597,13 +27790,13 @@
             "date": "2026-03-09 13:30:09.556134"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "Looking for a little luck and a lot of love? Meet Red Envelope, a stunning all-black Labrador mix puppy with a heart of gold!<br />\n<br />\nTrue to her name, this shy sweet girl is a total gift. With her soulful eyes and soft, velvet-black fur, she is as charming as he is cute. Red Envelope is a gentle soul who loves to curl up in cozy blankets and offers the best puppy snuggles you could ask for. Like any young Lab mix, she\u2019s ready to learn, play, and grow into the loyal best friend you\u2019ve been waiting for.<br />\n<br />\nRed Envelope\u2019s Wishlist:<br />\n<br />\n- A cozy spot to nap (preferably right next to you!).<br />\n- Plenty of toys and treats for a growing girl.<br />\n- A patient family ready to guide her through all her puppy milestones.<br />\n<br />\nBring some extra fortune into your home\u2014adopt Red Envelope today!",
+            "label": "Feeding Amount and Plan",
+            "text": "1/3 cup Purina Healthy Formula Puppy Dry Food 3x daily",
             "date": "2026-03-11 13:30:11.337452"
           },
           {
-            "label": "Feeding Amount and Plan",
-            "text": "1/3 cup Purina Healthy Formula Puppy Dry Food 3x daily",
+            "label": "Kennel Card / Website Memo",
+            "text": "Looking for a little luck and a lot of love? Meet Red Envelope, a stunning all-black Labrador mix puppy with a heart of gold!<br />\n<br />\nTrue to her name, this shy sweet girl is a total gift. With her soulful eyes and soft, velvet-black fur, she is as charming as he is cute. Red Envelope is a gentle soul who loves to curl up in cozy blankets and offers the best puppy snuggles you could ask for. Like any young Lab mix, she\u2019s ready to learn, play, and grow into the loyal best friend you\u2019ve been waiting for.<br />\n<br />\nRed Envelope\u2019s Wishlist:<br />\n<br />\n- A cozy spot to nap (preferably right next to you!).<br />\n- Plenty of toys and treats for a growing girl.<br />\n- A patient family ready to guide her through all her puppy milestones.<br />\n<br />\nBring some extra fortune into your home\u2014adopt Red Envelope today!",
             "date": "2026-03-11 13:30:11.337452"
           }
         ],
@@ -27720,7 +27913,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/4eb981a95d6ad3886787fb2dc49a0e69/491b18c0228ec45365fb2f6ce94f3b33.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/16c1e3a4480a6125b8ec337be12d7ca4/d1cd769dbf58bc6e3143815bbf0c30f7.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -27750,7 +27943,7 @@
         "altered": false,
         "arrivalDate": "2026-09-02",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/4eb981a95d6ad3886787fb2dc49a0e69/491b18c0228ec45365fb2f6ce94f3b33.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/16c1e3a4480a6125b8ec337be12d7ca4/d1cd769dbf58bc6e3143815bbf0c30f7.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -28075,6 +28268,40 @@
       "austin": null
     },
     {
+      "id": "214862927",
+      "aid": "1314",
+      "name": "Sal",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Grey",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 2.7,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "212874771",
       "aid": "620",
       "name": "Salem",
@@ -28374,7 +28601,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/89683b7d7b8b011206f3eb5eb23fab8f/4bca9cc5d9ce401ee27fd1dc13c542b4.png",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/8d90d69dc2b60fe9239f83c2cc40c33a/b8f230be41af91859ddfa81e61defa45.png",
       "nc": {
         "memos": [],
         "attributes": [
@@ -28454,7 +28681,7 @@
         "altered": false,
         "arrivalDate": "2026-08-18",
         "websiteMemo": "Don\u2019t let his tough-sounding name fool you\u2014Rugby is a big, gentle sweetheart who is looking for a loving home where he can truly bloom!\n\nRugby can be a little shy when meeting new people or stepping into new environments, but with a few soft treats and a patient, gentle voice, his sweet, affectionate personality shines right through. Once he knows he\u2019s safe, he\u2019ll be your most loyal sidekick. He seems very dog-friendly and takes great comfort in having canine buddies around!\n\nRugby\u2019s Highlights:\n\nSweet & Gentle: A quiet, loving boy who just wants to feel safe and adored.\n\nDog Friendly: Gets along well with other pups and enjoys doggy company.\n\nCrate Trained: House-proud and does wonderfully in his crate for cozy naps and quiet time.\n\nWorking on Skills: Needs a patient human to help him practice his leash-walking skills (he's learning that walkies are fun, not scary!).\n\nRugby is currently located at our Elgin facility. If you are interested in meeting him, please email us at transporthub@austinpetsalive.org",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/89683b7d7b8b011206f3eb5eb23fab8f/4bca9cc5d9ce401ee27fd1dc13c542b4.png",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/8d90d69dc2b60fe9239f83c2cc40c33a/b8f230be41af91859ddfa81e61defa45.png",
         "memos": [
           {
             "label": "Kennel Card / Website Memo",
@@ -28927,7 +29154,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/df0d98531ba1f65363c6ae6908a19d7f/360068e13cf4f5bdbeaedf2f5f5a7b00.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/100d0372b87bd1c9788411df5ad7bbad/1a58563d5d8c450e3ca1b2592383f9b6.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -28957,7 +29184,7 @@
         "altered": true,
         "arrivalDate": "2026-07-22",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/df0d98531ba1f65363c6ae6908a19d7f/360068e13cf4f5bdbeaedf2f5f5a7b00.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/100d0372b87bd1c9788411df5ad7bbad/1a58563d5d8c450e3ca1b2592383f9b6.jpeg",
         "memos": [
           {
             "label": "Intake",
@@ -28986,6 +29213,40 @@
           }
         ]
       }
+    },
+    {
+      "id": "214862884",
+      "aid": "1313",
+      "name": "Simba",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 3,
+      "animalDoB": "2026-07-11",
+      "color": "Orange",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 5.1,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
     },
     {
       "id": "214825925",
@@ -29031,7 +29292,7 @@
         "sex": "Male",
         "age": 2,
         "color": "Grey/White",
-        "altered": false,
+        "altered": true,
         "arrivalDate": "2026-10-26",
         "websiteMemo": "",
         "photo": "https://new-s3.shelterluv.com/profile-pictures/9583488b1360393ac002bce6d7703072/5ee36d82479c6f875321ae6889440b98.jpg",
@@ -29040,11 +29301,6 @@
             "label": "Disclaimer",
             "text": "I understand and agree as follows:\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.\n\nUntil the adoption is complete:\n(1) the Animal remains the property of APA!;\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;\n(5) APA! may take back the Animal at any time and for any reason;\n(6) I must return the Animal to APA! within 24 hours of request/demand;\n(7) I must notify APA! if the Animal sustains a life-threatening injury or illness; and\n(8) APA! must approve any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency.\n\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.\n\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. \nI understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
             "date": "2026-10-25 13:30:08.689073"
-          },
-          {
-            "label": "Disclaimer",
-            "text": "I understand and agree as follows:\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.\n\nUntil the adoption is complete:\n(1) the Animal remains the property of APA!;\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;\n(5) APA! may take back the Animal at any time and for any reason;\n(6) I must return the Animal to APA! within 24 hours of request/demand;\n(7) I must notify APA! if the Animal sustains a life-threatening injury or illness; and\n(8) APA! must approve any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency.\n\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.\n\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. \nI understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
-            "date": "2026-10-27 13:30:12.445798"
           }
         ],
         "attributes": [],
@@ -29077,6 +29333,40 @@
       }
     },
     {
+      "id": "214863057",
+      "aid": "1317",
+      "name": "Simon",
+      "species": "Cat",
+      "breed": "Domestic Medium Hair",
+      "sex": "Male",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Black/White",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": null,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
       "id": "214065209",
       "aid": "1047",
       "name": "Sionna",
@@ -29093,7 +29383,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/ba59c6e1ab4b15a0d4cbe2f8c3b4ec89/979d2d3bb4c6ab65dfc99d1d72a01cde.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/c3c175248224724ec4fa80201dce83a0/32366f7831cef188c3bc30a173451138.jpeg",
       "nc": {
         "memos": [
           {
@@ -29128,7 +29418,7 @@
         "altered": false,
         "arrivalDate": "2026-07-03",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/ba59c6e1ab4b15a0d4cbe2f8c3b4ec89/979d2d3bb4c6ab65dfc99d1d72a01cde.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/c3c175248224724ec4fa80201dce83a0/32366f7831cef188c3bc30a173451138.jpeg",
         "memos": [
           {
             "label": "Partner Attributes",
@@ -29295,6 +29585,40 @@
           }
         ]
       }
+    },
+    {
+      "id": "214862818",
+      "aid": "1312",
+      "name": "Skylar",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Female",
+      "age": 2,
+      "animalDoB": "2026-08-26",
+      "color": "Grey",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 2.7,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
+          }
+        ]
+      },
+      "austin": null
     },
     {
       "id": "213482555",
@@ -30023,7 +30347,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 11,
+      "age": 12,
       "animalDoB": "2025-10-28",
       "color": "Black",
       "status": "Healthy in Home",
@@ -30124,6 +30448,40 @@
             "event": "outcome",
             "type": "Outcome.Adoption",
             "subtype": "Cats - NCSPAC"
+          }
+        ]
+      },
+      "austin": null
+    },
+    {
+      "id": "214862810",
+      "aid": "1311",
+      "name": "Sterling",
+      "species": "Cat",
+      "breed": "Domestic Shorthair",
+      "sex": "Male",
+      "age": 3,
+      "animalDoB": "2026-07-09",
+      "color": "Grey",
+      "status": "Available (Shelter)",
+      "sizeGroup": "",
+      "weight": 3.36,
+      "altered": true,
+      "arrivalDate": null,
+      "websiteMemo": "",
+      "origin": "NC",
+      "photo": null,
+      "nc": {
+        "memos": [],
+        "attributes": [
+          "Spay/Neuter Still Needed"
+        ],
+        "history": [
+          {
+            "date": "2026-10-27",
+            "event": "intake",
+            "type": "Intake.Transfer",
+            "subtype": "HNCSPAC - Space"
           }
         ]
       },
@@ -30261,13 +30619,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/e0f16299ba8ad65475bb63ef6766e160/ef2e7c1ca8b1f12db2e6ad6a300fe96b.jpeg",
         "memos": [
           {
-            "label": "Outcome",
-            "text": "Elgin Hub",
+            "label": "Intake",
+            "text": "healthy female",
             "date": "2026-04-11 13:30:09.305293"
           },
           {
-            "label": "Intake",
-            "text": "healthy female",
+            "label": "Outcome",
+            "text": "Elgin Hub",
             "date": "2026-04-11 13:30:09.305293"
           },
           {
@@ -30552,7 +30910,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 30,
+      "age": 31,
       "animalDoB": "2024-03-28",
       "color": "Orange",
       "status": "Healthy in Home",
@@ -30645,7 +31003,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/2ee699b7957b0c9e2c28c4e0ff033871/c358fb6591cd9067784307a1252d770e.jpg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/8641984e5f5fb69f30e399d9b8d4627a/2bfcf9ebc7de26a14330f0a926039162.jpg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -30678,16 +31036,16 @@
         "altered": true,
         "arrivalDate": "2026-03-30",
         "websiteMemo": "Sweet Cheeks - 2-year-old spayed female\n\nMeet Sweet Cheeks \u2014 and as her name suggests, she is a total sweetheart! She\u2019s ready for all the affection you have to offer, whether that\u2019s cuddles, snuggles, kisses, or any kind of hands-on loving attention.\n\nSweet Cheeks adores being close to her people and thrives on warmth, comfort, and gentle companionship. She\u2019s the perfect little lovebug who is happiest when she\u2019s being doted on and showered with affection.\n\nIf you\u2019re looking for a soft, loving cuddle companion who will happily soak up all the love you can give, Sweet Cheeks is ready to meet you! \ud83d\udc3e2-year-old",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/2ee699b7957b0c9e2c28c4e0ff033871/c358fb6591cd9067784307a1252d770e.jpg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/8641984e5f5fb69f30e399d9b8d4627a/2bfcf9ebc7de26a14330f0a926039162.jpg",
         "memos": [
-          {
-            "label": "Outcome",
-            "text": "THANK YOU!!!!!!!!!",
-            "date": "2026-03-31 13:30:09.059832"
-          },
           {
             "label": "Kennel Card / Website Memo",
             "text": "Sweet Cheeks - 2-year-old spayed female<br />\n<br />\nMeet Sweet Cheeks \u2014 and as her name suggests, she is a total sweetheart! She\u2019s ready for all the affection you have to offer, whether that\u2019s cuddles, snuggles, kisses, or any kind of hands-on loving attention.<br />\n<br />\nSweet Cheeks adores being close to her people and thrives on warmth, comfort, and gentle companionship. She\u2019s the perfect little lovebug who is happiest when she\u2019s being doted on and showered with affection.<br />\n<br />\nIf you\u2019re looking for a soft, loving cuddle companion who will happily soak up all the love you can give, Sweet Cheeks is ready to meet you! \ud83d\udc3e2-year-old",
+            "date": "2026-03-31 13:30:09.059832"
+          },
+          {
+            "label": "Outcome",
+            "text": "THANK YOU!!!!!!!!!",
             "date": "2026-03-31 13:30:09.059832"
           }
         ],
@@ -30800,7 +31158,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/dabdf94d45a1637e8ac134dbac3b2d49/f585afe19d25551afae3f191497e233f.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/faee01fdb538e093b09cc26fdc7a512f/bddd98f9b609c8b5b1002423e215d047.jpeg",
       "nc": {
         "memos": [],
         "attributes": [],
@@ -30830,7 +31188,7 @@
         "altered": true,
         "arrivalDate": "2026-03-27",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/dabdf94d45a1637e8ac134dbac3b2d49/f585afe19d25551afae3f191497e233f.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/faee01fdb538e093b09cc26fdc7a512f/bddd98f9b609c8b5b1002423e215d047.jpeg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -31515,7 +31873,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/0fa1d4e6b445c953c2c1bf518151eda6/a1757166a4d9b7629f55792223ea9e57.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/50c218a410559d7af8d4483958e7c09c/5a5235d9b7e9c0946d3344c34715da06.jpeg",
       "nc": {
         "memos": [
           {
@@ -31550,7 +31908,7 @@
         "altered": true,
         "arrivalDate": "2026-04-14",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/0fa1d4e6b445c953c2c1bf518151eda6/a1757166a4d9b7629f55792223ea9e57.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/50c218a410559d7af8d4483958e7c09c/5a5235d9b7e9c0946d3344c34715da06.jpeg",
         "memos": [
           {
             "label": "Partner Attributes",
@@ -31817,7 +32175,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Female",
-      "age": 16,
+      "age": 17,
       "animalDoB": "2025-05-28",
       "color": "Blue/White",
       "status": "Healthy in Home",
@@ -33156,13 +33514,13 @@
             "date": "2026-02-26 14:30:09.601300"
           },
           {
-            "label": "Disclaimer",
-            "text": "This animal has not been spayed/neutered yet and it is eligible for surgery at no additional cost through the APA! clinic within 90 days of adoption, unless a longer timeline is provided for by an APA! vet in any medical disclaimers.<br />\n<br />\nI agree to not breed the Animal or allow the Animal to be in a situation where the Animal may breed (e.g., left unattended outdoors or indoors with animals of the same species and opposite sex that are not spayed/neutered).<br />\nI will ensure that the Animal is spayed or neutered within 90 days of adoption, and I understand that the Spay/Neuter Deposit will be forfeited unless, within 90 days of the Animal\u2019s adoption: (1) the Animal is spayed/neutered; and (2)  satisfactory proof of the spay/neuter has been received by APA!.<br />\nI understand I may be contacted by Austin Pets Alive! about my deposit.<br />\n<br />\nI am opting to complete the spay/neuter procedure through the APA! clinic. I understand and agree that APA! does not provide elective diagnostic tests, including bloodwork, prior to treatment, or state of the art medical procedures. APA! will only provide the Animal with the spay/neuter procedure and if any other treatment or exams outside of what is provided for in my adoption contract are needed, they must be done through a private veterinarian.<br />\n<br />\nThe Animal already has a medical appointment scheduled for the spay/neuter procedure, as specified below, or I will contact APA!\u2019s medical clinic within five (5) days of adoption to schedule the spay/neuter procedure.<br />\n<br />\nDate/time of surgery appointment:<br />\nOR<br />\nDeadline to complete surgery (90 days from adoption):",
+            "label": "Kennel Card / Website Memo",
+            "text": "With those soulful, dark eyes and perfectly floppy \"button\" ears, this little one is a total heart-stealer! This pup is a bundle of pure excitement, ready to turn every day into a celebration with wiggly tail-wags and an adventurous spirit. From the curious way those big puppy paws explore to the adorable tan \"eyebrow\" spots that highlight every expression, this puppy is all about spreading happiness and finding the next great play session.<br />\nWhen the \"zoomies\" are over, there is nothing this pup loves more than curling up for a cozy nap and a lifetime of companionship. The process to bring this joy home is quick and easy, and we invite you to take the next step today.",
             "date": "2026-03-08 13:30:08.433072"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "With those soulful, dark eyes and perfectly floppy \"button\" ears, this little one is a total heart-stealer! This pup is a bundle of pure excitement, ready to turn every day into a celebration with wiggly tail-wags and an adventurous spirit. From the curious way those big puppy paws explore to the adorable tan \"eyebrow\" spots that highlight every expression, this puppy is all about spreading happiness and finding the next great play session.<br />\nWhen the \"zoomies\" are over, there is nothing this pup loves more than curling up for a cozy nap and a lifetime of companionship. The process to bring this joy home is quick and easy, and we invite you to take the next step today.",
+            "label": "Disclaimer",
+            "text": "This animal has not been spayed/neutered yet and it is eligible for surgery at no additional cost through the APA! clinic within 90 days of adoption, unless a longer timeline is provided for by an APA! vet in any medical disclaimers.<br />\n<br />\nI agree to not breed the Animal or allow the Animal to be in a situation where the Animal may breed (e.g., left unattended outdoors or indoors with animals of the same species and opposite sex that are not spayed/neutered).<br />\nI will ensure that the Animal is spayed or neutered within 90 days of adoption, and I understand that the Spay/Neuter Deposit will be forfeited unless, within 90 days of the Animal\u2019s adoption: (1) the Animal is spayed/neutered; and (2)  satisfactory proof of the spay/neuter has been received by APA!.<br />\nI understand I may be contacted by Austin Pets Alive! about my deposit.<br />\n<br />\nI am opting to complete the spay/neuter procedure through the APA! clinic. I understand and agree that APA! does not provide elective diagnostic tests, including bloodwork, prior to treatment, or state of the art medical procedures. APA! will only provide the Animal with the spay/neuter procedure and if any other treatment or exams outside of what is provided for in my adoption contract are needed, they must be done through a private veterinarian.<br />\n<br />\nThe Animal already has a medical appointment scheduled for the spay/neuter procedure, as specified below, or I will contact APA!\u2019s medical clinic within five (5) days of adoption to schedule the spay/neuter procedure.<br />\n<br />\nDate/time of surgery appointment:<br />\nOR<br />\nDeadline to complete surgery (90 days from adoption):",
             "date": "2026-03-08 13:30:08.433072"
           },
           {
@@ -33250,13 +33608,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/117b34e1f4e9f1ca9f8009a25ad0a810/2a256cfc64cf5583ada9737fdfb5b012.jpg",
         "memos": [
           {
-            "label": "Outcome",
-            "text": "THANK YOU!!!!!!!!!",
+            "label": "Kennel Card / Website Memo",
+            "text": "Meet Villanova \u2013 an incredibly easy-going, sweet kitty who\u2019s ready to bring calm and comfort into your life. This gentle soul has a relaxed personality and takes everything in stride, making her the perfect companion for a peaceful home.<br />\n<br />\nVillanova loves to lounge, soak up affection, and simply be near her people. She\u2019s not demanding\u2014just happy to share your space and enjoy the quiet moments together. Whether she\u2019s stretched out in a sunny spot or curled up beside you, her mellow nature makes her an absolute joy to have around.<br />\n<br />\nIf you\u2019re looking for a low-maintenance, loving cat with a heart of gold, Villanova is your girl. Come meet her and see just how effortlessly she fits into your home!",
             "date": "2026-03-31 13:30:09.059832"
           },
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "Meet Villanova \u2013 an incredibly easy-going, sweet kitty who\u2019s ready to bring calm and comfort into your life. This gentle soul has a relaxed personality and takes everything in stride, making her the perfect companion for a peaceful home.<br />\n<br />\nVillanova loves to lounge, soak up affection, and simply be near her people. She\u2019s not demanding\u2014just happy to share your space and enjoy the quiet moments together. Whether she\u2019s stretched out in a sunny spot or curled up beside you, her mellow nature makes her an absolute joy to have around.<br />\n<br />\nIf you\u2019re looking for a low-maintenance, loving cat with a heart of gold, Villanova is your girl. Come meet her and see just how effortlessly she fits into your home!",
+            "label": "Outcome",
+            "text": "THANK YOU!!!!!!!!!",
             "date": "2026-03-31 13:30:09.059832"
           }
         ],
@@ -33360,7 +33718,7 @@
       "species": "Dog",
       "breed": "Ridgeback, Rhodesian/Retriever, Labrador",
       "sex": "Female",
-      "age": 8,
+      "age": 9,
       "animalDoB": "2026-01-27",
       "color": "Fawn/Black",
       "status": "Healthy in Home",
@@ -33432,13 +33790,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/13482ce37fe34b9fed50c4d45597b8af/e8a45f3065aa02ec9e06de016cc8ad3f.jpeg",
         "memos": [
           {
-            "label": "Kennel Card / Website Memo",
-            "text": "This adorable pup is undergoing Parvo treatment through APA! and is expected to make a full recovery.  They are not quite out of the woods yet and will need a few more days to complete treatment before leaving the Parvo ward; but that doesn\u2019t mean they can\u2019t start getting the word out that they need an adopter lined up for when they are ready to leave!  If you are interested in learning more about me you can email tarrytown.dog@austinpetsalive.org.  Please be aware that they absolutely cannot go home until they test negative, but we will be taking 1-2 people\u2019s information to be lined up for their adoption.",
+            "label": "Pop-up",
+            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters(no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 5/16/26. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. 1st Adopter: (Name)(Phone)(Email)  1st Back-up Adopter: (Name)(Phone)(Email)",
             "date": "2026-05-12 13:30:10.869387"
           },
           {
-            "label": "Pop-up",
-            "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters(no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 5/16/26. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. 1st Adopter: (Name)(Phone)(Email)  1st Back-up Adopter: (Name)(Phone)(Email)",
+            "label": "Kennel Card / Website Memo",
+            "text": "This adorable pup is undergoing Parvo treatment through APA! and is expected to make a full recovery.  They are not quite out of the woods yet and will need a few more days to complete treatment before leaving the Parvo ward; but that doesn\u2019t mean they can\u2019t start getting the word out that they need an adopter lined up for when they are ready to leave!  If you are interested in learning more about me you can email tarrytown.dog@austinpetsalive.org.  Please be aware that they absolutely cannot go home until they test negative, but we will be taking 1-2 people\u2019s information to be lined up for their adoption.",
             "date": "2026-05-12 13:30:10.869387"
           },
           {
@@ -33639,13 +33997,13 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/efd66a500326eb2a42456e5c3efe402e/cd212974f9a45d9d83239653be3fede7.jpeg",
         "memos": [
           {
-            "label": "Intake",
-            "text": "Owner Surrender",
+            "label": "Outcome",
+            "text": "Elgin Hub",
             "date": "2026-07-23 13:30:09.497240"
           },
           {
-            "label": "Outcome",
-            "text": "Elgin Hub",
+            "label": "Intake",
+            "text": "Owner Surrender",
             "date": "2026-07-23 13:30:09.497240"
           }
         ],
@@ -34000,7 +34358,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/3c4597029d3b111c836e059223d1b336/bfdf1995e39c72669e0beba1eeaf5cb9.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/9a94fab874f1c90ba068ef4b3c02be66/5f83857df17e65ece52ef4c065d4f878.jpg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -34032,7 +34390,7 @@
         "altered": false,
         "arrivalDate": "2026-10-20",
         "websiteMemo": "",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/3c4597029d3b111c836e059223d1b336/bfdf1995e39c72669e0beba1eeaf5cb9.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/9a94fab874f1c90ba068ef4b3c02be66/5f83857df17e65ece52ef4c065d4f878.jpg",
         "memos": [],
         "attributes": [],
         "history": [
@@ -34130,7 +34488,7 @@
       "species": "Cat",
       "breed": "Domestic Shorthair",
       "sex": "Male",
-      "age": 7,
+      "age": 8,
       "animalDoB": "2026-02-28",
       "color": "Lynx",
       "status": "Healthy in Home",
@@ -34293,7 +34651,7 @@
       "arrivalDate": null,
       "websiteMemo": "",
       "origin": "TX",
-      "photo": "https://new-s3.shelterluv.com/profile-pictures/7b52d7ed2b0e731a40bceca6d161633c/74de4f860913fa3950a35cab3eff34a1.jpeg",
+      "photo": "https://new-s3.shelterluv.com/profile-pictures/238166217f2e54f0dd816beccde2cbe7/776ae96822e0f12433f0c6dad2787415.jpeg",
       "nc": {
         "memos": [],
         "attributes": [
@@ -34325,13 +34683,8 @@
         "altered": false,
         "arrivalDate": "2026-02-23",
         "websiteMemo": "Meet Willie Nelson, a soulful boy with a striking black-and-tan coat and deep, expressive eyes that are always on the lookout for a new friend. With his adorable tan-marked paws and perfectly mismatched ears\u2014one floppy and one curious\u2014Willie is a bundle of pure joy and excitement, ready to turn every day into a playful new harmony. Puppies like him have a special way of filling a home with laughter, whether he's busy exploring with his favorite toy or settling in for some well-earned snuggles after a day of discovery. Are you ready to welcome this little legend into your life? We invite you to reach out and meet him! ",
-        "photo": "https://new-s3.shelterluv.com/profile-pictures/7b52d7ed2b0e731a40bceca6d161633c/74de4f860913fa3950a35cab3eff34a1.jpeg",
+        "photo": "https://new-s3.shelterluv.com/profile-pictures/238166217f2e54f0dd816beccde2cbe7/776ae96822e0f12433f0c6dad2787415.jpeg",
         "memos": [
-          {
-            "label": "Kennel Card / Website Memo",
-            "text": "This adorable pup is undergoing Parvo treatment through APA! and is expected to make a full recovery.  They are not quite out of the woods yet and will need a few more days to complete treatment before leaving the Parvo ward; but that doesn\u2019t mean they can\u2019t start getting the word out that they need an adopter lined up for when they are ready to leave!  If you are interested in learning more about me you can email tarrytown.dog@austinpetsalive.org.  Please be aware that they absolutely cannot go home until they test negative, but we will be taking 1-2 people\u2019s information to be lined up for their adoption.",
-            "date": "2026-02-25 14:30:09.120149"
-          },
           {
             "label": "Pop-up",
             "text": "We will take 1 confirmed adopter and 1-2 back-up adopters or 1-2 fosters (no more than 5 people per dog total!) in case the first person falls through to adopt this dog while undergoing parvo treatment.  Will be retested on 2/29. After 3-5 Adopters have been lined up, dog\u2019s status should be changed to \u201cUnavailable-Medical Treatment\u201d and remove the \u201cFoster Needed Urgent\u201d attribute. <br />\n1st Adopter: (Name)(Phone)(Email)  <br />\n1st Back-up Adopter: (Name)(Phone)(Email)",
@@ -34340,6 +34693,11 @@
           {
             "label": "Disclaimer",
             "text": "I understand and agree as follows:<br />\nFull ownership of the animal described in this contract (\u201cAnimal\u201d) will be transferred to me only after the medical treatment outlined in the contract disclaimers has been completed either at Austin Pets Alive, Inc. (\u201cAPA!\u201d) or through a private veterinarian.<br />\nUntil the adoption is complete:<br />\n(1) the Animal remains the property of APA!;<br />\n(2) APA! maintains responsibility only for the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(3) I have assumed and am responsible for all medical treatment related to the Animal other than the Animal\u2019s Pre-Adopt Medical Treatment as outlined in this contract;<br />\n(4) APA! has full authority to make decisions related to the Pre-Adopt Medical Treatment for the Animal;<br />\n(5) APA! can only provide medical care and create treatment plans that are financially reasonable and responsible for the organization;<br />\n(6) APA! cannot provide heroic care for patients suffering from chronic or terminal diseases. End-of-life decisions are made based on quality of life weighed against what would be considered reasonable care for APA! to provide this pet;<br />\n(7) APA! may take back the Animal at any time and for any reason;<br />\n(8) I must return the Animal to APA! within 24 hours of request/demand;<br />\n(9) I must notify APA! if the Animal sustains a life-threatening injury or illness; and<br />\n(10) APA! must be notified of any euthanasia recommendation by a private veterinarian before the Animal is euthanized, unless the recommendation is made after 7:00 pm or before 10:00 am and is based on an emergency. <br />\nAll private veterinary expenses (including emergency services), whether incurred while the Animal is in Pre-Adopt status or after the Animal\u2019s adoption is finalized, are my responsibility and that I will not be reimbursed by APA! for any such expenses, unless specifically provided otherwise in this Agreement.<br />\nI must comply with the Animal\u2019s treatment plan and be proactive in the treatment and recovery of the Animal. If I am not, I understand that APA! may take the Animal back and cancel this adoption. I understand that if refuse to surrender the Animal to APA!, as required herein, APA! may outcome the animal as \u201cLost/Stolen\u201d and/or pursue any and all available legal remedies against me.<br />\nLong-term follow-up and care will be my responsibility and APA! will not be liable for complications.",
+            "date": "2026-02-25 14:30:09.120149"
+          },
+          {
+            "label": "Kennel Card / Website Memo",
+            "text": "This adorable pup is undergoing Parvo treatment through APA! and is expected to make a full recovery.  They are not quite out of the woods yet and will need a few more days to complete treatment before leaving the Parvo ward; but that doesn\u2019t mean they can\u2019t start getting the word out that they need an adopter lined up for when they are ready to leave!  If you are interested in learning more about me you can email tarrytown.dog@austinpetsalive.org.  Please be aware that they absolutely cannot go home until they test negative, but we will be taking 1-2 people\u2019s information to be lined up for their adoption.",
             "date": "2026-02-25 14:30:09.120149"
           },
           {
@@ -34546,13 +34904,13 @@
             "date": "2026-03-02 14:30:09.173186"
           },
           {
-            "label": "Behavioral",
-            "text": "Reported by: Adopter (Elizabeth Lauria)<br />\n<br />\nWinston being returned to SPAC on 7/9 and going to Elgin due to space constraints in NC. <br />\n<br />\nSummary of Reported Behaviors:<br />\n<br />\nWhile training Winston not to get on the couch, the adopter gave the verbal cue &quot;off&quot; and reached toward his collar to guide him down. Winston snapped toward her hand. The adopter then attached a leash and was able to guide him off the couch without further incident. She reported that he responded appropriately when redirected with the leash.<br />\n<br />\nOn another occasion, Winston became highly focused on digging a hole in the yard. When the adopter attempted to interrupt the behavior, he growled and snapped at her.<br />\n<br />\nThe adopter stated that Winston was reportedly &quot;aggressive&quot; while playing with her daughter. She did not have additional details regarding this incident.<br />\n<br />\nDuring an interaction with the adopter&#039;s niece&#039;s dog, Winston took possession of one of the other dog&#039;s toys and became possessive. The dogs were face-to-face with the toy positioned behind Winston. Winston growled and lunged toward the other dog. The other dog placed its front paws on Winston&#039;s back, but neither dog sustained bite injuries.<br />\n<br />\nThe final incident occurred when an air conditioning service technician arrived at the home. Winston initially growled at the individual at the front door. The adopter instructed Winston to go to his bed, and he complied. While the adopter escorted the technician through the house, Winston left his bed, approached the technician, and bit him on the leg. The bite ripped the technician&#039;s pants and caused bruising. The adopter noted that Winston&#039;s teeth are very worn down and believes he released immediately after making contact and ran away.<br />\n<br />\nAdditional Information:<br />\n<br />\n-Winston is described as generally very sweet, enjoys sleeping on furniture, and seeks affection.<br />\n-Winston has a tendency to attempt to run out the front door if given the opportunity.<br />\n-He is comfortable being crated, sleeps in his crate overnight, and remains crated when the adopter is away from home.<br />\n-The adopter reports providing exercise through backyard time and regular walks.<br />\n-Winston frequently licks his paws, particularly when they are wet.<br />\n-He is possessive of tennis balls and is reluctant to relinquish them once he has them.<br />\n-According to a DNA test completed by the adopter, Winston is a mix of Miniature Schnauzer, Pitbull, and Cocker Spaniel.",
+            "label": "Partner Attributes",
+            "text": "Attributes from Shelter Pet Adoption Center - APA!: D2A",
             "date": "2026-07-10 13:30:10.621879"
           },
           {
-            "label": "Partner Attributes",
-            "text": "Attributes from Shelter Pet Adoption Center - APA!: D2A",
+            "label": "Behavioral",
+            "text": "Reported by: Adopter (Elizabeth Lauria)<br />\n<br />\nWinston being returned to SPAC on 7/9 and going to Elgin due to space constraints in NC. <br />\n<br />\nSummary of Reported Behaviors:<br />\n<br />\nWhile training Winston not to get on the couch, the adopter gave the verbal cue &quot;off&quot; and reached toward his collar to guide him down. Winston snapped toward her hand. The adopter then attached a leash and was able to guide him off the couch without further incident. She reported that he responded appropriately when redirected with the leash.<br />\n<br />\nOn another occasion, Winston became highly focused on digging a hole in the yard. When the adopter attempted to interrupt the behavior, he growled and snapped at her.<br />\n<br />\nThe adopter stated that Winston was reportedly &quot;aggressive&quot; while playing with her daughter. She did not have additional details regarding this incident.<br />\n<br />\nDuring an interaction with the adopter&#039;s niece&#039;s dog, Winston took possession of one of the other dog&#039;s toys and became possessive. The dogs were face-to-face with the toy positioned behind Winston. Winston growled and lunged toward the other dog. The other dog placed its front paws on Winston&#039;s back, but neither dog sustained bite injuries.<br />\n<br />\nThe final incident occurred when an air conditioning service technician arrived at the home. Winston initially growled at the individual at the front door. The adopter instructed Winston to go to his bed, and he complied. While the adopter escorted the technician through the house, Winston left his bed, approached the technician, and bit him on the leg. The bite ripped the technician&#039;s pants and caused bruising. The adopter noted that Winston&#039;s teeth are very worn down and believes he released immediately after making contact and ran away.<br />\n<br />\nAdditional Information:<br />\n<br />\n-Winston is described as generally very sweet, enjoys sleeping on furniture, and seeks affection.<br />\n-Winston has a tendency to attempt to run out the front door if given the opportunity.<br />\n-He is comfortable being crated, sleeps in his crate overnight, and remains crated when the adopter is away from home.<br />\n-The adopter reports providing exercise through backyard time and regular walks.<br />\n-Winston frequently licks his paws, particularly when they are wet.<br />\n-He is possessive of tennis balls and is reluctant to relinquish them once he has them.<br />\n-According to a DNA test completed by the adopter, Winston is a mix of Miniature Schnauzer, Pitbull, and Cocker Spaniel.",
             "date": "2026-07-10 13:30:10.621879"
           },
           {
@@ -34816,6 +35174,11 @@
         "photo": "https://new-s3.shelterluv.com/profile-pictures/eecd94499b9031637f0a58754c06031e/b49e64f7e7703f20692b8d672c0d645b.jpeg",
         "memos": [
           {
+            "label": "Pop-up",
+            "text": "Going to APA Elgin Hub. Transport will be arranged. -WB 3/26",
+            "date": "2026-03-31 13:30:09.059832"
+          },
+          {
             "label": "Intake",
             "text": "*",
             "date": "2026-03-31 13:30:09.059832"
@@ -34823,11 +35186,6 @@
           {
             "label": "Outcome",
             "text": "-",
-            "date": "2026-03-31 13:30:09.059832"
-          },
-          {
-            "label": "Pop-up",
-            "text": "Going to APA Elgin Hub. Transport will be arranged. -WB 3/26",
             "date": "2026-03-31 13:30:09.059832"
           }
         ],

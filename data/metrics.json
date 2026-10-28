@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T14:47:53.170835+00:00",
+  "generated_at": "2026-10-28T11:13:01.130964+00:00",
   "adoptions": {
     "total": 598,
     "cats": 470,
@@ -117,21 +117,21 @@
   },
   "foster": {
     "unique_families": 83,
-    "total_placements": 178,
-    "avg_days_per_stay": 8.1,
+    "total_placements": 182,
+    "avg_days_per_stay": 8.3,
     "foster_to_adopt_pct": 9.7
   },
   "volunteers": {
-    "total_hours": 2108.5,
-    "unique_volunteers": 162,
-    "total_shifts": 1439
+    "total_hours": 2123.5,
+    "unique_volunteers": 163,
+    "total_shifts": 1446
   },
   "snapshot": {
-    "cats_at_center": 6,
+    "cats_at_center": 13,
     "dogs_at_center": 1,
-    "cats_in_foster": 1,
+    "cats_in_foster": 5,
     "dogs_in_foster": 1,
-    "total_in_custody": 9
+    "total_in_custody": 20
   },
   "pedigree": {
     "transport_in": {
@@ -368,11 +368,11 @@
       "with_any_outcome": 21
     },
     "local_transfers_in": {
-      "all_time": 243,
-      "all_time_cats": 197,
+      "all_time": 254,
+      "all_time_cats": 208,
       "all_time_dogs": 46,
-      "cy2026": 153,
-      "cy2026_cats": 117,
+      "cy2026": 164,
+      "cy2026_cats": 128,
       "cy2026_dogs": 36,
       "by_month": [
         {
