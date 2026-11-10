@@ -43,3 +43,7 @@ git push
 ```
 
 An auto-refresh LaunchAgent (`com.apa.nc-petco-dashboard`) handles this automatically. See `update.sh`.
+
+## PEDIGREE D2A tab: hand-maintained items
+
+`data/pedigree_manual.json` holds things ShelterLuv can't supply: impact stories sent to PEDIGREE for the D2A grant (8 required), the D2A toolkit status, and report due/submitted dates. Edit it and push; the auto-refresh doesn't touch it. Add `?sp=dog` or `?sp=cat` to the URL (with `#pedigree`) to open the tab pre-filtered.

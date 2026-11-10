@@ -376,8 +376,130 @@ GOALS = {
     "year2": {"label": "Year 2 (Calendar Year 2026)", "min": 750, "max": 1000, "closed": False},
 }
 
+# =============================================================================
+# PEDIGREE D2A grant, report-aligned metrics (redesign 11/10/26).
+# Grant period = calendar year 2026: the 3/3/26 proposal frames all goals as
+# "Goals for 2026", the 6/11/26 award letter says funds are used "within the
+# calendar year", and PEDIGREE's prior collaborative grant (awarded 10/2024)
+# reported on 1/1-12/31/2025. Every metric here is split All / Cat / Dog.
+# =============================================================================
+GRANT_START = "2026-01-01"
+GRANT_END = "2026-12-31"
+today = now.date()
+grant_start_d = datetime.date.fromisoformat(GRANT_START)
+grant_end_d = datetime.date.fromisoformat(GRANT_END)
+period_days = (grant_end_d - grant_start_d).days + 1
+elapsed_days = max(1, min(period_days, (today - grant_start_d).days + 1))
+
+def split_counts(rows, pred=lambda r: True):
+    out = {"all": 0, "cat": 0, "dog": 0}
+    for r in rows:
+        if not pred(r):
+            continue
+        out["all"] += 1
+        sp = (r.get("species") or "").lower()
+        if sp in ("cat", "dog"):
+            out[sp] += 1
+    return out
+
+# --- Goal 2: 50% of TX arrivals go directly into a home (foster OR adoption).
+# "Directly" = the animal's first outcome after its NC arrival is a foster or
+# an adoption. Strict = within 1 day of arrival (arrival day or next day);
+# 3-day = within 3 days. An arrival only counts in a window's denominator once
+# that window has fully passed, so animals that landed yesterday don't drag
+# the rate down before they've had the chance to move.
+home_rows = q(f"""
+    {ORIGIN_CTE},
+    tx AS (
+      SELECT * FROM classified
+      WHERE origin = 'TX' AND DATE(intakeDate) BETWEEN '{GRANT_START}' AND '{GRANT_END}'
+    ),
+    nxt AS (
+      SELECT t.intakeID, t.species, DATE(t.intakeDate) AS arrival,
+        o.outcomeType, DATE(o.outcomeDate) AS out_date,
+        ROW_NUMBER() OVER (PARTITION BY t.intakeID ORDER BY o.outcomeDate) AS rn
+      FROM tx t
+      LEFT JOIN `apa-data-410213.nc_shelterluv.Outcomes` o
+        ON o.animalInternalID = t.animalInternalID AND o.outcomeDate >= t.intakeDate
+    )
+    SELECT species, arrival, outcomeType, out_date FROM nxt WHERE rn = 1
+""")
+for r in home_rows:
+    r["to_home"] = r["outcomeType"] in ("Outcome.Foster", "Outcome.Adoption")
+    r["days"] = (r["out_date"] - r["arrival"]).days if r["out_date"] else None
+
+def window_stats(rows, window):
+    eligible = [r for r in rows if (today - r["arrival"]).days >= window]
+    hit = lambda r: r["to_home"] and r["days"] is not None and r["days"] <= window
+    den = split_counts(eligible)
+    num = split_counts(eligible, hit)
+    fos = split_counts(eligible, lambda r: hit(r) and r["outcomeType"] == "Outcome.Foster")
+    ado = split_counts(eligible, lambda r: hit(r) and r["outcomeType"] == "Outcome.Adoption")
+    return {k: {"home": num[k], "arrivals": den[k], "to_foster": fos[k], "to_adopter": ado[k],
+                "pct": round(100 * num[k] / den[k], 1) if den[k] else None}
+            for k in ("all", "cat", "dog")}
+
+direct_home = {"strict_days": 1, "strict": window_stats(home_rows, 1),
+               "three_day": window_stats(home_rows, 3), "by_month": []}
+for m in sorted({r["arrival"].strftime("%Y-%m") for r in home_rows}):
+    mrows = [r for r in home_rows if r["arrival"].strftime("%Y-%m") == m]
+    direct_home["by_month"].append({"month": m, "strict": window_stats(mrows, 1),
+                                    "three_day": window_stats(mrows, 3)})
+
+# --- Goal 5: overall transport program, counted in AUSTIN ShelterLuv.
+# Transport program pet = passed through the Elgin Transport Hub and was then
+# transferred out to a different shelter (Outcome.Transfer) in the period.
+# Elgin is spread across location tiers 1 and 2 (plus building-level names),
+# so match both tiers; tier1 alone undercounts by ~25%.
+elgin_rows = q(f"""
+    WITH outs AS (
+      SELECT animalInternalID, MIN(outcomeDate) AS out_date
+      FROM `apa-data-410213.shelterluv.Outcomes`
+      WHERE outcomeType = 'Outcome.Transfer'
+        AND DATE(outcomeDate) BETWEEN '{GRANT_START}' AND '{GRANT_END}'
+      GROUP BY animalInternalID
+    ),
+    elgin AS (
+      SELECT DISTINCT animalInternalID, dateStart
+      FROM `apa-data-410213.shelterluv.AnimalLocationHistory`
+      WHERE LOWER(locationTier1) LIKE '%elgin%' OR LOWER(locationTier2) LIKE '%elgin%'
+         OR LOWER(locationTier1) LIKE '%transport hub%' OR LOWER(locationTier2) LIKE '%transport hub%'
+    )
+    SELECT DISTINCT o.animalInternalID, a.species, FORMAT_DATE('%Y-%m', DATE(o.out_date)) AS month
+    FROM outs o
+    JOIN `apa-data-410213.shelterluv.Animals` a ON a.animalInternalID = o.animalInternalID
+    JOIN elgin e ON e.animalInternalID = o.animalInternalID AND e.dateStart <= o.out_date
+    WHERE a.deletedFromSL IS NOT TRUE
+""")
+elgin_total = split_counts(elgin_rows)
+elgin_by_month = []
+for m in sorted({r["month"] for r in elgin_rows}):
+    c = split_counts([r for r in elgin_rows if r["month"] == m])
+    elgin_by_month.append({"month": m, "total": c["all"], "cats": c["cat"], "dogs": c["dog"]})
+
+# --- Volunteers engaged at the NC center during the grant period (report section 4)
+volunteers_period = q(f"""
+    SELECT COUNT(DISTINCT t.userID) AS unique_volunteers, ROUND(SUM(t.hoursWorked), 1) AS hours
+    FROM `apa-data-410213.betterImpact.TimelogEntries` t
+    JOIN `apa-data-410213.betterImpact.Users` u ON t.userID = u.userID
+    WHERE u.state = 'North Carolina' AND t.approved = true
+      AND DATE(t.dateWorked) BETWEEN '{GRANT_START}' AND '{GRANT_END}'
+""")[0]
+
+pedigree2026 = {
+    "period": {"start": GRANT_START, "end": GRANT_END, "days": period_days,
+               "elapsed_days": elapsed_days},
+    "direct_home": direct_home,
+    "elgin_transport": {"total": elgin_total["all"], "cats": elgin_total["cat"],
+                        "dogs": elgin_total["dog"], "by_month": elgin_by_month,
+                        "goal": 3000, "stretch": 3500},
+    "volunteers": {"unique": volunteers_period["unique_volunteers"] or 0,
+                   "hours": volunteers_period["hours"] or 0},
+}
+
 output = {
     "generated_at": now.isoformat(),
+    "pedigree2026": pedigree2026,
     "adoptions": {
         "total": totals["total"],
         "cats": totals["cats"],
@@ -473,6 +595,9 @@ print(f"  TX transported & adopted (CY2026, grant KPI): {transport_adopted_total
 print(f"  NC local transfers-in (CY2026): {local_transfers['cy2026']} / goal 100")
 print(f"  Unclassified transfer origin (all-time): {unclassified_transfers['all_time']}")
 print(f"  Foster caregivers, 2+ placements (CY2026): {foster_caregivers_active['active_2026']} / goal 15")
+_s, _t = direct_home["strict"], direct_home["three_day"]
+print(f"  Direct to home, strict (<=1d): {_s['all']['pct']}% (dogs {_s['dog']['pct']}%, cats {_s['cat']['pct']}%); 3-day: {_t['all']['pct']}%")
+print(f"  Elgin transport program (2026): {elgin_total['all']} ({elgin_total['cat']} cats, {elgin_total['dog']} dogs) / goal 3,000")
 
 # =============================================================================
 # Animal Profiles: every NC animal, all-time. For animals transferred in

@@ -1,5 +1,627 @@
 {
-  "generated_at": "2026-11-10T16:09:00.857192+00:00",
+  "generated_at": "2026-11-10T16:33:05.186352+00:00",
+  "pedigree2026": {
+    "period": {
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "days": 365,
+      "elapsed_days": 314
+    },
+    "direct_home": {
+      "strict_days": 1,
+      "strict": {
+        "all": {
+          "home": 60,
+          "arrivals": 219,
+          "to_foster": 19,
+          "to_adopter": 41,
+          "pct": 27.4
+        },
+        "cat": {
+          "home": 34,
+          "arrivals": 183,
+          "to_foster": 1,
+          "to_adopter": 33,
+          "pct": 18.6
+        },
+        "dog": {
+          "home": 26,
+          "arrivals": 36,
+          "to_foster": 18,
+          "to_adopter": 8,
+          "pct": 72.2
+        }
+      },
+      "three_day": {
+        "all": {
+          "home": 114,
+          "arrivals": 219,
+          "to_foster": 25,
+          "to_adopter": 89,
+          "pct": 52.1
+        },
+        "cat": {
+          "home": 81,
+          "arrivals": 183,
+          "to_foster": 2,
+          "to_adopter": 79,
+          "pct": 44.3
+        },
+        "dog": {
+          "home": 33,
+          "arrivals": 36,
+          "to_foster": 23,
+          "to_adopter": 10,
+          "pct": 91.7
+        }
+      },
+      "by_month": [
+        {
+          "month": "2026-01",
+          "strict": {
+            "all": {
+              "home": 0,
+              "arrivals": 15,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": 0.0
+            },
+            "cat": {
+              "home": 0,
+              "arrivals": 13,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": 0.0
+            },
+            "dog": {
+              "home": 0,
+              "arrivals": 2,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": 0.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 1,
+              "arrivals": 15,
+              "to_foster": 1,
+              "to_adopter": 0,
+              "pct": 6.7
+            },
+            "cat": {
+              "home": 0,
+              "arrivals": 13,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": 0.0
+            },
+            "dog": {
+              "home": 1,
+              "arrivals": 2,
+              "to_foster": 1,
+              "to_adopter": 0,
+              "pct": 50.0
+            }
+          }
+        },
+        {
+          "month": "2026-02",
+          "strict": {
+            "all": {
+              "home": 6,
+              "arrivals": 14,
+              "to_foster": 6,
+              "to_adopter": 0,
+              "pct": 42.9
+            },
+            "cat": {
+              "home": 1,
+              "arrivals": 9,
+              "to_foster": 1,
+              "to_adopter": 0,
+              "pct": 11.1
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 5,
+              "to_foster": 5,
+              "to_adopter": 0,
+              "pct": 100.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 11,
+              "arrivals": 14,
+              "to_foster": 6,
+              "to_adopter": 5,
+              "pct": 78.6
+            },
+            "cat": {
+              "home": 6,
+              "arrivals": 9,
+              "to_foster": 1,
+              "to_adopter": 5,
+              "pct": 66.7
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 5,
+              "to_foster": 5,
+              "to_adopter": 0,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-03",
+          "strict": {
+            "all": {
+              "home": 8,
+              "arrivals": 16,
+              "to_foster": 3,
+              "to_adopter": 5,
+              "pct": 50.0
+            },
+            "cat": {
+              "home": 3,
+              "arrivals": 9,
+              "to_foster": 0,
+              "to_adopter": 3,
+              "pct": 33.3
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 7,
+              "to_foster": 3,
+              "to_adopter": 2,
+              "pct": 71.4
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 14,
+              "arrivals": 16,
+              "to_foster": 3,
+              "to_adopter": 11,
+              "pct": 87.5
+            },
+            "cat": {
+              "home": 7,
+              "arrivals": 9,
+              "to_foster": 0,
+              "to_adopter": 7,
+              "pct": 77.8
+            },
+            "dog": {
+              "home": 7,
+              "arrivals": 7,
+              "to_foster": 3,
+              "to_adopter": 4,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-04",
+          "strict": {
+            "all": {
+              "home": 6,
+              "arrivals": 27,
+              "to_foster": 2,
+              "to_adopter": 4,
+              "pct": 22.2
+            },
+            "cat": {
+              "home": 3,
+              "arrivals": 24,
+              "to_foster": 0,
+              "to_adopter": 3,
+              "pct": 12.5
+            },
+            "dog": {
+              "home": 3,
+              "arrivals": 3,
+              "to_foster": 2,
+              "to_adopter": 1,
+              "pct": 100.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 11,
+              "arrivals": 27,
+              "to_foster": 2,
+              "to_adopter": 9,
+              "pct": 40.7
+            },
+            "cat": {
+              "home": 8,
+              "arrivals": 24,
+              "to_foster": 0,
+              "to_adopter": 8,
+              "pct": 33.3
+            },
+            "dog": {
+              "home": 3,
+              "arrivals": 3,
+              "to_foster": 2,
+              "to_adopter": 1,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-05",
+          "strict": {
+            "all": {
+              "home": 9,
+              "arrivals": 34,
+              "to_foster": 1,
+              "to_adopter": 8,
+              "pct": 26.5
+            },
+            "cat": {
+              "home": 8,
+              "arrivals": 30,
+              "to_foster": 0,
+              "to_adopter": 8,
+              "pct": 26.7
+            },
+            "dog": {
+              "home": 1,
+              "arrivals": 4,
+              "to_foster": 1,
+              "to_adopter": 0,
+              "pct": 25.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 17,
+              "arrivals": 34,
+              "to_foster": 4,
+              "to_adopter": 13,
+              "pct": 50.0
+            },
+            "cat": {
+              "home": 14,
+              "arrivals": 30,
+              "to_foster": 1,
+              "to_adopter": 13,
+              "pct": 46.7
+            },
+            "dog": {
+              "home": 3,
+              "arrivals": 4,
+              "to_foster": 3,
+              "to_adopter": 0,
+              "pct": 75.0
+            }
+          }
+        },
+        {
+          "month": "2026-06",
+          "strict": {
+            "all": {
+              "home": 11,
+              "arrivals": 17,
+              "to_foster": 2,
+              "to_adopter": 9,
+              "pct": 64.7
+            },
+            "cat": {
+              "home": 9,
+              "arrivals": 14,
+              "to_foster": 0,
+              "to_adopter": 9,
+              "pct": 64.3
+            },
+            "dog": {
+              "home": 2,
+              "arrivals": 3,
+              "to_foster": 2,
+              "to_adopter": 0,
+              "pct": 66.7
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 14,
+              "arrivals": 17,
+              "to_foster": 3,
+              "to_adopter": 11,
+              "pct": 82.4
+            },
+            "cat": {
+              "home": 11,
+              "arrivals": 14,
+              "to_foster": 0,
+              "to_adopter": 11,
+              "pct": 78.6
+            },
+            "dog": {
+              "home": 3,
+              "arrivals": 3,
+              "to_foster": 3,
+              "to_adopter": 0,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-07",
+          "strict": {
+            "all": {
+              "home": 4,
+              "arrivals": 22,
+              "to_foster": 0,
+              "to_adopter": 4,
+              "pct": 18.2
+            },
+            "cat": {
+              "home": 3,
+              "arrivals": 21,
+              "to_foster": 0,
+              "to_adopter": 3,
+              "pct": 14.3
+            },
+            "dog": {
+              "home": 1,
+              "arrivals": 1,
+              "to_foster": 0,
+              "to_adopter": 1,
+              "pct": 100.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 6,
+              "arrivals": 22,
+              "to_foster": 0,
+              "to_adopter": 6,
+              "pct": 27.3
+            },
+            "cat": {
+              "home": 5,
+              "arrivals": 21,
+              "to_foster": 0,
+              "to_adopter": 5,
+              "pct": 23.8
+            },
+            "dog": {
+              "home": 1,
+              "arrivals": 1,
+              "to_foster": 0,
+              "to_adopter": 1,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-08",
+          "strict": {
+            "all": {
+              "home": 7,
+              "arrivals": 28,
+              "to_foster": 2,
+              "to_adopter": 5,
+              "pct": 25.0
+            },
+            "cat": {
+              "home": 2,
+              "arrivals": 23,
+              "to_foster": 0,
+              "to_adopter": 2,
+              "pct": 8.7
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 5,
+              "to_foster": 2,
+              "to_adopter": 3,
+              "pct": 100.0
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 16,
+              "arrivals": 28,
+              "to_foster": 2,
+              "to_adopter": 14,
+              "pct": 57.1
+            },
+            "cat": {
+              "home": 11,
+              "arrivals": 23,
+              "to_foster": 0,
+              "to_adopter": 11,
+              "pct": 47.8
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 5,
+              "to_foster": 2,
+              "to_adopter": 3,
+              "pct": 100.0
+            }
+          }
+        },
+        {
+          "month": "2026-09",
+          "strict": {
+            "all": {
+              "home": 6,
+              "arrivals": 30,
+              "to_foster": 3,
+              "to_adopter": 3,
+              "pct": 20.0
+            },
+            "cat": {
+              "home": 2,
+              "arrivals": 24,
+              "to_foster": 0,
+              "to_adopter": 2,
+              "pct": 8.3
+            },
+            "dog": {
+              "home": 4,
+              "arrivals": 6,
+              "to_foster": 3,
+              "to_adopter": 1,
+              "pct": 66.7
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 15,
+              "arrivals": 30,
+              "to_foster": 4,
+              "to_adopter": 11,
+              "pct": 50.0
+            },
+            "cat": {
+              "home": 10,
+              "arrivals": 24,
+              "to_foster": 0,
+              "to_adopter": 10,
+              "pct": 41.7
+            },
+            "dog": {
+              "home": 5,
+              "arrivals": 6,
+              "to_foster": 4,
+              "to_adopter": 1,
+              "pct": 83.3
+            }
+          }
+        },
+        {
+          "month": "2026-10",
+          "strict": {
+            "all": {
+              "home": 3,
+              "arrivals": 16,
+              "to_foster": 0,
+              "to_adopter": 3,
+              "pct": 18.8
+            },
+            "cat": {
+              "home": 3,
+              "arrivals": 16,
+              "to_foster": 0,
+              "to_adopter": 3,
+              "pct": 18.8
+            },
+            "dog": {
+              "home": 0,
+              "arrivals": 0,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": null
+            }
+          },
+          "three_day": {
+            "all": {
+              "home": 9,
+              "arrivals": 16,
+              "to_foster": 0,
+              "to_adopter": 9,
+              "pct": 56.2
+            },
+            "cat": {
+              "home": 9,
+              "arrivals": 16,
+              "to_foster": 0,
+              "to_adopter": 9,
+              "pct": 56.2
+            },
+            "dog": {
+              "home": 0,
+              "arrivals": 0,
+              "to_foster": 0,
+              "to_adopter": 0,
+              "pct": null
+            }
+          }
+        }
+      ]
+    },
+    "elgin_transport": {
+      "total": 2019,
+      "cats": 610,
+      "dogs": 1409,
+      "by_month": [
+        {
+          "month": "2026-01",
+          "total": 115,
+          "cats": 33,
+          "dogs": 82
+        },
+        {
+          "month": "2026-02",
+          "total": 190,
+          "cats": 56,
+          "dogs": 134
+        },
+        {
+          "month": "2026-03",
+          "total": 170,
+          "cats": 74,
+          "dogs": 96
+        },
+        {
+          "month": "2026-04",
+          "total": 208,
+          "cats": 84,
+          "dogs": 124
+        },
+        {
+          "month": "2026-05",
+          "total": 239,
+          "cats": 80,
+          "dogs": 159
+        },
+        {
+          "month": "2026-06",
+          "total": 206,
+          "cats": 56,
+          "dogs": 150
+        },
+        {
+          "month": "2026-07",
+          "total": 252,
+          "cats": 60,
+          "dogs": 192
+        },
+        {
+          "month": "2026-08",
+          "total": 168,
+          "cats": 50,
+          "dogs": 118
+        },
+        {
+          "month": "2026-09",
+          "total": 231,
+          "cats": 60,
+          "dogs": 171
+        },
+        {
+          "month": "2026-10",
+          "total": 240,
+          "cats": 57,
+          "dogs": 183
+        }
+      ],
+      "goal": 3000,
+      "stretch": 3500
+    },
+    "volunteers": {
+      "unique": 145,
+      "hours": 1728.5
+    }
+  },
   "adoptions": {
     "total": 610,
     "cats": 481,
