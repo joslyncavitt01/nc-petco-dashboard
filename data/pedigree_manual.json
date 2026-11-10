@@ -7,13 +7,34 @@
     "period_label": "January 1 to December 31, 2026"
   },
   "reports": [
-    { "name": "Interim report", "due": "2027-01-15", "submitted": null },
-    { "name": "Final report", "due": "2027-06-15", "submitted": null }
+    {
+      "name": "Interim report",
+      "due": "2027-01-15",
+      "submitted": null
+    },
+    {
+      "name": "Final report",
+      "due": "2027-06-15",
+      "submitted": null
+    }
   ],
   "stories_required": 8,
   "stories": [
-    { "name": "Lily", "species": "Dog", "sent": "2026-08-21", "summary": "Pecos, TX to a South Carolina adopter, July 2026" },
-    { "name": "Blur", "species": "Dog", "sent": "2026-10-16", "summary": "Parvo ICU survivor, adopted the day he arrived in NC" }
+    {
+      "name": "Lily",
+      "species": "Dog",
+      "sent": "2026-08-21",
+      "summary": "Pecos, TX to a South Carolina adopter, July 2026"
+    },
+    {
+      "name": "Blur",
+      "species": "Dog",
+      "sent": "2026-10-16",
+      "summary": "Parvo ICU survivor, adopted the day he arrived in NC"
+    }
   ],
-  "toolkit": { "status": "Not confirmed", "note": "Ask Maggie whether the Direct to Adopt toolkit has been started." }
+  "toolkit": {
+    "status": "Not started",
+    "note": "No D2A toolkit document found in Drive or email as of 11/10/26. Confirm with Maggie and Jordana."
+  }
 }
