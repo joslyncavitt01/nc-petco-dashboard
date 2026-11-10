@@ -486,6 +486,76 @@ volunteers_period = q(f"""
       AND DATE(t.dateWorked) BETWEEN '{GRANT_START}' AND '{GRANT_END}'
 """)[0]
 
+# =============================================================================
+# PETCO LOVE tab (report-aligned, redesign 11/10/26). Year 2 = CY2026,
+# goal 750-1,000 adoptions; grant extended to 12/31/26 (final report due then).
+# =============================================================================
+petco_months_2026 = q("""
+    SELECT FORMAT_DATE('%Y-%m', DATE(o.outcomeDate)) AS month,
+      COUNT(*) AS total, COUNTIF(a.species = 'Cat') AS cats, COUNTIF(a.species = 'Dog') AS dogs
+    FROM `apa-data-410213.nc_shelterluv.Outcomes` o
+    JOIN `apa-data-410213.nc_shelterluv.Animals` a ON o.animalInternalID = a.animalInternalID
+    WHERE o.outcomeType = 'Outcome.Adoption' AND EXTRACT(YEAR FROM o.outcomeDate) = 2026
+    GROUP BY month ORDER BY month
+""")
+petco_fosters_2026 = q("""
+    SELECT COUNT(DISTINCT personInternalID) AS families, COUNT(*) AS placements
+    FROM `apa-data-410213.nc_shelterluv.Outcomes`
+    WHERE outcomeType = 'Outcome.Foster' AND EXTRACT(YEAR FROM outcomeDate) = 2026
+""")[0]
+
+# Monday.com promotion tasks for the grant (Grants 2026-2027 board). Done
+# tasks are moved to the "Completed" group, so filter the whole board on the
+# Grant column. Token stays local (~/.config/apa/monday_token) and is never
+# written to output. A failure here must not break the daily refresh.
+def fetch_monday_petco():
+    import os, urllib.request
+    tok_path = os.path.expanduser("~/.config/apa/monday_token")
+    tok = open(tok_path).read().strip()
+    fields = "items{ name column_values{ text column{ title } } }"
+    def gql(query, variables=None):
+        req = urllib.request.Request(
+            "https://api.monday.com/v2",
+            data=json.dumps({"query": query, "variables": variables or {}}).encode(),
+            headers={"Authorization": tok, "Content-Type": "application/json", "API-Version": "2024-10"})
+        return json.load(urllib.request.urlopen(req, timeout=30))
+    page = gql("{ boards(ids:[18416504263]){ items_page(limit:500){ cursor %s } } }" % fields)
+    page = page["data"]["boards"][0]["items_page"]
+    items, cursor = page["items"], page["cursor"]
+    while cursor:
+        page = gql("query($c:String!){ next_items_page(limit:500, cursor:$c){ cursor %s } }" % fields, {"c": cursor})
+        page = page["data"]["next_items_page"]
+        items += page["items"]
+        cursor = page["cursor"]
+    tasks = []
+    for it in items:
+        cv = {c["column"]["title"]: c["text"] for c in it["column_values"]}
+        if "petco love" not in (cv.get("Grant") or "").lower():
+            continue
+        name = it["name"]
+        kind = "sponsor_credit" if "sponsor credit" in name.lower() else (
+               "social_post" if "social" in name.lower() else "other")
+        link = (cv.get("Link to Social Post") or "")
+        if " - " in link:
+            link = link.split(" - ", 1)[1]
+        tasks.append({"name": name, "kind": kind, "due": cv.get("Due Date") or None,
+                      "status": cv.get("Status") or "Not Started", "link": link or None})
+    tasks.sort(key=lambda t: t["due"] or "")
+    return tasks
+
+try:
+    petco_tasks = fetch_monday_petco()
+    petco_tasks_error = None
+except Exception as e:  # keep refresh alive if Monday is unreachable
+    petco_tasks, petco_tasks_error = [], str(e)[:200]
+
+petco2026 = {
+    "by_month": petco_months_2026,
+    "fosters_2026": petco_fosters_2026,
+    "monday_tasks": petco_tasks,
+    "monday_error": petco_tasks_error,
+}
+
 pedigree2026 = {
     "period": {"start": GRANT_START, "end": GRANT_END, "days": period_days,
                "elapsed_days": elapsed_days},
@@ -500,6 +570,7 @@ pedigree2026 = {
 output = {
     "generated_at": now.isoformat(),
     "pedigree2026": pedigree2026,
+    "petco2026": petco2026,
     "adoptions": {
         "total": totals["total"],
         "cats": totals["cats"],

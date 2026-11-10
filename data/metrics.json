@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T16:33:05.186352+00:00",
+  "generated_at": "2026-11-10T17:14:17.552134+00:00",
   "pedigree2026": {
     "period": {
       "start": "2026-01-01",
@@ -621,6 +621,160 @@
       "unique": 145,
       "hours": 1728.5
     }
+  },
+  "petco2026": {
+    "by_month": [
+      {
+        "month": "2026-01",
+        "total": 32,
+        "cats": 25,
+        "dogs": 7
+      },
+      {
+        "month": "2026-02",
+        "total": 34,
+        "cats": 26,
+        "dogs": 8
+      },
+      {
+        "month": "2026-03",
+        "total": 41,
+        "cats": 28,
+        "dogs": 13
+      },
+      {
+        "month": "2026-04",
+        "total": 39,
+        "cats": 33,
+        "dogs": 6
+      },
+      {
+        "month": "2026-05",
+        "total": 38,
+        "cats": 30,
+        "dogs": 8
+      },
+      {
+        "month": "2026-06",
+        "total": 49,
+        "cats": 40,
+        "dogs": 9
+      },
+      {
+        "month": "2026-07",
+        "total": 32,
+        "cats": 28,
+        "dogs": 4
+      },
+      {
+        "month": "2026-08",
+        "total": 69,
+        "cats": 52,
+        "dogs": 17
+      },
+      {
+        "month": "2026-09",
+        "total": 46,
+        "cats": 37,
+        "dogs": 9
+      },
+      {
+        "month": "2026-10",
+        "total": 37,
+        "cats": 32,
+        "dogs": 5
+      },
+      {
+        "month": "2026-11",
+        "total": 9,
+        "cats": 8,
+        "dogs": 1
+      }
+    ],
+    "fosters_2026": {
+      "families": 85,
+      "placements": 188
+    },
+    "monday_tasks": [
+      {
+        "name": "Q2 2026 Event Sponsor Credit (NCSPAC)",
+        "kind": "sponsor_credit",
+        "due": "2026-06-30",
+        "status": "Declined",
+        "link": null
+      },
+      {
+        "name": "June 2026 Social Post (APA!)",
+        "kind": "social_post",
+        "due": "2026-06-30",
+        "status": "Done",
+        "link": "https://www.facebook.com/share/p/1BzzmhTgyX/"
+      },
+      {
+        "name": "July 2026 Social Post (APA!)",
+        "kind": "social_post",
+        "due": "2026-07-31",
+        "status": "Done",
+        "link": "https://www.facebook.com/share/p/1Fhb8VT26J/"
+      },
+      {
+        "name": "August 2026 Petco Love: Monthly Social Media Post - North Carolina Shelter Pet Adoption Center (Adoption Story)",
+        "kind": "social_post",
+        "due": "2026-08-31",
+        "status": "Done",
+        "link": "https://www.facebook.com/share/p/1BJLk6dFAP/"
+      },
+      {
+        "name": "Q3 2026 Event Sponsor Credit (NCSPAC)",
+        "kind": "sponsor_credit",
+        "due": "2026-09-30",
+        "status": "Done",
+        "link": "https://www.instagram.com/reel/DdcbG6yxSB3/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+      },
+      {
+        "name": "September 2026 Petco Love: Monthly Social Media Post - North Carolina Shelter Pet Adoption Center (Adoption Story)",
+        "kind": "social_post",
+        "due": "2026-09-30",
+        "status": "Done",
+        "link": "https://www.facebook.com/share/p/19XWfQ6qdk/"
+      },
+      {
+        "name": "October 2026 Petco Love: Monthly Social Media Post - North Carolina Shelter Pet Adoption Center (Adoption Story)",
+        "kind": "social_post",
+        "due": "2026-10-31",
+        "status": "Done",
+        "link": null
+      },
+      {
+        "name": "Q4 2026 Event Sponsor Credit (NCSPAC): Thanksgiving Promo Nov 20-22",
+        "kind": "sponsor_credit",
+        "due": "2026-11-20",
+        "status": "Not Started",
+        "link": null
+      },
+      {
+        "name": "November 2026 Petco Love: Monthly Social Media Post - North Carolina Shelter Pet Adoption Center (Adoption Story)",
+        "kind": "social_post",
+        "due": "2026-11-30",
+        "status": "Not Started",
+        "link": null
+      },
+      {
+        "name": "Q4 2026 Event Sponsor Credit (NCSPAC): December Holiday Promo",
+        "kind": "sponsor_credit",
+        "due": "2026-12-15",
+        "status": "Not Started",
+        "link": null
+      },
+      {
+        "name": "December 2026 Petco Love: Monthly Social Media Post - North Carolina Shelter Pet Adoption Center (Adoption Story)",
+        "kind": "social_post",
+        "due": "2026-12-31",
+        "status": "Not Started",
+        "link": null
+      }
+    ],
+    "monday_error": null
   },
   "adoptions": {
     "total": 610,

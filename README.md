@@ -47,3 +47,7 @@ An auto-refresh LaunchAgent (`com.apa.nc-petco-dashboard`) handles this automati
 ## PEDIGREE D2A tab: hand-maintained items
 
 `data/pedigree_manual.json` holds things ShelterLuv can't supply: impact stories sent to PEDIGREE for the D2A grant (8 required), the D2A toolkit status, and report due/submitted dates. Edit it and push; the auto-refresh doesn't touch it. Add `?sp=dog` or `?sp=cat` to the URL (with `#pedigree`) to open the tab pre-filtered.
+
+## Petco Love tab
+
+`data/petco_manual.json` holds the recognition checklist (as answered in the Fluxx interim report), report dates, and impact stories reported. Promotion tasks and sponsor credits come live from Monday.com (Grants 2026-2027 board, filtered on the Grant column) during each refresh, using the local token at `~/.config/apa/monday_token`; the token is never written to the repo. Sponsor credits count only Monday tasks marked Done.

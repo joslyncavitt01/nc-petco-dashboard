@@ -1,0 +1,29 @@
+{
+  "_note": "Hand-maintained. Recognition answers mirror the Fluxx Lifesaving Impact Award Report (interim submitted 7/31/26). Update before the final report.",
+  "grant": {
+    "name": "Petco Love Lifesaving Impact Award: NC Shelter Pet Adoption Center",
+    "id": "G-2406-56741",
+    "amount": 1500000,
+    "year2_label": "Year 2 = calendar year 2026",
+    "extended_to": "2026-12-31"
+  },
+  "reports": [
+    { "name": "Interim report", "due": "2026-07-31", "submitted": "2026-07-31" },
+    { "name": "Final report", "due": "2026-12-31", "submitted": null }
+  ],
+  "sponsor_credits_required": 4,
+  "recognition": [
+    { "item": "Press release announcing the investment", "done": true },
+    { "item": "Petco Love logo on the website", "done": true, "note": "Keep it up through 12/31/26 (grant extended)" },
+    { "item": "2+ examples of partner press kit use", "done": true, "note": "Adoption promo graphic, Meet Your Match media alert, Positively Charlotte features" },
+    { "item": "In-store signage at the Huntersville Petco", "done": true },
+    { "item": "Petco Love Lost (national lost & found)", "done": true },
+    { "item": "In-store adoptions", "done": true },
+    { "item": "Follow Petco Love on social and share their posts", "done": true },
+    { "item": "Annual data report (due March 31)", "done": true }
+  ],
+  "stories": [
+    { "name": "Blink", "species": "Dog", "used_in": "Interim report 7/31/26", "summary": "Shy Lab mix from Giddings, met her family at the NoDa pop-up" },
+    { "name": "Toby", "species": "Dog", "used_in": "Interim report 7/31/26", "summary": "German Shepherd adopted the same day his placement deadline hit" }
+  ]
+}

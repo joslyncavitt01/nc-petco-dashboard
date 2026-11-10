@@ -296,6 +296,8 @@
   .story-list li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; display: flex; justify-content: space-between; gap: 10px; }
   .story-list li:last-child { border-bottom: none; }
   .story-list .muted { color: var(--text-muted); }
+  .story-list a { color: var(--brand-orange); text-decoration: none; font-weight: 600; }
+  .story-list a:hover { text-decoration: underline; }
   .card-title { font-weight: 700; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 
   details.method { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; font-size: 0.84rem; color: var(--text-secondary); }
@@ -434,7 +436,7 @@
         <button class="grant-card" data-goto="petco-love">
           <div class="grant-eyebrow">Petco Love &middot; Grant G-2406-56741</div>
           <div class="grant-title">Adoption Center Launch</div>
-          <div class="grant-desc">Multi-year contract goal for total adoptions out of the Huntersville center, tracked by calendar year.</div>
+          <div class="grant-desc">$1.5M Lifesaving Impact Award: Year 2 goal of 750&ndash;1,000 adoptions in 2026, plus sponsorship and recognition requirements.</div>
         </button>
         <button class="grant-card" data-goto="pedigree">
           <div class="grant-eyebrow">PEDIGREE Foundation &middot; $50K, 2026</div>
@@ -481,18 +483,76 @@
   <!-- ===== PETCO LOVE TAB ===== -->
   <div class="tab-pane" data-tab="petco-love">
 
+    <div class="grant-banner">
+      <div>
+        <div class="grant-eyebrow">Petco Love &middot; $1.5M Lifesaving Impact Award &middot; G-2406-56741</div>
+        <div class="grant-banner-title">NC Shelter Pet Adoption Center</div>
+        <div class="grant-banner-meta" id="pet-period"></div>
+      </div>
+      <div class="deadline-chips" id="pet-deadlines"></div>
+    </div>
+
+    <div class="ptoggle-bar">
+      <span class="ptoggle-label">Show</span>
+      <div class="ptoggle" id="pet-toggle" role="group" aria-label="Species">
+        <button data-sp="all" class="active">All</button>
+        <button data-sp="dog">Dogs</button>
+        <button data-sp="cat">Cats</button>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <h2>Goals &amp; Requirements</h2>
+      </div>
+      <div class="rtable-wrap"><table class="rtable" id="pet-goal-table"></table></div>
+      <div class="rtable-foot" id="pet-goal-foot"></div>
+    </section>
+
     <section>
       <div class="section-head">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <h2>Progress Toward Contract Goal</h2>
+        <h2>Year 2 Adoptions (Calendar 2026)</h2>
       </div>
-      <div id="goals"></div>
+      <div class="chart-card">
+        <div id="pet-adopt-head"></div>
+        <div class="legend" id="pet-adopt-legend"></div>
+        <svg id="pet-adopt-chart" class="pchart" viewBox="0 0 1000 220" preserveAspectRatio="none"></svg>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <h2>Community Built (2026)</h2>
+      </div>
+      <div class="tiles" id="pet-community-tiles"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg>
+        <h2>Sponsorship &amp; Recognition</h2>
+      </div>
+      <div class="report-grid">
+        <div class="chart-card" id="pet-tasks"></div>
+        <div class="chart-card" id="pet-recognition"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
+        <h2>Impact Stories Reported</h2>
+      </div>
+      <div class="chart-card" id="pet-stories"></div>
     </section>
 
     <section>
       <div class="section-head">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-        <h2>Adoption Trend</h2>
+        <h2>Adoption Trend Since Opening</h2>
       </div>
       <div class="chart-card">
         <div class="legend">
@@ -715,16 +775,21 @@ async function main() {
     { label: 'Dogs in Foster', value: s.dogs_in_foster || 0 },
   ]);
 
-  renderGoals(d.goals);
   renderTrend(months);
+  try {
+    const pres = await fetch('data/petco_manual.json', { cache: 'no-store' });
+    PET_MANUAL = await pres.json();
+  } catch (e) { PET_MANUAL = null; }
+  renderPetco();
   try {
     const mres = await fetch('data/pedigree_manual.json', { cache: 'no-store' });
     PED_MANUAL = await mres.json();
   } catch (e) { PED_MANUAL = null; }
   const spParam = new URLSearchParams(location.search).get('sp');
   if (['all', 'cat', 'dog'].includes(spParam)) {
-    PED_SP = spParam;
-    document.querySelectorAll('#ped-toggle button').forEach(x => x.classList.toggle('active', x.dataset.sp === spParam));
+    PED_SP = spParam; PET_SP = spParam;
+    document.querySelectorAll('#ped-toggle button, #pet-toggle button').forEach(x => x.classList.toggle('active', x.dataset.sp === spParam));
+    renderPetco();
   }
   renderPedigree();
   const hashTab = location.hash.replace('#', '');
@@ -952,6 +1017,131 @@ function renderPedigree() {
     { label: 'Adopted', value: d2aAdoptions, sub: `${p.d2a.direct_adoptions} directly, ${p.d2a.foster_to_adopt} through foster` },
     { label: 'Still in the Pipeline', value: Math.max(0, p.d2a.tagged_total - d2aAdoptions) },
   ]);
+}
+
+// ===== PETCO LOVE TAB (report-aligned, species toggle) =====
+let PET_MANUAL = null;
+let PET_SP = 'all';
+document.getElementById('pet-toggle').addEventListener('click', e => {
+  const b = e.target.closest('button[data-sp]');
+  if (!b) return;
+  PET_SP = b.dataset.sp;
+  document.querySelectorAll('#pet-toggle button').forEach(x => x.classList.toggle('active', x === b));
+  renderPetco();
+});
+
+function renderPetco() {
+  const d = METRICS;
+  const pc = d && d.petco2026;
+  if (!pc) return;
+  const sp = PET_SP;
+  const man = PET_MANUAL || {};
+  const y1 = d.goals.year1, y2 = d.goals.year2;
+  const pick = (all, cats, dogs) => sp === 'all' ? all : sp === 'cat' ? cats : dogs;
+  const spNote = sp === 'all' ? '' : ` (${SP_LABEL[sp].toLowerCase()} only)`;
+
+  // period: calendar 2026, extended end 12/31
+  const start = new Date(2026, 0, 1), end = new Date(2026, 11, 31), now = new Date();
+  const days = Math.round((end - start) / 86400000) + 1;
+  const elapsed = Math.max(1, Math.min(days, Math.floor((now - start) / 86400000) + 1));
+  const left = days - elapsed;
+  document.getElementById('pet-period').innerHTML =
+    `Year 2 = January 1 &ndash; December 31, 2026 (grant extended to Dec 31) &middot; ${left} days left`;
+  document.getElementById('pet-deadlines').innerHTML = (man.reports || []).map(r => {
+    const [yy, mm, dd] = r.due.split('-').map(Number);
+    const dleft = Math.ceil((new Date(yy, mm - 1, dd) - now) / 86400000);
+    const status = r.submitted ? `Submitted ${fmtDate(r.submitted)}` : `Due in ${dleft} days`;
+    return `<div class="deadline-chip">${r.name}<b>${fmtDate(r.due)}</b>${status}</div>`;
+  }).join('');
+
+  // adoptions
+  const y2v = pick(y2.actual, y2.cats, y2.dogs);
+  const y1v = pick(y1.actual, y1.cats, y1.dogs);
+  const proj = Math.round(y2.actual * days / elapsed);
+  const needPerMonth = left > 0 ? Math.ceil((y2.min - y2.actual) / (left / 30.4)) : 0;
+  const months = pc.by_month;
+  const bestMonth = months.reduce((a, m) => m.total > (a ? a.total : -1) ? m : a, null);
+
+  // Monday tasks
+  const tasks = pc.monday_tasks || [];
+  const credits = tasks.filter(t => t.kind === 'sponsor_credit');
+  const creditsDone = credits.filter(t => t.status === 'Done').length;
+  const creditsPlanned = credits.filter(t => t.status !== 'Done' && t.status !== 'Declined').length;
+  const need = man.sponsor_credits_required || 4;
+  const posts = tasks.filter(t => t.kind === 'social_post');
+  const postsDone = posts.filter(t => t.status === 'Done').length;
+  const rec = man.recognition || [];
+  const recDone = rec.filter(r => r.done).length;
+
+  const rows = [
+    { name: 'Year 2 adoptions (calendar 2026)', target: '750&ndash;1,000', progress: y2v.toLocaleString(),
+      pct: sp === 'all' ? Math.round(100 * y2.actual / y2.min) + '%' : '&ndash;',
+      status: sp === 'all' ? (y2.actual >= y2.min ? { cls: 'met', label: 'Goal met' } : { cls: 'behind', label: 'Behind pace' }) : null,
+      note: sp === 'all'
+        ? `${y2.cats} cats / ${y2.dogs} dogs. Projected ${proj.toLocaleString()} by Dec 31 at the current pace; reaching 750 needs about ${needPerMonth} a month (best month so far: ${bestMonth ? bestMonth.total : 0}).`
+        : `${SP_LABEL[sp]} only. Goal is for all species.` },
+    { name: 'Year 1 adoptions (calendar 2025, closed)', target: '500&ndash;750', progress: y1v.toLocaleString(),
+      pct: sp === 'all' ? Math.round(100 * y1.actual / y1.min) + '%' : '&ndash;',
+      status: sp === 'all' ? (y1.actual >= y1.min ? { cls: 'met', label: 'Goal met' } : { cls: 'behind', label: 'Missed' }) : null,
+      note: 'Center opened April 2025.' },
+    { name: 'Petco Love named primary sponsor of 4+ adoption events or promotions', target: String(need), progress: creditsDone,
+      pct: Math.round(100 * creditsDone / need) + '%',
+      status: creditsDone >= need ? { cls: 'met', label: 'Met' } : (creditsDone + creditsPlanned >= need ? { cls: 'pace', label: 'On track' } : { cls: 'behind', label: 'Short' }),
+      note: `Monday.com sponsor credits marked Done. ${creditsPlanned} more planned; ${credits.filter(t => t.status === 'Declined').length} declined.` },
+    { name: 'Monthly Petco Love recognition posts', target: String(posts.length), progress: postsDone,
+      pct: posts.length ? Math.round(100 * postsDone / posts.length) + '%' : '&ndash;',
+      status: { cls: 'open', label: `${posts.length - postsDone} to go` }, note: 'From Monday.com.' },
+    { name: 'Recognition & partnership checklist (report section)', target: String(rec.length), progress: recDone,
+      pct: rec.length ? Math.round(100 * recDone / rec.length) + '%' : '&ndash;',
+      status: recDone === rec.length ? { cls: 'met', label: 'Complete' } : { cls: 'open', label: 'Open' },
+      note: 'As answered in the 7/31/26 interim report.' },
+  ];
+  document.getElementById('pet-goal-table').innerHTML =
+    `<thead><tr><th>Goal / requirement</th><th>Target</th><th>Progress${sp === 'all' ? '' : ' (' + SP_LABEL[sp] + ')'}</th><th>% Complete</th><th>Status</th></tr></thead><tbody>` +
+    rows.map(r => `<tr>
+      <td><div class="goal-name">${r.name}</div><div class="note">${r.note}</div></td>
+      <td class="num">${r.target}</td><td class="num">${r.progress}</td><td class="num">${r.pct}</td>
+      <td>${r.status ? `<span class="pill ${r.status.cls}">${r.status.label}</span>` : '<span class="note">Goal is for all species</span>'}</td>
+    </tr>`).join('') + '</tbody>';
+  document.getElementById('pet-goal-foot').innerHTML = pc.monday_error
+    ? 'Monday.com could not be reached on the last refresh, so task counts may be missing.'
+    : `Pace = 2026 total so far projected to Dec 31 (${elapsed} of ${days} days elapsed).`;
+
+  // Year 2 adoption chart
+  document.getElementById('pet-adopt-head').innerHTML = `
+    <div class="elgin-head">
+      <div><span class="v">${y2v.toLocaleString()}</span> <span class="s">${SP_WORD[sp]} adopted in 2026${spNote}</span></div>
+      ${sp === 'all' ? `<div class="s">Goal 750 &middot; stretch 1,000 &middot; projected <b>${proj.toLocaleString()}</b> by Dec 31 <span class="pill ${y2.actual >= y2.min ? 'met' : 'behind'}">${y2.actual >= y2.min ? 'Goal met' : 'Behind pace'}</span></div>` : '<div class="s">Goal 750&ndash;1,000 (all species)</div>'}
+    </div>
+    <div class="bar-track" style="margin:24px 0 18px">
+      <div class="bar-fill" style="width:${Math.min(100, 100 * y2v / y2.max)}%"></div>
+      <div class="bar-marker" style="left:${100 * y2.min / y2.max}%"><span class="tick-label">goal 750</span></div>
+      <div class="bar-marker" style="left:100%"><span class="tick-label" style="left:auto; right:0; transform:none;">1,000</span></div>
+    </div>`;
+  renderStackedBars('pet-adopt-chart', 'pet-adopt-legend', months, sp);
+
+  // community
+  const v = d.pedigree2026 ? d.pedigree2026.volunteers : null;
+  renderTiles('pet-community-tiles', [
+    { label: 'Foster Families (2026)', value: pc.fosters_2026.families, sub: `${pc.fosters_2026.placements} foster placements` },
+    { label: 'NC Volunteers (2026)', value: v ? v.unique : '&ndash;', sub: v ? `${Math.round(v.hours).toLocaleString()} hours` : '' },
+    { label: 'Adoptions Since Opening', value: d.adoptions.total.toLocaleString(), sub: `${d.adoptions.cats} cats / ${d.adoptions.dogs} dogs` },
+    { label: 'Best Month (2026)', value: bestMonth ? bestMonth.total : '&ndash;', sub: bestMonth ? formatMonth(bestMonth.month, true) : '' },
+  ]);
+
+  // Monday tasks + recognition
+  const pill = s => s === 'Done' ? '<span class="pill met">Done</span>' : s === 'Declined' ? '<span class="pill behind">Declined</span>' : `<span class="pill open">${s}</span>`;
+  const short = n => n.replace(' - North Carolina Shelter Pet Adoption Center (Adoption Story)', '').replace('Petco Love: Monthly Social Media Post', 'Petco Love monthly post');
+  document.getElementById('pet-tasks').innerHTML = `
+    <div class="card-title">Promotion tasks (Monday.com) <span class="pill ${creditsDone >= need ? 'met' : 'open'}">${creditsDone} of ${need} sponsor credits</span></div>
+    <ul class="story-list">${tasks.map(t => `<li><span>${t.link ? `<a href="${t.link}" target="_blank" rel="noopener">${short(t.name)}</a>` : short(t.name)} <span class="muted">&middot; due ${t.due ? fmtDate(t.due, { month: 'short', day: 'numeric' }) : '&ndash;'}</span></span>${pill(t.status)}</li>`).join('') || '<li class="muted">No tasks found.</li>'}</ul>`;
+  document.getElementById('pet-recognition').innerHTML = `
+    <div class="card-title">Recognition checklist <span class="pill ${recDone === rec.length ? 'met' : 'open'}">${recDone} of ${rec.length}</span></div>
+    <ul class="story-list">${rec.map(r => `<li><span>${r.done ? '&#10003;' : '&#9675;'} ${r.item}${r.note ? ` <span class="muted">&middot; ${r.note}</span>` : ''}</span></li>`).join('')}</ul>`;
+
+  const st = man.stories || [];
+  document.getElementById('pet-stories').innerHTML = `
+    <ul class="story-list">${st.map(s => `<li><span><b>${s.name}</b> <span class="muted">&middot; ${s.summary}</span></span><span class="muted">${s.used_in}</span></li>`).join('')}</ul>`;
 }
 
 function chartMonthLabel(ym) { return MONTH_ABBR[parseInt(ym.split('-')[1], 10) - 1]; }
