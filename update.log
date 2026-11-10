@@ -94,3 +94,118 @@ To https://github.com/joslyncavitt01/nc-petco-dashboard.git
    580054b..cd71433  main -> main
 Pushed update.
 === Sun Aug  9 06:14:49 CDT 2026 ===
+=== Thu Sep 17 18:30:38 CDT 2026 ===
+Wrote data/metrics.json at 2026-09-17T23:30:49.684070+00:00Z
+  Total adoptions: 542 (422 cats, 120 dogs)
+  Year 1 (CY2025): 184 / 500-750
+  Year 2 (CY2026): 358 / 750-1000
+  TX transport-in (CY2026, arrived): 192
+  TX transported & adopted (CY2026, grant KPI): 180 / goal 180
+  NC local transfers-in (CY2026): 133 / goal 100
+  Unclassified transfer origin (all-time): 57
+  Foster caregivers, 2+ placements (CY2026): 32 / goal 15
+Wrote data/animal_profiles.json: 603 animals (179 with Austin link)
+[main b330e26] Auto-refresh metrics 2026-09-17 18:31
+ Committer: Joslyn <joslyn@Joslyns-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 6863 insertions(+), 2034 deletions(-)
+To https://github.com/joslyncavitt01/nc-petco-dashboard.git
+   c413bbe..b330e26  main -> main
+Pushed update.
+=== Fri Sep 18 06:09:18 CDT 2026 ===
+=== Fri Oct 23 22:42:41 CDT 2026 ===
+Wrote data/metrics.json at 2026-10-24T03:42:58.990550+00:00Z
+  Total adoptions: 580 (454 cats, 126 dogs)
+  Year 1 (CY2025): 184 / 500-750
+  Year 2 (CY2026): 396 / 750-1000
+  TX transport-in (CY2026, arrived): 219
+  TX transported & adopted (CY2026, grant KPI): 200 / goal 180
+  NC local transfers-in (CY2026): 153 / goal 100
+  Unclassified transfer origin (all-time): 57
+  Foster caregivers, 2+ placements (CY2026): 37 / goal 15
+Wrote data/animal_profiles.json: 637 animals (206 with Austin link)
+[main 8bc1571] Auto-refresh metrics 2026-10-23 22:43
+ Committer: Joslyn <joslyn@Joslyns-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 4267 insertions(+), 1756 deletions(-)
+To https://github.com/joslyncavitt01/nc-petco-dashboard.git
+   b330e26..8bc1571  main -> main
+Pushed update.
+=== Sat Oct 24 06:07:34 CDT 2026 ===
+=== Tue Oct 27 09:47:36 CDT 2026 ===
+Wrote data/metrics.json at 2026-10-27T14:47:53.170835+00:00Z
+  Total adoptions: 598 (470 cats, 128 dogs)
+  Year 1 (CY2025): 184 / 500-750
+  Year 2 (CY2026): 414 / 750-1000
+  TX transport-in (CY2026, arrived): 219
+  TX transported & adopted (CY2026, grant KPI): 209 / goal 180
+  NC local transfers-in (CY2026): 153 / goal 100
+  Unclassified transfer origin (all-time): 57
+  Foster caregivers, 2+ placements (CY2026): 37 / goal 15
+Wrote data/animal_profiles.json: 634 animals (206 with Austin link)
+[main 2df5262] Auto-refresh metrics 2026-10-27 09:48
+ Committer: Joslyn <joslyn@Joslyns-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 737 insertions(+), 548 deletions(-)
+To https://github.com/joslyncavitt01/nc-petco-dashboard.git
+   8bc1571..2df5262  main -> main
+Pushed update.
+=== Wed Oct 28 06:12:59 CDT 2026 ===
+Wrote data/metrics.json at 2026-10-28T11:13:01.130964+00:00Z
+  Total adoptions: 598 (470 cats, 128 dogs)
+  Year 1 (CY2025): 184 / 500-750
+  Year 2 (CY2026): 414 / 750-1000
+  TX transport-in (CY2026, arrived): 219
+  TX transported & adopted (CY2026, grant KPI): 209 / goal 180
+  NC local transfers-in (CY2026): 164 / goal 100
+  Unclassified transfer origin (all-time): 57
+  Foster caregivers, 2+ placements (CY2026): 37 / goal 15
+Wrote data/animal_profiles.json: 645 animals (206 with Austin link)
+[main ffbb948] Auto-refresh metrics 2026-10-28 06:26
+ Committer: Joslyn <joslyn@Joslyns-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 665 insertions(+), 307 deletions(-)
+To https://github.com/joslyncavitt01/nc-petco-dashboard.git
+   2df5262..ffbb948  main -> main
+Pushed update.
+=== Thu Oct 29 06:07:27 CDT 2026 ===
